@@ -10,9 +10,10 @@ require 'dev_training_application'
 
 map '/assets' do
   sprockets = Sprockets::Environment.new
-  sprockets.append_path File.join('assets', 'stylesheets')
-  sprockets.append_path File.join('assets', 'javascripts')
-  sprockets.append_path File.join('assets', 'images')
+  sprockets.append_path 'assets/stylesheets'
+  sprockets.append_path 'assets/javascripts'
+  sprockets.append_path 'assets/images'
+  sprockets.append_path 'node_modules'
   run sprockets
 end
 

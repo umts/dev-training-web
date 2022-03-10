@@ -1,0 +1,7 @@
+{
+  "name": "dev-training",
+  "private": true,
+  "dependencies": {
+    "@picocss/pico": "^1.4.4"
+  }
+}
