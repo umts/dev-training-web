@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Gravit.io -->
+
+<svg
+   style="isolation:isolate"
+   viewBox="0 0 292 292"
+   width="292"
+   height="292"
+   version="1.1"
+   id="svg129"
+   sodipodi:docname="icon.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview131"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="3.6857143"
+     inkscape:cx="136.60853"
+     inkscape:cy="136.60853"
+     inkscape:window-width="2556"
+     inkscape:window-height="1376"
+     inkscape:window-x="0"
+     inkscape:window-y="30"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g127" />
+  <defs
+     id="defs82">
+    <clipPath
+       id="_clipPath_8YK1kUcxpeUIFBio9hyjam63ggln06G6">
+      <rect
+         width="560"
+         height="315"
+         id="rect79"
+         x="0"
+         y="0" />
+    </clipPath>
+  </defs>
+  <g
+     clip-path="url(#_clipPath_8YK1kUcxpeUIFBio9hyjam63ggln06G6)"
+     id="g127"
+     transform="translate(-134,-27.37)">
+    <g
+       id="pax-mirror"
+       transform="translate(0,16)">
+      <path
+         d="m 171.293,81.326 v 0 c 8.321,0 15.077,6.755 15.077,15.076 v 19.044 c 0,8.32 -6.756,15.076 -15.077,15.076 v 0 c -8.32,0 -15.076,-6.756 -15.076,-15.076 V 96.402 c 0,-8.321 6.756,-15.076 15.076,-15.076 z"
+         style="fill:none;stroke:#000000;stroke-width:1.58696;stroke-linecap:square;stroke-miterlimit:3"
+         id="path84" />
+      <path
+         d="m 148.283,84.5 v 0 c 7.882,0 14.282,6.4 14.282,14.283 v 11.108 c 0,7.883 -6.4,14.283 -14.282,14.283 v 0 C 140.4,124.174 134,117.774 134,109.891 V 98.783 C 134,90.9 140.4,84.5 148.283,84.5 Z"
+         style="fill:#f08638;stroke:none;stroke-linecap:square;stroke-miterlimit:3"
+         id="path86" />
+    </g>
+    <g
+       id="drivers-mirror"
+       transform="translate(0,16)">
+      <path
+         d="m 388.707,81.326 v 0 c -8.321,0 -15.077,6.755 -15.077,15.076 v 19.044 c 0,8.32 6.756,15.076 15.077,15.076 v 0 c 8.32,0 15.076,-6.756 15.076,-15.076 V 96.402 c 0,-8.321 -6.756,-15.076 -15.076,-15.076 z"
+         style="fill:none;stroke:#000000;stroke-width:1.58696;stroke-linecap:square;stroke-miterlimit:3"
+         id="path89" />
+      <path
+         d="m 411.717,84.5 v 0 c -7.882,0 -14.282,6.4 -14.282,14.283 v 11.108 c 0,7.883 6.4,14.283 14.282,14.283 v 0 c 7.883,0 14.283,-6.4 14.283,-14.283 V 98.783 C 426,90.9 419.6,84.5 411.717,84.5 Z"
+         style="fill:#f08638;stroke:none;stroke-linecap:square;stroke-miterlimit:3"
+         id="path91" />
+    </g>
+    <path
+       d="m 386.313,246.5 c 0.012,-0.252 0.013,-0.507 0.013,-0.762 V 109.197 c 0,-36.331 -29.496,-65.827 -65.827,-65.827 h -84.172 c -36.331,0 -65.827,29.496 -65.827,65.827 v 136.541 c 0,0.255 0.001,0.51 0.013,0.762 z"
+       fill="#ffd038"
+       id="chasis" />
+    <path
+       d="m 191.162,243.326 h 11.045 c 9.652,0 17.489,7.836 17.489,17.488 v 25.328 c 0,9.652 -7.837,17.488 -17.489,17.488 h -11.045 c -9.652,0 -17.488,-7.836 -17.488,-17.488 v -25.328 c 0,-9.652 7.836,-17.488 17.488,-17.488 z"
+       style="fill:#333238;stroke:none;stroke-linecap:square;stroke-miterlimit:3"
+       id="pax-wheel" />
+    <path
+       d="m 357.793,243.326 h 11.045 c 9.652,0 17.488,7.836 17.488,17.488 v 25.328 c 0,9.652 -7.836,17.488 -17.488,17.488 h -11.045 c -9.652,0 -17.489,-7.836 -17.489,-17.488 v -25.328 c 0,-9.652 7.837,-17.488 17.489,-17.488 z"
+       style="fill:#333238;stroke:none;stroke-linecap:square;stroke-miterlimit:3"
+       id="drivers-wheel" />
+    <path
+       d="m 345.065,84.63 h -60.304 v 61.892 h 60.304 c 15.766,0 28.565,-12.8 28.565,-28.565 v -4.761 C 373.63,97.43 360.831,84.63 345.065,84.63 Z"
+       fill="#e9f8fd"
+       id="drivers-window" />
+    <path
+       d="m 214.935,84.63 h 60.304 v 61.892 h -60.304 c -15.766,0 -28.565,-12.8 -28.565,-28.565 v -4.761 c 0,-15.766 12.799,-28.566 28.565,-28.566 z"
+       fill="#e9f8fd"
+       id="pax-window" />
+    <path
+       d="m 168.913,254.435 v -52.544 c 0,-38.442 31.21,-69.652 69.652,-69.652 h 78.11 c 38.441,0 69.651,31.21 69.651,69.652 v 52.544 z"
+       fill="#ffb333"
+       id="hood" />
+    <path
+       d="m 166.533,249.674 h 223.76 c 3.942,0 7.142,3.2 7.142,7.141 v 0 c 0,3.942 -3.2,7.142 -7.142,7.142 h -223.76 c -3.942,0 -7.142,-3.2 -7.142,-7.142 v 0 c 0,-3.941 3.2,-7.141 7.142,-7.141 z"
+       style="fill:#4f424a;fill-opacity:1;stroke:none;stroke-linecap:square;stroke-miterlimit:3"
+       id="bumper" />
+    <path
+       d="m 186.37,193.337 c 0,-10.072 8.177,-18.25 18.25,-18.25 10.072,0 18.25,8.178 18.25,18.25 0,10.072 -8.178,18.25 -18.25,18.25 -10.073,0 -18.25,-8.178 -18.25,-18.25 z"
+       fill="#c2e8eb"
+       id="pax-hl" />
+    <path
+       d="m 335.543,193.337 c 0,-10.072 8.178,-18.25 18.25,-18.25 10.073,0 18.25,8.178 18.25,18.25 0,10.072 -8.177,18.25 -18.25,18.25 -10.072,0 -18.25,-8.178 -18.25,-18.25 z"
+       fill="#c2e8eb"
+       id="drivers-hl" />
+    <path
+       d="m 252.078,168.739 h 52.671 c 13.492,0 24.447,10.954 24.447,24.447 v 12.997 c 0,13.493 -10.955,24.447 -24.447,24.447 h -52.671 c -13.493,0 -24.448,-10.954 -24.448,-24.447 v -12.997 c 0,-13.493 10.955,-24.447 24.448,-24.447 z"
+       style="fill:#4f424a;stroke:none;stroke-linecap:square;stroke-miterlimit:3"
+       id="grille" />
+    <path
+       d="m 252.228,221.902 h 50.783 c 4.817,0 8.728,3.911 8.728,8.728 v 0 c 0,4.818 -3.911,8.729 -8.728,8.729 h -50.783 c -4.817,0 -8.728,-3.911 -8.728,-8.729 v 0 c 0,-4.817 3.911,-8.728 8.728,-8.728 z"
+       style="fill:#7e5424;stroke:none;stroke-linecap:square;stroke-miterlimit:3"
+       id="hood-ornament" />
+    <path
+       d="m 252.228,248.087 h 50.783 c 4.817,0 8.728,3.911 8.728,8.728 v 0 c 0,4.817 -3.911,8.728 -8.728,8.728 h -50.783 c -4.817,0 -8.728,-3.911 -8.728,-8.728 v 0 c 0,-4.817 3.911,-8.728 8.728,-8.728 z"
+       style="fill:#fffff3;stroke:none;stroke-linecap:square;stroke-miterlimit:3"
+       id="lic-plate" />
+    <path
+       d="m 199.462,221.902 h 10.315 c 3.285,0 5.951,2.667 5.951,5.951 v 0 c 0,3.285 -2.666,5.951 -5.951,5.951 h -10.315 c -3.285,0 -5.951,-2.666 -5.951,-5.951 v 0 c 0,-3.284 2.666,-5.951 5.951,-5.951 z"
+       style="fill:#df4641;stroke:none;stroke-linecap:square;stroke-miterlimit:3"
+       id="pax-ts" />
+    <path
+       d="m 348.636,221.902 h 10.315 c 3.285,0 5.951,2.667 5.951,5.951 v 0 c 0,3.285 -2.666,5.951 -5.951,5.951 h -10.315 c -3.285,0 -5.951,-2.666 -5.951,-5.951 v 0 c 0,-3.284 2.666,-5.951 5.951,-5.951 z"
+       style="fill:#df4641;stroke:none;stroke-linecap:square;stroke-miterlimit:3"
+       id="drivers-ts" />
+    <path
+       d="M 358.194,78.283 C 353.926,60.978 338.289,48.13 319.674,48.13 h -82.522 c -18.615,0 -34.252,12.848 -38.52,30.153 z"
+       fill="#4f424a"
+       id="sign" />
+  </g>
+</svg>
