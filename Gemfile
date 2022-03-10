@@ -5,3 +5,4 @@ ruby File.read(File.expand_path('.ruby-version', __dir__)).strip
 
 gem 'haml'
 gem 'sinatra'
+gem 'sprockets'
