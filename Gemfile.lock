@@ -2,6 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     concurrent-ruby (1.1.9)
+    ffi (1.15.5)
     haml (5.2.2)
       temple (>= 0.8.0)
       tilt
@@ -11,6 +12,8 @@ GEM
     rack-protection (2.2.0)
       rack
     ruby2_keywords (0.0.5)
+    sassc (2.4.0)
+      ffi (~> 1.9)
     sinatra (2.2.0)
       mustermann (~> 1.0)
       rack (~> 2.2)
@@ -27,6 +30,7 @@ PLATFORMS
 
 DEPENDENCIES
   haml
+  sassc
   sinatra
   sprockets
 

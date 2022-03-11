@@ -1,0 +1,13 @@
+$primary-hue: 0;
+$primary-50: hsl($primary-hue, 71%, 85%) !default;
+$primary-100: hsl($primary-hue, 69%, 77%) !default;
+$primary-200: hsl($primary-hue, 67%, 68%) !default;
+$primary-300: hsl($primary-hue, 65%, 59%) !default;
+$primary-400: hsl($primary-hue, 63%, 50%) !default;
+$primary-500: hsl($primary-hue, 61%, 41%) !default;
+$primary-600: hsl($primary-hue, 66%, 32%) !default; /* This is UMass Maroon */
+$primary-700: hsl($primary-hue, 71%, 23%) !default;
+$primary-800: hsl($primary-hue, 76%, 14%) !default;
+$primary-900: hsl($primary-hue, 81%, 6%) !default;
+
+@import '@picocss/pico/scss/pico';
