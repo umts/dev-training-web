@@ -1,0 +1,24 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'bundler'
+require 'irb'
+require 'irb/completion'
+
+$LOAD_PATH.unshift File.join(__dir__, '..', 'lib')
+Bundler.require(:default, :development)
+
+require 'application_configuration'
+ApplicationConfiguration.load!
+
+STDOUT.sync = true
+IRB.setup nil
+IRB.conf.merge!(
+  AUTO_INDENT: true,
+  IRB_NAME: 'dev-training',
+  IRB_PATH: '(dev-training)',
+  PROMPT_MODE: :CLASSIC,
+  RC: false
+)
+
+IRB::Irb.new.run(IRB.conf)
