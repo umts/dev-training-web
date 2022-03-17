@@ -6,6 +6,9 @@ require 'bundler'
 env = ENV['RACK_ENV']
 Bundler.require(:default, env)
 
+require 'application_configuration'
+ApplicationConfiguration.load!
+
 require 'dev_training_application'
 
 map '/assets' do
