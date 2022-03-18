@@ -13,7 +13,7 @@ class DevTrainingApplication < Sinatra::Base
   end
 
   use OmniAuth::Builder do
-    options = { scope: 'user:email, repo' }
+    options = { scope: 'user:email, repo, read:org' }
     options[:provider_ignores_state] = true if development?
     provider :github, ENV['github_key'], ENV['github_secret'], options
   end
