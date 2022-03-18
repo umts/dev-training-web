@@ -5,8 +5,9 @@ ruby File.read(File.expand_path('.ruby-version', __dir__)).strip
 
 gem 'figaro'
 gem 'haml'
+gem 'octokit'
 gem 'omniauth-github'
 gem 'rake'
 gem 'sassc'
-gem 'sinatra'
+gem 'sinatra', require: false
 gem 'sprockets'
