@@ -11,6 +11,8 @@ Bundler.require(:default, :development)
 require 'application_configuration'
 ApplicationConfiguration.load!
 
+require 'dev_training'
+
 STDOUT.sync = true
 IRB.setup nil
 IRB.conf.merge!(
