@@ -1,0 +1,10 @@
+%h1 Authorize UMTS Developer Training
+
+%article
+  %p
+    Here is some text that will describe what is about to happen.
+  %footer
+    %form{ method: :post, action: '/auth/github' }
+      - csrf = request.env['rack.session']['csrf']
+      %input{ type: :hidden, name: :authenticity_token, value: csrf }
+      %input{ type: :submit, value: 'Authorize' }

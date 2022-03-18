@@ -1,0 +1,10 @@
+%h1 Welcome, #{@name}
+
+%article
+  %p
+    Here is some text that will describe what will happen next.
+  %footer
+    %form{ method: :post, action: '/create' }
+      - csrf = request.env['rack.session']['csrf']
+      %input{ type: :hidden, name: :authenticity_token, value: csrf }
+      %input{ type: :submit, value: 'Create' }
