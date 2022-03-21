@@ -2,11 +2,33 @@
 
 class DevTraining::Repository
   NAME = 'umts-dev-training'
+  ORG = 'umts'
 
-  def initialize(client, readme: nil)
+  def initialize(client)
     @client = client
     @repo = Octokit::Repository.new owner: @client.user.login, name: NAME
-    @readme = readme
+  end
+
+  def add_collaborator(login)
+    @client.add_collaborator(resource.full_name, login)
+  end
+
+  def add_team(team_name)
+    team = @client.organization_teams(ORG).find { |t| t.name == team_name }
+
+    @client.team_members(team.id).each do |member|
+      add_collaborator(member.login)
+    end
+  end
+
+  def create_readme(content)
+    return if readme?
+
+    if content.is_a?(File) || content.is_a?(Tempfile)
+      @client.create_contents(@repo, 'README.md', 'Add README', file: content)
+    else
+      @client.create_contents(@repo, 'README.md', 'Add README', content)
+    end
   end
 
   def resource
@@ -16,11 +38,16 @@ class DevTraining::Repository
   private
 
   def create_repo
-    created = @client.create_repository @repo.name,
-                                        private: true, has_issues: true, has_projects: false,
-                                        has_wiki: false, has_downloads: false, auto_init: false
-    @client.create_contents(@repo, 'README.md', 'Add README', @readme) if @readme
-    created
+    @client.create_repository @repo.name,
+                              private: true, has_issues: true, has_projects: false,
+                              has_wiki: false, has_downloads: false, auto_init: false
+  end
+
+  def readme?
+    @client.readme(@repo)
+    return true
+  rescue Octokit::NotFound
+    return false
   end
 
   def repo

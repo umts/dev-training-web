@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'dev_training'
 require 'sinatra'
 require 'rack/protection'
 
