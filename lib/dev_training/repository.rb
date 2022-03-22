@@ -25,9 +25,9 @@ class DevTraining::Repository
     return if readme?
 
     if content.is_a?(File) || content.is_a?(Tempfile)
-      @client.create_contents(@repo, 'README.md', 'Add README', file: content)
+      @client.create_contents(resource.full_name, 'README.md', 'Add README', file: content)
     else
-      @client.create_contents(@repo, 'README.md', 'Add README', content)
+      @client.create_contents(resource.full_name, 'README.md', 'Add README', content)
     end
   end
 
