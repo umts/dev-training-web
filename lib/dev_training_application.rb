@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'dev_training'
-require 'dev_training/collaborators'
 require 'sinatra'
 require 'rack/protection'
 
@@ -37,11 +36,10 @@ class DevTrainingApplication < Sinatra::Base
     token  = session[:auth][:credentials][:token]
     training = DevTraining.new(token)
 
-    collaborators_data = YAML.load(File.open(settings.collaborators, &:read))
-    qualifications_data = YAML.load_stream(File.open(settings.qualifications, &:read))
-    collaborators = DevTraining::Collaborators.new collaborators_data
+    collaborators = YAML.load(File.open(settings.collaborators, &:read))
+    qualifications = YAML.load_stream(File.open(settings.qualifications, &:read))
 
-    training.create_issues! qualifications_data
+    training.create_issues! qualifications
     training.add_collaborators! collaborators
     training.repo.create_readme File.open(settings.readme)
   end

@@ -2,7 +2,6 @@
 
 class DevTraining::Repository
   NAME = 'umts-dev-training'
-  ORG = 'umts'
 
   def initialize(client)
     @client = client
@@ -11,14 +10,6 @@ class DevTraining::Repository
 
   def add_collaborator(login)
     @client.add_collaborator(resource.full_name, login)
-  end
-
-  def add_team(team_name)
-    team = @client.organization_teams(ORG).find { |t| t.name == team_name }
-
-    @client.team_members(team.id).each do |member|
-      add_collaborator(member.login)
-    end
   end
 
   def create_readme(content)

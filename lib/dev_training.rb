@@ -14,8 +14,7 @@ class DevTraining
   end
 
   def add_collaborators!(collaborators)
-    collaborators.users.each { |user| @repo.add_collaborator user }
-    collaborators.teams.each { |team| @repo.add_team team }
+    collaborators.each { |user| @repo.add_collaborator user }
   end
 
   def create_issues!(stream)
