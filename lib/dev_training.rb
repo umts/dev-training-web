@@ -13,9 +13,9 @@ class DevTraining
     @milestone = DevTraining::Milestone.new(@client, @repo)
   end
 
-  def add_collaborators!(colaborators)
-    colaborators.users.each { |user| @repo.add_colaborator user }
-    colaborators.teams.each { |team| @repo.add_team team }
+  def add_collaborators!(collaborators)
+    collaborators.users.each { |user| @repo.add_collaborator user }
+    collaborators.teams.each { |team| @repo.add_team team }
   end
 
   def create_issues!(stream)

@@ -5,7 +5,7 @@ class DevTraining::Collaborators
   attr_reader :users, :teams
 
   def initialize(collaborators = [])
-    case colaborators
+    case collaborators
     when Array
       @users = collaborators
       @teams = []
