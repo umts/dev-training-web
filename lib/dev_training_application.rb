@@ -1,11 +1,16 @@
 # frozen_string_literal: true
 
 require 'dev_training'
+require 'dev_training/collaborators'
 require 'sinatra'
 require 'rack/protection'
 
 class DevTrainingApplication < Sinatra::Base
   set :root, File.join(File.dirname(settings.app_file), '..')
+  set :collaborators, Proc.new { File.join(root, 'config', 'collaborators.yml') }
+  set :qualifications, Proc.new { File.join(root, 'config', 'qualifications.yml') }
+  set :readme, Proc.new { File.join(root, 'config', 'template_readme.md') }
+
   set :sessions, secret: ENV['session_secret']
   set :haml, layout: :application
 
@@ -29,7 +34,16 @@ class DevTrainingApplication < Sinatra::Base
   end
 
   post '/create' do
-    
+    token  = session[:auth][:credentials][:token]
+    training = DevTraining.new(token)
+
+    collaborators_data = YAML.load(File.open(settings.collaborators, &:read))
+    qualifications_data = YAML.load_stream(File.open(settings.qualifications, &:read))
+    collaborators = DevTraining::Collaborators.new collaborators_data
+
+    training.create_issues! qualifications_data
+    training.add_collaborators! collaborators
+    training.repo.create_readme File.open(settings.readme)
   end
 
   get '/' do
