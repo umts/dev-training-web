@@ -42,13 +42,18 @@ class DevTrainingApplication < Sinatra::Base
     training.create_issues! qualifications
     training.add_collaborators! collaborators
     training.repo.create_readme File.open(settings.readme)
+
+    @repo_resource = training.repo.resource
+    haml :success
   end
 
   get '/' do
     if session[:auth].nil? || session[:auth].empty?
       haml :welcome
     else
-      @name = session[:auth][:info][:name]
+      info = session[:auth][:info]
+      @name = info[:name]
+      @repo_name = "#{info[:nickname]}/#{DevTraining::Repository::NAME}"
       haml :ready
     end
   end

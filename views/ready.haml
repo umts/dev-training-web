@@ -1,8 +1,24 @@
-%h1 Welcome, #{@name}
+%h1
+  Welcome Back
+  = ", #{@name}" if @name
 
 %article
+  %h2 Set-up Your Training
   %p
-    Here is some text that will describe what will happen next.
+    You have successfully authorized our application. The next step is to
+    create your training repository and tracking issues.
+  %p
+    When you click the button below, we will create the repository,
+    = succeed ',' do
+      %tt= @repo_name
+    and create issues within it for you to complete. We will also invite our
+    more experienced developers to collaborate on your training repository.
+    They will be able to comment on your assigned tasks, add tasks and mark
+    tasks as complete.
+  %p
+    %strong
+      This step will take about 30 seconds to complete. Please, be patient.
+
   %footer
     %form{ method: :post, action: '/create' }
       - csrf = request.env['rack.session']['csrf']

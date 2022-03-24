@@ -1,8 +1,25 @@
-%h1 Authorize UMTS Developer Training
+%h1 Welcome!
 
 %article
+  %h2 Authorize UMTS Developer Training
   %p
-    Here is some text that will describe what is about to happen.
+    To track your training, we are going to use a GitHub repository. We will
+    create that repository for you and then create issues for you to complete
+    over the course of your training.
+  %p
+    Before we can do that, however, we need you to authorize this application
+    to make changes on GitHub on your behalf. When you click the button below,
+    you'll be sent over to GitHub, given a summary of the access we're
+    requesting, and asked whether you want to authorize our application
+    = succeed '.' do
+      %sup *
+  %p
+    Assuming you agree, you'll be brought back here to complete the next step.
+  %p
+    %sup *
+    %small
+      If you don't have a GitHub account yet, you'll also be given an
+      opportunity to sign up at this point.
   %footer
     %form{ method: :post, action: '/auth/github' }
       - csrf = request.env['rack.session']['csrf']
