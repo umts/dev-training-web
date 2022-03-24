@@ -1,6 +1,5 @@
 %h1
-  Welcome Back
-  = ", #{@name}" if @name
+  Welcome Back#{', ' + @name if @name}!
 
 %article
   %h2 Set-up Your Training
