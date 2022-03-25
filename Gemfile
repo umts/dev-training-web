@@ -11,3 +11,4 @@ gem 'rake'
 gem 'sassc'
 gem 'sinatra', require: false
 gem 'sprockets'
+gem 'tilt'

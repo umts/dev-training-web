@@ -8,7 +8,7 @@ class DevTrainingApplication < Sinatra::Base
   set :root, File.join(File.dirname(settings.app_file), '..')
   set :collaborators, Proc.new { File.join(root, 'config', 'collaborators.yml') }
   set :qualifications, Proc.new { File.join(root, 'config', 'qualifications.yml') }
-  set :readme, Proc.new { File.join(root, 'config', 'template_readme.md') }
+  set :readme, Proc.new { File.join(root, 'config', 'README.md.erb') }
 
   set :sessions, secret: ENV['session_secret']
   set :haml, layout: :application
@@ -41,7 +41,7 @@ class DevTrainingApplication < Sinatra::Base
 
     training.create_issues! qualifications
     training.add_collaborators! collaborators
-    training.repo.create_readme File.open(settings.readme)
+    training.create_readme! settings.readme
 
     @repo_resource = training.repo.resource
     haml :success

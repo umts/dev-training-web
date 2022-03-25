@@ -3,6 +3,7 @@
 class DevTraining
   require 'dev_training/issue'
   require 'dev_training/milestone'
+  require 'dev_training/readme'
   require 'dev_training/repository'
 
   attr_reader :client, :repo
@@ -15,6 +16,10 @@ class DevTraining
 
   def add_collaborators!(collaborators)
     collaborators.each { |user| @repo.add_collaborator user }
+  end
+
+  def create_readme!(filename)
+     DevTraining::Readme.new(filename, @client, @repo).resource
   end
 
   def create_issues!(stream)

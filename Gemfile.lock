@@ -94,6 +94,7 @@ DEPENDENCIES
   sassc
   sinatra
   sprockets
+  tilt
 
 RUBY VERSION
    ruby 2.7.5p203
