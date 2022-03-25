@@ -3,9 +3,9 @@
 %article
   %p
     Your training repository has been created and can be found at
-    %a{href: @repo_resource[:html_url]}= @repo_resource[:html_url]
+    %a{ href: @repo_resource[:html_url] }= @repo_resource[:html_url]
   %p
     As you work on UMTS software projects, you can mark your work as addressing
     a particular training task by referring to it by number in a Git commit or
     pull request comment. e.g.
-    %tt= "#{@repo_resource[:full_name]}#7"
+    %tt #{@repo_resource[:full_name]}#7
