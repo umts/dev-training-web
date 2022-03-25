@@ -6,9 +6,9 @@ require 'rack/protection'
 
 class DevTrainingApplication < Sinatra::Base
   set :root, File.join(File.dirname(settings.app_file), '..')
-  set :collaborators, Proc.new { File.join(root, 'config', 'collaborators.yml') }
-  set :qualifications, Proc.new { File.join(root, 'config', 'qualifications.yml') }
-  set :readme, Proc.new { File.join(root, 'config', 'README.md.erb') }
+  set :collaborators, (proc { File.join root, 'config', 'collaborators.yml' })
+  set :qualifications, (proc { File.join root, 'config', 'qualifications.yml' })
+  set :readme, (proc { File.join root, 'config', 'README.md.erb' })
 
   set :sessions, secret: ENV['session_secret']
   set :haml, layout: :application
@@ -33,11 +33,11 @@ class DevTrainingApplication < Sinatra::Base
   end
 
   post '/create' do
-    token  = session[:auth][:credentials][:token]
+    token = session[:auth][:credentials][:token]
     training = DevTraining.new(token)
 
-    collaborators = YAML.load(File.open(settings.collaborators, &:read))
-    qualifications = YAML.load_stream(File.open(settings.qualifications, &:read))
+    collaborators = YAML.safe_load(File.read(settings.collaborators))
+    qualifications = YAML.load_stream(File.read(settings.qualifications))
 
     training.create_issues! qualifications
     training.add_collaborators! collaborators

@@ -19,7 +19,7 @@ class DevTraining
   end
 
   def create_readme!(filename)
-     DevTraining::Readme.new(filename, @client, @repo).resource
+    DevTraining::Readme.new(filename, @client, @repo).resource
   end
 
   def create_issues!(stream)

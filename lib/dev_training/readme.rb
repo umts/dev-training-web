@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'uri'
 
 class DevTraining::Readme
@@ -31,7 +32,7 @@ class DevTraining::Readme
   def readme
     @client.readme repo_name
   rescue Octokit::NotFound
-    return nil
+    nil
   end
 
   def repo_name

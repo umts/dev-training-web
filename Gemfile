@@ -13,3 +13,8 @@ gem 'sassc'
 gem 'sinatra', require: false
 gem 'sprockets'
 gem 'tilt'
+
+group :development do
+  gem 'haml-lint', require: false
+  gem 'rubocop', require: false
+end

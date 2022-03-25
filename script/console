@@ -14,7 +14,7 @@ ApplicationConfiguration.load!
 require 'dev_training'
 @training = DevTraining.new(ENV['console_token']) if ENV['console_token']
 
-STDOUT.sync = true
+$stdout.sync = true
 IRB.setup nil
 IRB.conf.merge!(
   AUTO_INDENT: true,
