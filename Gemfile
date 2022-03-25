@@ -7,6 +7,7 @@ gem 'figaro'
 gem 'haml'
 gem 'octokit'
 gem 'omniauth-github'
+gem 'puma'
 gem 'rake'
 gem 'sassc'
 gem 'sinatra', require: false
