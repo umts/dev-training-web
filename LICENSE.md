@@ -2,9 +2,13 @@ Copyright (c) 2022 UMass Transportation Services
 
 ---
 
-Prose and training materials in this repository -- contents of READMEs and
-`.yml` files -- are licensed under a [Creative Commons Attribution-ShareAlike
-4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/)
+Prose and training materials in this repository -- contents of the following
+files:
+
+  * `config/qualifications.yml`
+  * `config/README.me.erb`
+
+are licensed under a [Creative Commons Attribution 4.0 International License][cc-by]
 
 ---
 
@@ -27,3 +31,5 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+[cc-by]: http://creativecommons.org/licenses/by/4.0/
