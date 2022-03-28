@@ -7,8 +7,8 @@
 
     %link{ rel: :icon, href: '/favicon.ico', sizes: :any }
     %link{ rel: :icon, href: '/icon.svg', type: 'image/svg+xml' }
-    %link{ rel: :stylesheet, href: '/assets/application.css' }
-    %script{ src: '/assets/application.js', defer: true }
+    %link{ rel: :stylesheet, href: asset_path('application.css') }
+    %script{ src: asset_path('application.js'), defer: true }
 
   %body
     %main.container

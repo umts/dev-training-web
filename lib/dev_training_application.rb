@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'application_assets'
 require 'dev_training'
 require 'sinatra'
 require 'rack/protection'
@@ -10,6 +11,7 @@ class DevTrainingApplication < Sinatra::Base
   set :qualifications, (proc { File.join root, 'config', 'qualifications.yml' })
   set :readme, (proc { File.join root, 'config', 'README.md.erb' })
 
+  set :sprockets, ApplicationAssets.new
   set :sessions, secret: ENV['session_secret']
   set :haml, layout: :application
 
@@ -18,6 +20,12 @@ class DevTrainingApplication < Sinatra::Base
   end
 
   before { @csrf_token = request.env['rack.session']['csrf'] }
+
+  helpers do
+    def asset_path(file)
+      settings.sprockets.asset_path(file, digest: settings.environment == :production)
+    end
+  end
 
   use OmniAuth::Builder do
     options = { scope: 'user:email, repo' }
