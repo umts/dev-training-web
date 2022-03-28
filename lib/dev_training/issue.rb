@@ -16,14 +16,6 @@ class DevTraining::Issue
     @subtasks = data['subtasks']
   end
 
-  def self.close_all_for!(milestone)
-    @client.issues(@repo, milestone: milestone.resource.number).each do |issue|
-      @client.add_comment @repo, issue.number, 'Closed: Re-initializing'
-      @client.update_issue @repo, issue.number, milestone: nil
-      @client.close_issue @repo, issue.number
-    end
-  end
-
   def body
     format_body(@description, @subtasks)
   end
