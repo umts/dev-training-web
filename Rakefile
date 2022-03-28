@@ -12,6 +12,7 @@ ApplicationConfiguration.load!
 require 'application_assets'
 require 'haml_lint/rake_task'
 require 'rake/sprocketstask'
+require 'rdoc/task'
 require 'rspec/core/rake_task'
 require 'rubocop/rake_task'
 
@@ -20,6 +21,12 @@ desc 'Generate a cryptographically secure secret key (this is typically used to 
 task :secret do
   require 'securerandom'
   puts SecureRandom.hex(64)
+end
+
+RDoc::Task.new do |rdoc|
+  rdoc.markup = 'markdown'
+  rdoc.rdoc_files.include('lib/**/*.rb')
+  rdoc.rdoc_dir = 'docs'
 end
 
 Rake::SprocketsTask.new do |sprockets|
