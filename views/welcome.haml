@@ -22,6 +22,5 @@
       opportunity to sign up at this point.
   %footer
     %form{ method: :post, action: '/auth/github' }
-      - csrf = request.env['rack.session']['csrf']
-      %input{ type: :hidden, name: :authenticity_token, value: csrf }
+      %input{ type: :hidden, name: :authenticity_token, value: @csrf_token }
       %input{ type: :submit, value: 'Authorize' }

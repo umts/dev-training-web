@@ -17,6 +17,8 @@ class DevTrainingApplication < Sinatra::Base
     set :static, false
   end
 
+  before { @csrf_token = request.env['rack.session']['csrf'] }
+
   use OmniAuth::Builder do
     options = { scope: 'user:email, repo' }
     options[:provider_ignores_state] = true if development?
