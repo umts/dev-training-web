@@ -17,4 +17,5 @@ gem 'tilt'
 group :development do
   gem 'haml-lint', require: false
   gem 'rubocop', require: false
+  gem 'rubocop-rake', require: false
 end

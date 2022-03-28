@@ -10,19 +10,38 @@ require 'application_configuration'
 ApplicationConfiguration.load!
 
 require 'application_assets'
+require 'haml_lint/rake_task'
 require 'rake/sprocketstask'
+require 'rubocop/rake_task'
 
-desc <<~DESC.gsub(/\s+/, ' ')
-  Generate a cryptographically secure secret key (this is typically used to
-  generate a secret for cookie sessions).
-DESC
+desc 'Generate a cryptographically secure secret key (this is typically used to ' \
+     'generate a secret for cookie sessions).'
 task :secret do
   require 'securerandom'
   puts SecureRandom.hex(64)
 end
 
-Rake::SprocketsTask.new do |t|
-  t.environment = ApplicationAssets.new
-  t.output = File.join(__dir__, 'public/assets')
-  t.assets = %w[manifest.js]
+Rake::SprocketsTask.new do |sprockets|
+  sprockets.environment = ApplicationAssets.new
+  sprockets.output = File.join(__dir__, 'public/assets')
+  sprockets.assets = %w[manifest.js]
+end
+
+RuboCop::RakeTask.new do |rubocop|
+  next unless ENV['CI']
+
+  rubocop.options = [['--fail-level', 'W'], '--display-only-fail-level-offenses', '--fail-fast']
+  rubocop.formatters = ['simple']
+end
+
+HamlLint::RakeTask.new do |hl|
+  next unless ENV['CI']
+
+  hl.fail_level = 'error'
+  hl.quiet = false
+end
+
+desc 'Run all tests and linters.'
+task :default do
+  %w[haml_lint rubocop].each { |t| Rake::Task[t].invoke }
 end

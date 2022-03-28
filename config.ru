@@ -12,6 +12,5 @@ ApplicationConfiguration.load!
 require 'application_assets'
 require 'dev_training_application'
 
-
 map('/assets') { run ApplicationAssets.new } unless env == 'production'
 map('/') { run DevTrainingApplication }
