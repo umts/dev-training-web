@@ -1,5 +1,5 @@
 !!!
-%html
+%html{ lang: 'en-US' }
   %head
     %meta{ charset: :utf8 }
     %meta{ name: :viewport, content: 'width=device-width, initial-scale=1' }
@@ -8,8 +8,8 @@
     %link{ rel: :icon, href: '/favicon.ico', sizes: :any }
     %link{ rel: :icon, href: '/icon.svg', type: 'image/svg+xml' }
     %link{ rel: :stylesheet, href: '/assets/application.css' }
+    %script{ src: '/assets/application.js', defer: true }
 
   %body
     %main.container
       = yield
-    %script{ src: '/assets/application.js' }
