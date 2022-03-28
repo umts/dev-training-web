@@ -14,8 +14,13 @@ gem 'sinatra', require: false
 gem 'sprockets'
 gem 'tilt'
 
+group :test do
+  gem 'rspec', require: false
+end
+
 group :development do
   gem 'haml-lint', require: false
   gem 'rubocop', require: false
   gem 'rubocop-rake', require: false
+  gem 'rubocop-rspec', require: false
 end

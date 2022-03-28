@@ -12,6 +12,7 @@ ApplicationConfiguration.load!
 require 'application_assets'
 require 'haml_lint/rake_task'
 require 'rake/sprocketstask'
+require 'rspec/core/rake_task'
 require 'rubocop/rake_task'
 
 desc 'Generate a cryptographically secure secret key (this is typically used to ' \
@@ -41,7 +42,13 @@ HamlLint::RakeTask.new do |hl|
   hl.quiet = false
 end
 
+RSpec::Core::RakeTask.new(:spec) do |rspec|
+  next unless ENV['CI']
+
+  rspec.rspec_opts = ['--format progress', '--fail-fast', '--no-profile']
+end
+
 desc 'Run all tests and linters.'
 task :default do
-  %w[haml_lint rubocop].each { |t| Rake::Task[t].invoke }
+  %w[haml_lint rubocop spec].each { |t| Rake::Task[t].invoke }
 end
