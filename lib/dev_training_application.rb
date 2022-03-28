@@ -5,6 +5,8 @@ require 'dev_training'
 require 'sinatra'
 require 'rack/protection'
 
+##
+# Sinatra application resposible for the web-app-ish components of training creation
 class DevTrainingApplication < Sinatra::Base
   set :root, File.join(File.dirname(settings.app_file), '..')
   set :collaborators, (proc { File.join root, 'config', 'collaborators.yml' })
