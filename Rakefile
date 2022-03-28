@@ -24,7 +24,7 @@ end
 
 Rake::SprocketsTask.new do |sprockets|
   sprockets.environment = ApplicationAssets.new
-  sprockets.output = File.join(__dir__, 'public/assets')
+  sprockets.output = File.join(__dir__, "public#{ApplicationAssets::ASSET_ROOT}")
   sprockets.assets = %w[manifest.js]
 end
 
