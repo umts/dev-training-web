@@ -4,6 +4,7 @@ require 'application_assets'
 require 'dev_training'
 require 'sinatra'
 require 'rack/protection'
+require 'yaml'
 
 ##
 # Sinatra application resposible for the web-app-ish components of training creation

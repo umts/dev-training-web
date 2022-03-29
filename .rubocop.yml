@@ -8,5 +8,13 @@ AllCops:
 Layout/LineLength:
   Max: 100
 
+Metrics/BlockLength:
+  IgnoredMethods:
+    - describe
+
+RSpec/DescribeClass:
+  Exclude:
+    - 'spec/config/**/*'
+
 Style/ClassAndModuleChildren:
   EnforcedStyle: compact
