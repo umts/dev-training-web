@@ -5,5 +5,8 @@ require:
 AllCops:
   NewCops: enable
 
+Layout/LineLength:
+  Max: 100
+
 Style/ClassAndModuleChildren:
   EnforcedStyle: compact

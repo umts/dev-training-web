@@ -24,7 +24,7 @@ class DevTrainingApplication < Sinatra::Base
   before { @csrf_token = request.env['rack.session']['csrf'] }
 
   helpers do
-    def asset_path(file)  #:nodoc:
+    def asset_path(file)  # :nodoc:
       settings.sprockets.asset_path(file, digest: settings.environment == :production)
     end
   end
