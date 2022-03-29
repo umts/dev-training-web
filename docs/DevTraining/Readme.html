@@ -94,7 +94,7 @@
 
   <section class="description">
     
-<p>Class representing the “README” file in the training repository. It is responsible for rendering a template file through Tilt and creating the file in the Training repository.</p>
+<p>Class representing the “README” file in the training repository. It is responsible for rendering a template file through Tilt and creating the file in the <a href="Training.html"><code>Training</code></a> repository.</p>
 
   </section>
 
@@ -155,7 +155,7 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/dev_training/readme.rb, line 20</span>
+            <pre><span class="ruby-comment"># File lib/dev_training/readme.rb, line 21</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">client</span>, <span class="ruby-identifier">repo</span>)
   <span class="ruby-ivar">@template</span> = <span class="ruby-constant">Tilt</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-value">trim:</span> <span class="ruby-string">&#39;-&#39;</span>)
   <span class="ruby-ivar">@client</span> = <span class="ruby-identifier">client</span>
@@ -198,7 +198,7 @@
 
           
           <div class="method-source-code" id="content-source">
-            <pre><span class="ruby-comment"># File lib/dev_training/readme.rb, line 31</span>
+            <pre><span class="ruby-comment"># File lib/dev_training/readme.rb, line 32</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">content</span>
   <span class="ruby-ivar">@template</span>.<span class="ruby-identifier">render</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -233,7 +233,7 @@
 
           
           <div class="method-source-code" id="resource-source">
-            <pre><span class="ruby-comment"># File lib/dev_training/readme.rb, line 42</span>
+            <pre><span class="ruby-comment"># File lib/dev_training/readme.rb, line 43</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">resource</span>
   <span class="ruby-ivar">@resource</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">readme</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">create_readme</span>
 <span class="ruby-keyword">end</span></pre>

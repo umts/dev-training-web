@@ -15,6 +15,3 @@ Metrics/BlockLength:
 RSpec/DescribeClass:
   Exclude:
     - 'spec/config/**/*'
-
-Style/ClassAndModuleChildren:
-  EnforcedStyle: compact

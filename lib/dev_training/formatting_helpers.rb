@@ -1,23 +1,25 @@
 # frozen_string_literal: true
 
-##
-# A few helpers for formatting issue text. Available as module functions
-# for convenience, but also included in DevTraining::Issue
-module DevTraining::FormattingHelpers
-  module_function
-
+module DevTraining
   ##
-  # Returns `desc`, and optionally if `subtasks` is a non-empty `Array`, the
-  # results of format_checklist tacked on after a blank line.
-  def format_body(desc, subtasks = nil)
-    return desc if subtasks.nil?
+  # A few helpers for formatting issue text. Available as module functions
+  # for convenience, but also included in DevTraining::Issue
+  module FormattingHelpers
+    module_function
 
-    [desc, format_checklist(subtasks)].compact.join "\n\n"
-  end
+    ##
+    # Returns `desc`, and optionally if `subtasks` is a non-empty `Array`, the
+    # results of format_checklist tacked on after a blank line.
+    def format_body(desc, subtasks = nil)
+      return desc if subtasks.nil?
 
-  ##
-  # Makes a GFM "tasklisk" with one item per item in `checklist`
-  def format_checklist(checklist)
-    checklist.map { |item| "* [ ] #{item}" }.join("\n")
+      [desc, format_checklist(subtasks)].compact.join "\n\n"
+    end
+
+    ##
+    # Makes a GFM "tasklisk" with one item per item in `checklist`
+    def format_checklist(checklist)
+      checklist.map { |item| "* [ ] #{item}" }.join("\n")
+    end
   end
 end
