@@ -6,9 +6,9 @@
 # as such, a number of them take an instance of this class as an initialization
 # parameter:
 #
-#  * `DevTraining::Issue`
-#  * `DevTraining::Milestone`
-#  * `DevTraining::Readme`
+#  * DevTraining::Issue
+#  * DevTraining::Milestone
+#  * DevTraining::Readme
 class DevTraining::Repository
   NAME = 'umts-dev-training'
 

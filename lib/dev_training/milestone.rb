@@ -7,7 +7,7 @@ class DevTraining::Milestone
   NAME = 'Programmer Qualification'
 
   ##
-  # Takes an `Octokit::Client` and a `DevTraining::Repository`
+  # Takes an `Octokit::Client` and a DevTraining::Repository
   def initialize(client, repo)
     @client = client
     @repo = repo

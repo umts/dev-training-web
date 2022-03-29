@@ -2,7 +2,7 @@
 
 ##
 # A few helpers for formatting issue text. Available as module functions
-# for convenience, but also included in `DevTraining::Issue`
+# for convenience, but also included in DevTraining::Issue
 module DevTraining::FormattingHelpers
   module_function
 

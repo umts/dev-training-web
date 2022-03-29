@@ -10,6 +10,7 @@ require 'application_configuration'
 ApplicationConfiguration.load!
 
 require 'application_assets'
+
 require 'haml_lint/rake_task'
 require 'rake/sprocketstask'
 require 'rdoc/task'
@@ -25,7 +26,8 @@ end
 
 RDoc::Task.new do |rdoc|
   rdoc.markup = 'markdown'
-  rdoc.rdoc_files.include('lib/**/*.rb')
+  rdoc.rdoc_files.include('README.md', 'lib/**/*.rb')
+  rdoc.main = 'README.md'
   rdoc.rdoc_dir = 'docs'
 end
 
@@ -57,5 +59,5 @@ end
 
 desc 'Run all tests and linters.'
 task :default do
-  %w[haml_lint rubocop spec].each { |t| Rake::Task[t].invoke }
+  %w[spec rubocop haml_lint].each { |t| Rake::Task[t].invoke }
 end

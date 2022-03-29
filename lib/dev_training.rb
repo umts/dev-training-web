@@ -12,7 +12,7 @@ class DevTraining
   # An `Octokit::Client`
   attr_reader :client
 
-  # The `DevTraining::Repository` for this training
+  # The DevTraining::Repository for this training
   attr_reader :repo
 
   ##
@@ -28,21 +28,21 @@ class DevTraining
 
   ##
   # Takes an array of login names and adds them in turn as outside
-  # collaborators to the `#repo`
+  # collaborators to the repository.
   def add_collaborators!(collaborators)
     collaborators.each { |user| @repo.add_collaborator user }
   end
 
   ##
-  # Takes a filename that will be passed to a new `DevTraining::Readme`, and
+  # Takes a filename that will be passed to a new DevTraining::Readme, and
   # then returns the resource as created on or returned from GitHub.
   def create_readme!(filename)
     DevTraining::Readme.new(filename, @client, @repo).resource
   end
 
   ##
-  # Takes an `Array` of `Hash`es, each in the format a `DevTraining::Issue`
-  # expects and returns an `Array` of resources as created on or returned from
+  # Takes an `Array` of `Hash`es, each in the format a DevTraining::Issue
+  # expects, and returns an `Array` of resources as created on or returned from
   # GitHub.
   def create_issues!(stream)
     stream.map do |data|

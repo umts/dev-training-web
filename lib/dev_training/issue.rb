@@ -7,7 +7,7 @@ require 'dev_training/formatting_helpers'
 class DevTraining::Issue
   include DevTraining::FormattingHelpers
 
-  # The issue title -- read from, and required to be in the `data'
+  # The issue title -- read from, and required to be in the `data`
   attr_accessor :title
 
   # The issue description -- part of the body, optional, read from the `data`
@@ -20,11 +20,11 @@ class DevTraining::Issue
   ##
   # Arguments:
   #
-  #  [client]    An `Octokit::Client`
-  #  [repo]      A `DevTraining::Repository`
-  #  [milestone] A `DevTraining::Milestone`
-  #  [data]      A `Hash` containing the keys, `title`, `description` (optional),
-  #              and `subtasks` (optional). Likely read in from a YAML file.
+  #  * `client`:    An `Octokit::Client`
+  #  * `repo`:      A DevTraining::Repository
+  #  * `milestone`: A DevTraining::Milestone
+  #  * `data`:      A `Hash` containing the keys, `title`, `description` (optional),
+  #                 and `subtasks` (optional). Likely read in from a YAML file.
   def initialize(client, repo, milestone, data)
     @client = client
     @repo = repo
@@ -35,7 +35,7 @@ class DevTraining::Issue
   end
 
   ##
-  # The text of this issue's body (uses `DevTraining::FormattingHelpers.format_body`)
+  # The text of this issue's body (uses DevTraining::FormattingHelpers.format_body)
   def body
     format_body(@description, @subtasks)
   end
