@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'sprockets'
+
 ##
 # Wrapper class for our applications's Sprockets environment.
 class ApplicationAssets < Sprockets::Environment
