@@ -56,6 +56,12 @@ assigned to complete. Each document can have the following fields:
 This file is kept in source-control with the intention that changes to our
 training process can go through the normal PR, review, merge process.
 
+`README.md.erb`
+---------------
+
+This is the template used for new training repositories. It's passed to an
+instance of `DevTraining::Readme`, see the documentation for more information.
+
 Running the App
 ===============
 
