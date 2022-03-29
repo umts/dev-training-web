@@ -59,9 +59,44 @@ training process can go through the normal PR, review, merge process.
 Running the App
 ===============
 
+It's a Rack app, so just `bundle exec rackup` should do it.
+
 Developing
 ==========
 
+Developer Console
+-----------------
+
+```bash
+script/console
+```
+
+will load the `ApplicationConfiguration`, require the `DevTraining` libraries,
+and (if possible) initialize a `DevTraining` with your PAT to `@training`.
+
+Docs
+----
+
+API Documentation is generated with RDoc:
+
+```
+bundle exec rake rdoc
+```
+
+The [compiled documentation][docs] is available in the GH pages environment for
+this project.
+
+Tests and Linting
+-----------------
+RSpec, Rubocop, and Haml-Lint are in the `Gemfile`. You can run then the usual
+way. Alternatively, the default Rake task,
+
+```bash
+bundle exec rake
+```
+
+will run all of them (stopping on the first tool to fail).
 
 [oaa]: https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app
-[pat]: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token 
+[pat]: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
+[docs]: https://umts.github.io/dev-training-web/
