@@ -1,5 +1,11 @@
 # frozen_string_literal: true
 
+require 'simplecov'
+SimpleCov.start do
+  load_profile 'test_frameworks'
+  track_files 'lib/**/*.rb'
+end
+
 $LOAD_PATH.unshift File.join(__dir__, '..', 'lib')
 
 RSpec.configure do |config|

@@ -16,6 +16,7 @@ gem 'tilt'
 
 group :test do
   gem 'rspec', require: false
+  gem 'simplecov', require: false
 end
 
 group :development do
