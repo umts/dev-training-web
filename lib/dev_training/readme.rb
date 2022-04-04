@@ -44,7 +44,21 @@ module DevTraining
       @resource ||= readme || create_readme
     end
 
-    ## Some of these private methods act as helper methods in the template
+    ##
+    # These protected methods act as helper methods in the template rendering
+    # context. Note that even private methods can work this way, but keeping
+    # these methods grouped under protected is a useful naming convention.
+    protected
+
+    def repo_relative(path)
+      base = URI.parse(@repo.resource.html_url)
+      URI.join(base, "#{base.path}/#{path}")
+    end
+
+    def user_name
+      @client.user.name || @client.user.login
+    end
+
     private
 
     def message
@@ -63,15 +77,6 @@ module DevTraining
 
     def repo_name
       @repo.resource.full_name
-    end
-
-    def repo_relative(path)
-      base = URI.parse(@repo.resource.html_url)
-      URI.join(base, "#{base.path}/#{path}")
-    end
-
-    def user_name
-      @client.user.name || @client.user.login
     end
   end
 end

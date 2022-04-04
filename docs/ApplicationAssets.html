@@ -151,7 +151,7 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/application_assets.rb, line 12</span>
+            <pre><span class="ruby-comment"># File lib/application_assets.rb, line 14</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>
   <span class="ruby-keyword">super</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">__dir__</span>, <span class="ruby-string">&#39;..&#39;</span>))
   <span class="ruby-node">%w[config images javascripts stylesheets]</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">dir</span><span class="ruby-operator">|</span>
@@ -196,7 +196,7 @@
 
           
           <div class="method-source-code" id="asset_path-source">
-            <pre><span class="ruby-comment"># File lib/application_assets.rb, line 25</span>
+            <pre><span class="ruby-comment"># File lib/application_assets.rb, line 27</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">asset_path</span>(<span class="ruby-identifier">file</span>, <span class="ruby-value">digest:</span> <span class="ruby-keyword">false</span>)
   <span class="ruby-identifier">method</span> = <span class="ruby-identifier">digest</span> <span class="ruby-operator">?</span> <span class="ruby-value">:digest_path</span> <span class="ruby-operator">:</span> <span class="ruby-value">:logical_path</span>
   <span class="ruby-constant">ASSET_ROOT</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">find_asset</span>(<span class="ruby-identifier">file</span>).<span class="ruby-identifier">send</span>(<span class="ruby-identifier">method</span>)

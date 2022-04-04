@@ -79,7 +79,11 @@
     
     <li ><a href="#method-i-content">#content</a>
     
+    <li ><a href="#method-i-repo_relative">#repo_relative</a>
+    
     <li ><a href="#method-i-resource">#resource</a>
+    
+    <li ><a href="#method-i-user_name">#user_name</a>
     
   </ul>
 </div>
@@ -236,6 +240,81 @@
             <pre><span class="ruby-comment"># File lib/dev_training/readme.rb, line 43</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">resource</span>
   <span class="ruby-ivar">@resource</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">readme</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">create_readme</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="protected-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Protected Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-repo_relative" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">repo_relative</span><span
+            class="method-args">(path)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>These protected methods act as helper methods in the template rendering context. Note that even private methods can work this way, but keeping these methods grouped under protected is a useful naming convention.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="repo_relative-source">
+            <pre><span class="ruby-comment"># File lib/dev_training/readme.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">repo_relative</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-identifier">base</span> = <span class="ruby-constant">URI</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-ivar">@repo</span>.<span class="ruby-identifier">resource</span>.<span class="ruby-identifier">html_url</span>)
+  <span class="ruby-constant">URI</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">base</span>, <span class="ruby-node">&quot;#{base.path}/#{path}&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-user_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">user_name</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="user_name-source">
+            <pre><span class="ruby-comment"># File lib/dev_training/readme.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">user_name</span>
+  <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">user</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">user</span>.<span class="ruby-identifier">login</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
           
