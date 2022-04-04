@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'octokit'
+
 module DevTraining
   ##
   # Class representing the training progress repository, lazily instantiated. It

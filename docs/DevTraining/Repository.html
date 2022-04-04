@@ -155,7 +155,7 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/dev_training/repository.rb, line 18</span>
+            <pre><span class="ruby-comment"># File lib/dev_training/repository.rb, line 20</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">client</span>)
   <span class="ruby-ivar">@client</span> = <span class="ruby-identifier">client</span>
   <span class="ruby-ivar">@repo</span> = <span class="ruby-constant">Octokit</span><span class="ruby-operator">::</span><span class="ruby-constant">Repository</span>.<span class="ruby-identifier">new</span> <span class="ruby-value">owner:</span> <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">user</span>.<span class="ruby-identifier">login</span>, <span class="ruby-value">name:</span> <span class="ruby-constant">NAME</span>
@@ -197,7 +197,7 @@
 
           
           <div class="method-source-code" id="add_collaborator-source">
-            <pre><span class="ruby-comment"># File lib/dev_training/repository.rb, line 25</span>
+            <pre><span class="ruby-comment"># File lib/dev_training/repository.rb, line 27</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add_collaborator</span>(<span class="ruby-identifier">login</span>)
   <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">add_collaborator</span>(<span class="ruby-identifier">resource</span>.<span class="ruby-identifier">full_name</span>, <span class="ruby-identifier">login</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -230,7 +230,7 @@
 
           
           <div class="method-source-code" id="resource-source">
-            <pre><span class="ruby-comment"># File lib/dev_training/repository.rb, line 32</span>
+            <pre><span class="ruby-comment"># File lib/dev_training/repository.rb, line 34</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">resource</span>
   <span class="ruby-ivar">@resource</span> <span class="ruby-operator">||=</span> (<span class="ruby-identifier">repo?</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">repo</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">create_repo</span>)
 <span class="ruby-keyword">end</span></pre>
