@@ -159,7 +159,7 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/dev_training/readme.rb, line 21</span>
+            <pre><span class="ruby-comment"># File lib/dev_training/readme.rb, line 22</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">client</span>, <span class="ruby-identifier">repo</span>)
   <span class="ruby-ivar">@template</span> = <span class="ruby-constant">Tilt</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-value">trim:</span> <span class="ruby-string">&#39;-&#39;</span>)
   <span class="ruby-ivar">@client</span> = <span class="ruby-identifier">client</span>
@@ -202,7 +202,7 @@
 
           
           <div class="method-source-code" id="content-source">
-            <pre><span class="ruby-comment"># File lib/dev_training/readme.rb, line 32</span>
+            <pre><span class="ruby-comment"># File lib/dev_training/readme.rb, line 33</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">content</span>
   <span class="ruby-ivar">@template</span>.<span class="ruby-identifier">render</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -237,7 +237,7 @@
 
           
           <div class="method-source-code" id="resource-source">
-            <pre><span class="ruby-comment"># File lib/dev_training/readme.rb, line 43</span>
+            <pre><span class="ruby-comment"># File lib/dev_training/readme.rb, line 44</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">resource</span>
   <span class="ruby-ivar">@resource</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">readme</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">create_readme</span>
 <span class="ruby-keyword">end</span></pre>
@@ -278,7 +278,7 @@
 
           
           <div class="method-source-code" id="repo_relative-source">
-            <pre><span class="ruby-comment"># File lib/dev_training/readme.rb, line 53</span>
+            <pre><span class="ruby-comment"># File lib/dev_training/readme.rb, line 54</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">repo_relative</span>(<span class="ruby-identifier">path</span>)
   <span class="ruby-identifier">base</span> = <span class="ruby-constant">URI</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-ivar">@repo</span>.<span class="ruby-identifier">resource</span>.<span class="ruby-identifier">html_url</span>)
   <span class="ruby-constant">URI</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">base</span>, <span class="ruby-node">&quot;#{base.path}/#{path}&quot;</span>)
@@ -312,7 +312,7 @@
 
           
           <div class="method-source-code" id="user_name-source">
-            <pre><span class="ruby-comment"># File lib/dev_training/readme.rb, line 58</span>
+            <pre><span class="ruby-comment"># File lib/dev_training/readme.rb, line 59</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">user_name</span>
   <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">user</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">user</span>.<span class="ruby-identifier">login</span>
 <span class="ruby-keyword">end</span></pre>
