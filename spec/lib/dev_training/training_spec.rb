@@ -1,18 +1,19 @@
 # frozen_string_literal: true
 
+require_relative 'with_mock_client'
+require 'dev_training/issue'
+require 'dev_training/milestone'
+require 'dev_training/repository'
 require 'dev_training/training'
 
 RSpec.describe DevTraining::Training do
   subject(:training) { described_class.new(:fake_token) }
 
-  let(:client) { instance_double(Octokit::Client) }
-  let(:repo) { DevTraining::Repository.new(client) }
+  include_context 'with mock client'
   let(:milestone) { DevTraining::Milestone.new(client, repo) }
-  let(:user) { Struct.new(:login).new('fake-user') }
 
   before do
     allow(Octokit::Client).to receive(:new).with(access_token: :fake_token).and_return(client)
-    allow(client).to receive(:user).and_return(user)
     allow(DevTraining::Repository).to receive(:new).and_return(repo)
     allow(DevTraining::Milestone).to receive(:new).and_return(milestone)
   end

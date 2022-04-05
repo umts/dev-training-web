@@ -1,21 +1,18 @@
 # frozen_string_literal: true
 
+require_relative 'with_mock_client'
 require 'dev_training/readme'
-require 'dev_training/repository'
 require 'octokit'
 require 'tilt'
 
 RSpec.describe DevTraining::Readme do
   subject(:readme) { described_class.new(filename, client, repo) }
 
-  let(:client) { instance_double(Octokit::Client) }
+  include_context 'with mock client'
   let(:filename) { File.join(__dir__, '../../fixtures/README.md.erb') }
-  let(:repo) { DevTraining::Repository.new(client) }
   let(:template) { Tilt.new(filename, trim: '-') }
-  let(:user) { Struct.new(:name, :login).new('Fake User', 'fake-user') }
 
   before do
-    allow(client).to receive(:user).and_return(user)
     allow(Tilt).to receive(:new).with(filename, trim: '-').and_return(template)
   end
 
@@ -45,10 +42,6 @@ RSpec.describe DevTraining::Readme do
 
   describe '#resource' do
     subject(:call) { readme.resource }
-
-    before do
-      allow(repo).to receive(:resource).and_return(Struct.new(:full_name).new('repo/name'))
-    end
 
     context 'when a readme exists in the repo' do
       before do

@@ -1,25 +1,16 @@
 # frozen_string_literal: true
 
+require_relative 'with_mock_client'
 require 'dev_training/milestone'
-require 'dev_training/repository'
-require 'octokit'
 
 RSpec.describe DevTraining::Milestone do
   subject(:milestone) { described_class.new(client, repo) }
 
-  let(:client) { instance_double(Octokit::Client) }
+  include_context 'with mock client'
   let(:milestone_name) { described_class::NAME }
-  let(:repo) { DevTraining::Repository.new(client) }
-  let(:user) { Struct.new(:login).new('fake-user') }
-
-  before { allow(client).to receive(:user).and_return(user) }
 
   describe '#resource' do
     subject(:call) { milestone.resource }
-
-    before do
-      allow(repo).to receive(:resource).and_return(Struct.new(:full_name).new('repo/name'))
-    end
 
     context 'when a milestone with the right title exists' do
       let(:existing_milestone) { Struct.new(:title).new(milestone_name) }

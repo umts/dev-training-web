@@ -1,19 +1,14 @@
 # frozen_string_literal: true
 
+require_relative 'with_mock_client'
 require 'dev_training/issue'
 require 'dev_training/milestone'
-require 'dev_training/repository'
-require 'octokit'
 
 RSpec.describe DevTraining::Issue do
   subject(:issue) { ->(data) { described_class.new(client, repo, milestone, data) } }
 
-  let(:client) { instance_double(Octokit::Client) }
-  let(:repo) { DevTraining::Repository.new(client) }
+  include_context 'with mock client'
   let(:milestone) { DevTraining::Milestone.new(client, repo) }
-  let(:user) { Struct.new(:login).new('fake-user') }
-
-  before { allow(client).to receive(:user).and_return(user) }
 
   describe '#title' do
     it 'is required' do
@@ -60,10 +55,9 @@ RSpec.describe DevTraining::Issue do
   describe '#resource' do
     subject(:call) { issue['title' => 'sierra'].resource }
 
-    before do
-      allow(repo).to receive(:resource).and_return(Struct.new(:full_name).new('repo/name'))
-      allow(milestone).to receive(:resource).and_return(Struct.new(:number).new(1))
-    end
+    let(:milestone_resource) { Struct.new(:number).new(1) }
+
+    before { allow(milestone).to receive(:resource).and_return(milestone_resource) }
 
     context 'when an issue with the right title exists' do
       let(:existing_issue) { Struct.new(:title).new('sierra') }

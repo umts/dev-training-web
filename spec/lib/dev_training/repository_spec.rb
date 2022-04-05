@@ -1,17 +1,13 @@
 # frozen_string_literal: true
 
+require_relative 'with_mock_client'
 require 'dev_training/repository'
 
 RSpec.describe DevTraining::Repository do
   subject(:repository) { described_class.new(client) }
 
-  let(:client) { instance_double(Octokit::Client) }
-  let(:user) { Struct.new(:login).new('fake-user') }
+  include_context 'with mock client'
   let(:repo_name) { described_class::NAME }
-
-  before do
-    allow(client).to receive(:user).and_return(user)
-  end
 
   describe '#add_collaborator' do
     subject(:call) { repository.add_collaborator 'someone' }
@@ -57,8 +53,7 @@ RSpec.describe DevTraining::Repository do
 
       it 'creates the repo' do
         call
-        expect(client).to have_received(:create_repository)
-          .with(repo_name, instance_of(Hash))
+        expect(client).to have_received(:create_repository).with(repo_name, instance_of(Hash))
       end
 
       it 'creates a private repo' do
