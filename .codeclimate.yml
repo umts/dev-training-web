@@ -1,0 +1,26 @@
+version: '2'
+plugins:
+  brakeman:
+    enabled: true
+  bundler-audit:
+    enabled: true
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - ruby
+  haml-lint:
+    enabled: true
+  fixme:
+    enabled: true
+  rubocop:
+    enabled: true
+    channel: rubocop-1-23-0
+exclude_patterns:
+- bin/**/*
+- config/**/*
+- coverage/**/*
+- docs/**/*
+- spec/**/*
+- node_modules/**/*
+- vendor/**/*
