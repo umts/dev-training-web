@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 require 'dev_training/issue'
-require 'dev_training/repository'
 require 'dev_training/milestone'
+require 'dev_training/repository'
+require 'octokit'
 
 RSpec.describe DevTraining::Issue do
   subject(:issue) { ->(data) { described_class.new(client, repo, milestone, data) } }
@@ -12,9 +13,7 @@ RSpec.describe DevTraining::Issue do
   let(:milestone) { DevTraining::Milestone.new(client, repo) }
   let(:user) { Struct.new(:login).new('fake-user') }
 
-  before do
-    allow(client).to receive(:user).and_return(user)
-  end
+  before { allow(client).to receive(:user).and_return(user) }
 
   describe '#title' do
     it 'is required' do
