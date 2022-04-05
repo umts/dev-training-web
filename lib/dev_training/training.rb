@@ -4,6 +4,7 @@ require 'dev_training/issue'
 require 'dev_training/milestone'
 require 'dev_training/readme'
 require 'dev_training/repository'
+require 'octokit'
 
 module DevTraining
   ##

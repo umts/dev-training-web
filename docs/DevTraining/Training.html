@@ -170,7 +170,7 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/dev_training/training.rb, line 24</span>
+            <pre><span class="ruby-comment"># File lib/dev_training/training.rb, line 25</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">token</span>)
   <span class="ruby-ivar">@client</span> = <span class="ruby-constant">Octokit</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span>.<span class="ruby-identifier">new</span> <span class="ruby-value">access_token:</span> <span class="ruby-identifier">token</span>
   <span class="ruby-ivar">@repo</span> = <span class="ruby-constant">DevTraining</span><span class="ruby-operator">::</span><span class="ruby-constant">Repository</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@client</span>)
@@ -213,7 +213,7 @@
 
           
           <div class="method-source-code" id="add_collaborators-21-source">
-            <pre><span class="ruby-comment"># File lib/dev_training/training.rb, line 33</span>
+            <pre><span class="ruby-comment"># File lib/dev_training/training.rb, line 34</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add_collaborators!</span>(<span class="ruby-identifier">collaborators</span>)
   <span class="ruby-identifier">collaborators</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">user</span><span class="ruby-operator">|</span> <span class="ruby-ivar">@repo</span>.<span class="ruby-identifier">add_collaborator</span> <span class="ruby-identifier">user</span> }
 <span class="ruby-keyword">end</span></pre>
@@ -246,7 +246,7 @@
 
           
           <div class="method-source-code" id="create_issues-21-source">
-            <pre><span class="ruby-comment"># File lib/dev_training/training.rb, line 48</span>
+            <pre><span class="ruby-comment"># File lib/dev_training/training.rb, line 49</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create_issues!</span>(<span class="ruby-identifier">stream</span>)
   <span class="ruby-identifier">stream</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">data</span><span class="ruby-operator">|</span>
     <span class="ruby-constant">DevTraining</span><span class="ruby-operator">::</span><span class="ruby-constant">Issue</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@client</span>, <span class="ruby-ivar">@repo</span>, <span class="ruby-ivar">@milestone</span>, <span class="ruby-identifier">data</span>).<span class="ruby-identifier">resource</span>
@@ -281,7 +281,7 @@
 
           
           <div class="method-source-code" id="create_readme-21-source">
-            <pre><span class="ruby-comment"># File lib/dev_training/training.rb, line 40</span>
+            <pre><span class="ruby-comment"># File lib/dev_training/training.rb, line 41</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create_readme!</span>(<span class="ruby-identifier">filename</span>)
   <span class="ruby-constant">DevTraining</span><span class="ruby-operator">::</span><span class="ruby-constant">Readme</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-ivar">@client</span>, <span class="ruby-ivar">@repo</span>).<span class="ruby-identifier">resource</span>
 <span class="ruby-keyword">end</span></pre>
