@@ -4,6 +4,8 @@ require:
 
 AllCops:
   NewCops: enable
+  Exclude:
+    - 'bin/**/*'
 
 Layout/LineLength:
   Max: 100
