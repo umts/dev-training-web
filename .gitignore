@@ -1,6 +1,7 @@
 /config/application.yml
 /coverage/*
 !/coverage/.last_run.json
+/log
 /node_modules
 /public/assets
 /spec/examples.txt
