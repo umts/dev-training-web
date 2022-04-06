@@ -10,7 +10,6 @@ require 'application_configuration'
 ApplicationConfiguration.load!
 
 require 'application_assets'
-
 require 'rake/sprocketstask'
 
 desc 'Generate a cryptographically secure secret key (this is typically used to ' \
@@ -24,6 +23,13 @@ Rake::SprocketsTask.new do |sprockets|
   sprockets.environment = ApplicationAssets.new
   sprockets.output = File.join(__dir__, "public#{ApplicationAssets::ASSET_ROOT}")
   sprockets.assets = %w[manifest.js]
+end
+
+# Aliases for capistrano-rails to invoke
+namespace :assets do
+  task(:precompile) { Rake::Task['assets'].invoke }
+  task(:clean) { Rake::Task['clean_assets'].invoke }
+  task(:clobber) { Rake::Task['clobber_assets'].invoke }
 end
 
 unless env == 'production'
