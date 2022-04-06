@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# config valid for current version and patch releases of Capistrano
+# config valid for current version and minor releases of Capistrano
 lock '~> 3.17'
 
 set :application, 'dev-training-web'

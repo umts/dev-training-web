@@ -26,11 +26,13 @@ Rake::SprocketsTask.new do |sprockets|
 end
 
 # Aliases for capistrano-rails to invoke
+# rubocop:disable Rake/Desc
 namespace :assets do
   task(:precompile) { Rake::Task['assets'].invoke }
   task(:clean) { Rake::Task['clean_assets'].invoke }
   task(:clobber) { Rake::Task['clobber_assets'].invoke }
 end
+# rubocop:enable Rake/Desc
 
 unless env == 'production'
   require 'haml_lint/rake_task'
