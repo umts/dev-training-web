@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+  "name": "UMTS Developer Training",
+  "short_name": "UMTS Dev Training",
+  "start_url": ".",
+  "background_color": "#881c1c",
+  "theme_color": "#881c1c",
+  "icons": [{
+    "src": "icon-192.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  }, {
+    "src": "icon-512.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }]
+}
