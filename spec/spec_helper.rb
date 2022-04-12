@@ -4,6 +4,7 @@ require 'bundler'
 Bundler.require(:default, :test)
 
 SimpleCov.start do
+  enable_coverage :branch
   load_profile 'test_frameworks'
   track_files 'lib/**/*.rb'
 end
