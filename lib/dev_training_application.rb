@@ -46,6 +46,8 @@ class DevTrainingApplication < Sinatra::Base
     redirect to '/'
   end
 
+  get('/auth/failure') { redirect to '/' }
+
   post '/create' do
     token = session[:auth][:credentials][:token]
     training = DevTraining.new(token)

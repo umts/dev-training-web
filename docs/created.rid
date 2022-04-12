@@ -1,4 +1,4 @@
-Tue, 05 Apr 2022 11:35:26 -0400
+Tue, 12 Apr 2022 12:19:34 -0400
 README.md	Tue, 29 Mar 2022 11:58:53 -0400
 lib/application_assets.rb	Tue, 29 Mar 2022 12:57:23 -0400
 lib/application_configuration.rb	Tue, 29 Mar 2022 13:31:04 -0400
@@ -9,4 +9,4 @@ lib/dev_training/milestone.rb	Tue, 29 Mar 2022 12:38:19 -0400
 lib/dev_training/readme.rb	Mon, 04 Apr 2022 15:24:40 -0400
 lib/dev_training/repository.rb	Mon, 04 Apr 2022 14:36:13 -0400
 lib/dev_training/training.rb	Tue, 05 Apr 2022 10:47:49 -0400
-lib/dev_training_application.rb	Tue, 29 Mar 2022 12:16:04 -0400
+lib/dev_training_application.rb	Tue, 12 Apr 2022 12:13:23 -0400
