@@ -2,6 +2,7 @@
 
 require 'application_assets'
 require 'dev_training'
+require 'omniauth-github'
 require 'sinatra'
 require 'rack/protection'
 require 'yaml'
@@ -18,9 +19,11 @@ class DevTrainingApplication < Sinatra::Base
   set :sessions, secret: ENV['session_secret']
   set :haml, layout: :application
 
+  # :nocov:
   configure :production do
     set :static, false
   end
+  # :nocov:
 
   before { @csrf_token = request.env['rack.session']['csrf'] }
 

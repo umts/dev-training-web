@@ -15,7 +15,10 @@ gem 'sprockets'
 gem 'tilt'
 
 group :test do
+  gem 'faker', require: false
+  gem 'rack-test', require: false
   gem 'rspec', require: false
+  gem 'rspec-html-matchers', require: false
   gem 'simplecov', require: false
 end
 

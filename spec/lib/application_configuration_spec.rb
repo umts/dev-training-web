@@ -2,15 +2,12 @@
 
 require 'application_configuration'
 require 'tempfile'
+require_relative '../support/mock_yaml_file'
 
 RSpec.describe ApplicationConfiguration do
-  let(:config_file) do
-    Tempfile.new(%w[application .yml]).then do |file|
-      file.write('test_key: test_value')
-      file.close
-      file.path
-    end
-  end
+  include MockYamlFile
+
+  let(:config_file) { mock_yaml('application.yml', { 'test_key' => 'test_value' }) }
 
   before do
     allow(described_class).to receive(:config_file).and_return(config_file)

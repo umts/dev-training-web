@@ -25,6 +25,8 @@ GEM
     concurrent-ruby (1.1.10)
     diff-lcs (1.5.0)
     docile (1.4.0)
+    faker (2.20.0)
+      i18n (>= 1.8.11, < 2)
     faraday (1.10.0)
       faraday-em_http (~> 1.0)
       faraday-em_synchrony (~> 1.0)
@@ -76,6 +78,8 @@ GEM
       net-ssh (>= 2.6.5, < 7.0.0)
     net-ssh (6.1.0)
     nio4r (2.5.8)
+    nokogiri (1.13.4-x86_64-linux)
+      racc (~> 1.4)
     oauth2 (1.4.9)
       faraday (>= 0.17.3, < 3.0)
       jwt (>= 1.0, < 3.0)
@@ -107,9 +111,12 @@ GEM
     public_suffix (4.0.6)
     puma (5.6.4)
       nio4r (~> 2.0)
+    racc (1.6.0)
     rack (2.2.3)
     rack-protection (2.2.0)
       rack
+    rack-test (1.1.0)
+      rack (>= 1.0, < 3)
     rainbow (3.1.1)
     rake (13.0.6)
     regexp_parser (2.2.1)
@@ -123,6 +130,9 @@ GEM
     rspec-expectations (3.11.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.11.0)
+    rspec-html-matchers (0.9.4)
+      nokogiri (~> 1)
+      rspec (>= 3.0.0.a, < 4)
     rspec-mocks (3.11.1)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.11.0)
@@ -181,6 +191,7 @@ DEPENDENCIES
   capistrano-passenger
   capistrano-pending
   capistrano-rails
+  faker
   figaro
   haml
   haml-lint
@@ -188,8 +199,10 @@ DEPENDENCIES
   omniauth-github
   pry-byebug
   puma
+  rack-test
   rake
   rspec
+  rspec-html-matchers
   rubocop
   rubocop-rake
   rubocop-rspec
