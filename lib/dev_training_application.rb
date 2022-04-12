@@ -14,7 +14,7 @@ class DevTrainingApplication < Sinatra::Base
   set :readme, (proc { File.join root, 'config', 'README.md.erb' })
 
   set :sprockets, ApplicationAssets.new
-  set :sessions, secret: ENV['session_secret']
+  set :sessions, (ENV['session_secret'] ? { secret: ENV['session_secret'] } : {})
   set :haml, layout: :application
 
   # :nocov:

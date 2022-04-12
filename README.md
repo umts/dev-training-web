@@ -23,10 +23,7 @@ Configuration
 `application.yml`
 -----------------
 
-Generate a `session_secret` by running `rake secret` and putting the output in
-this file. This value is used to encrypt cookies.
-
-You'll also need an OAuth app on GitHub in order to interact with the GitHub
+You'll need an OAuth app on GitHub in order to interact with the GitHub
 API. See "[Creating an OAuth App][oaa]" for more information. For local
 development, create an app with an "authorization callback URL" of
 `http://localhost:9292/auth/github/callback`.
