@@ -18,3 +18,7 @@ Metrics/BlockLength:
 RSpec/DescribeClass:
   Exclude:
     - 'spec/config/**/*'
+
+RSpec/MultipleMemoizedHelpers:
+  Exclude:
+    - 'spec/requests/**/*'

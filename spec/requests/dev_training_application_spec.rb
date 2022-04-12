@@ -3,10 +3,12 @@
 require 'dev_training/repository'
 require 'dev_training/training'
 require 'dev_training_application'
+
 require 'faker'
 require 'omniauth'
 require 'rack/test'
 require 'rspec-html-matchers'
+
 require_relative '../support/mock_yaml_file'
 
 RSpec.describe DevTrainingApplication do
