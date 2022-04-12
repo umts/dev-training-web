@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'dev_training'
+require 'dev_training/training'
 
 RSpec.describe DevTraining do
   describe '.new' do

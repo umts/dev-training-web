@@ -10,16 +10,16 @@ gem 'omniauth-github'
 gem 'puma'
 gem 'rake'
 gem 'sassc'
-gem 'sinatra', require: false
+gem 'sinatra'
 gem 'sprockets'
 gem 'tilt'
 
 group :test do
-  gem 'faker', require: false
-  gem 'rack-test', require: false
-  gem 'rspec', require: false
-  gem 'rspec-html-matchers', require: false
-  gem 'simplecov', require: false
+  gem 'faker'
+  gem 'rack-test', require: 'rack/test'
+  gem 'rspec'
+  gem 'rspec-html-matchers'
+  gem 'simplecov'
 end
 
 group :development do

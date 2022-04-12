@@ -2,8 +2,6 @@
 
 require_relative 'with_mock_client'
 require 'dev_training/readme'
-require 'octokit'
-require 'tilt'
 
 RSpec.describe DevTraining::Readme do
   subject(:readme) { described_class.new(filename, client, repo) }

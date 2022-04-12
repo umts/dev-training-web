@@ -2,7 +2,6 @@
 
 require 'application_configuration'
 require 'tempfile'
-require_relative '../support/mock_yaml_file'
 
 RSpec.describe ApplicationConfiguration do
   include MockYamlFile

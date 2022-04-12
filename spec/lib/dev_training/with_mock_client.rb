@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'dev_training/repository'
-require 'octokit'
 
 RSpec.shared_context 'with mock client' do
   let(:client) { instance_double(Octokit::Client) }

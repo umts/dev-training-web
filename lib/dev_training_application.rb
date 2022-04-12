@@ -2,8 +2,6 @@
 
 require 'application_assets'
 require 'dev_training'
-require 'omniauth-github'
-require 'sinatra'
 require 'rack/protection'
 require 'yaml'
 

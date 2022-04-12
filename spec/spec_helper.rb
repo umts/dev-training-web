@@ -1,12 +1,16 @@
 # frozen_string_literal: true
 
-require 'simplecov'
+require 'bundler'
+Bundler.require(:default, :test)
+
 SimpleCov.start do
   load_profile 'test_frameworks'
   track_files 'lib/**/*.rb'
 end
 
 $LOAD_PATH.unshift File.join(__dir__, '..', 'lib')
+
+Dir.glob(File.join(__dir__, 'support/**/*.rb')).sort.each { |f| require f }
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
