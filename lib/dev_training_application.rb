@@ -2,6 +2,8 @@
 
 require 'application_assets'
 require 'dev_training'
+require 'logger'
+require 'rack/common_logger'
 require 'rack/protection'
 require 'yaml'
 
@@ -9,6 +11,15 @@ require 'yaml'
 # Sinatra application resposible for the web-app-ish components of training creation
 class DevTrainingApplication < Sinatra::Base
   set :root, File.join(File.dirname(settings.app_file), '..')
+  set :access_log, (proc do
+    logfile = File.join root, 'log', "#{settings.environment}_access.log"
+    Logger.new logfile
+  end)
+  set :error_log, (proc do
+    logfile = File.join root, 'log', "#{settings.environment}_error.log"
+    File.open logfile, 'a+'
+  end)
+
   set :collaborators, (proc { File.join root, 'config', 'collaborators.yml' })
   set :qualifications, (proc { File.join root, 'config', 'qualifications.yml' })
   set :readme, (proc { File.join root, 'config', 'README.md.erb' })
@@ -17,13 +28,21 @@ class DevTrainingApplication < Sinatra::Base
   set :sessions, (ENV['session_secret'] ? { secret: ENV['session_secret'] } : {})
   set :haml, layout: :application
 
+  configure do
+    enable :logging
+    use Rack::CommonLogger, settings.access_log
+  end
+
   # :nocov:
   configure :production do
     set :static, false
   end
   # :nocov:
 
-  before { @csrf_token = request.env['rack.session']['csrf'] }
+  before do
+    @csrf_token = request.env['rack.session']['csrf']
+    request.env['rack.errors'] = settings.error_log
+  end
 
   helpers do
     def asset_path(file)  # :nodoc:
