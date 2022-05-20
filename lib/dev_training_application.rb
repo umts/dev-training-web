@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'app_client'
 require 'application_assets'
 require 'dev_training'
 require 'rack/protection'
@@ -12,6 +13,7 @@ class DevTrainingApplication < Sinatra::Base
   set :collaborators, (proc { File.join root, 'config', 'collaborators.yml' })
   set :qualifications, (proc { File.join root, 'config', 'qualifications.yml' })
   set :readme, (proc { File.join root, 'config', 'README.md.erb' })
+  set :app_client, (proc { AppClient.new ENV['github_key'], ENV['github_secret'] })
 
   set :sprockets, ApplicationAssets.new
   set :sessions, (ENV['session_secret'] ? { secret: ENV['session_secret'] } : {})
@@ -59,12 +61,14 @@ class DevTrainingApplication < Sinatra::Base
     training.add_collaborators! collaborators
     training.create_readme! settings.readme
 
+    settings.app_client.revoke_token token
     @repo_resource = training.repo.resource
     haml :success
   end
 
   get '/' do
-    if session[:auth].nil? || session[:auth].empty?
+    if session[:auth].nil? || session[:auth].empty? ||
+       !settings.app_client.token_valid?(session[:auth][:credentials][:token])
       haml :welcome
     else
       info = session[:auth][:info]
