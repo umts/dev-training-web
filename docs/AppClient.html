@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>class ApplicationAssets - RDoc Documentation</title>
+<title>class AppClient - RDoc Documentation</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "./";
@@ -63,7 +63,7 @@
   <h3>Parent</h3>
 
   
-  <p class="link">Sprockets::Environment
+  <p class="link">Delegator
   
 </div>
 
@@ -77,7 +77,9 @@
     
     <li class="calls-super" ><a href="#method-c-new">::new</a>
     
-    <li ><a href="#method-i-asset_path">#asset_path</a>
+    <li ><a href="#method-i-revoke_token">#revoke_token</a>
+    
+    <li ><a href="#method-i-token_valid-3F">#token_valid?</a>
     
   </ul>
 </div>
@@ -85,14 +87,14 @@
   </div>
 </nav>
 
-<main role="main" aria-labelledby="class-ApplicationAssets">
-  <h1 id="class-ApplicationAssets" class="class">
-    class ApplicationAssets
+<main role="main" aria-labelledby="class-AppClient">
+  <h1 id="class-AppClient" class="class">
+    class AppClient
   </h1>
 
   <section class="description">
     
-<p>Wrapper class for our applications&#39;s Sprockets environment.</p>
+<p>A wrapper around an Octokit::Client that authnticates as an OAuth application. Contains a few methods for manipulating OAuth tokens as well.</p>
 
   </section>
 
@@ -102,20 +104,6 @@
 
     
 
-    
-    <section class="constants-list">
-      <header>
-        <h3>Constants</h3>
-      </header>
-      <dl>
-      
-        <dt id="ASSET_ROOT">ASSET_ROOT
-        
-        <dd><p>request path prepended to each asset – this is where the Rack app is <em>mounted</em> OR a directory within /public containing compiled assets</p>
-        
-      
-      </dl>
-    </section>
     
 
     
@@ -131,7 +119,7 @@
         
         <div class="method-heading">
           <span class="method-name">new</span><span
-            class="method-args">()</span>
+            class="method-args">(client_id, client_secret)</span>
           
           <span class="method-click-advice">click to toggle source</span>
           
@@ -140,7 +128,7 @@
 
         <div class="method-description">
           
-          <p>Configure Sprockets&#39; search paths here</p>
+          <p>Takes two arguments, an OAuth client ID and an OAuth client secret. These are used to initialize an <code>Octokit::Client</code> acting as the OAuth application. This class delegates missing instance methods to that client.</p>
           
           
             <div class="method-calls-super">
@@ -151,13 +139,9 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/application_assets.rb, line 14</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>
-  <span class="ruby-keyword">super</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">__dir__</span>, <span class="ruby-string">&#39;..&#39;</span>))
-  <span class="ruby-node">%w[config images javascripts stylesheets]</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">dir</span><span class="ruby-operator">|</span>
-    <span class="ruby-identifier">append_path</span> <span class="ruby-node">&quot;assets/#{dir}&quot;</span>
-  <span class="ruby-keyword">end</span>
-  <span class="ruby-identifier">append_path</span> <span class="ruby-string">&#39;node_modules&#39;</span>
+            <pre><span class="ruby-comment"># File lib/app_client.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">client_id</span>, <span class="ruby-identifier">client_secret</span>)
+  <span class="ruby-keyword">super</span> <span class="ruby-constant">Octokit</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">client_id:</span> <span class="ruby-identifier">client_id</span>, <span class="ruby-value">client_secret:</span> <span class="ruby-identifier">client_secret</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -177,11 +161,11 @@
        </header>
 
     
-      <div id="method-i-asset_path" class="method-detail ">
+      <div id="method-i-revoke_token" class="method-detail ">
         
         <div class="method-heading">
-          <span class="method-name">asset_path</span><span
-            class="method-args">(file, digest: false)</span>
+          <span class="method-name">revoke_token</span><span
+            class="method-args">(token)</span>
           
           <span class="method-click-advice">click to toggle source</span>
           
@@ -190,16 +174,53 @@
 
         <div class="method-description">
           
-          <p>Returns an HTTP path that will resolve to the requested asset. The optional digest: parameter will cause the return result to include the hexidigest of the asset so that it will resolve to a compiled, digested asset in production.</p>
+          <p>Revoke the given access token for the OAuth application.</p>
           
           
 
           
-          <div class="method-source-code" id="asset_path-source">
-            <pre><span class="ruby-comment"># File lib/application_assets.rb, line 27</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">asset_path</span>(<span class="ruby-identifier">file</span>, <span class="ruby-value">digest:</span> <span class="ruby-keyword">false</span>)
-  <span class="ruby-identifier">method</span> = <span class="ruby-identifier">digest</span> <span class="ruby-operator">?</span> <span class="ruby-value">:digest_path</span> <span class="ruby-operator">:</span> <span class="ruby-value">:logical_path</span>
-  <span class="ruby-constant">ASSET_ROOT</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">find_asset</span>(<span class="ruby-identifier">file</span>).<span class="ruby-identifier">send</span>(<span class="ruby-identifier">method</span>)
+          <div class="method-source-code" id="revoke_token-source">
+            <pre><span class="ruby-comment"># File lib/app_client.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">revoke_token</span>(<span class="ruby-identifier">token</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">token_valid?</span> <span class="ruby-identifier">token</span>
+
+  <span class="ruby-identifier">delete</span> <span class="ruby-node">&quot;applications/#{client_id}/grant&quot;</span>, <span class="ruby-value">access_token:</span> <span class="ruby-identifier">token</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-token_valid-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">token_valid?</span><span
+            class="method-args">(token)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Check to see whether the given token is valid for the OAuth application.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="token_valid-3F-source">
+            <pre><span class="ruby-comment"># File lib/app_client.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">token_valid?</span>(<span class="ruby-identifier">token</span>)
+  <span class="ruby-identifier">check_application_authorization</span> <span class="ruby-identifier">token</span>, <span class="ruby-value">accept:</span> <span class="ruby-string">&#39;application/vnd.github.v3+json&#39;</span>
+  <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Octokit</span><span class="ruby-operator">::</span><span class="ruby-constant">NotFound</span>
+  <span class="ruby-keyword">false</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
           
