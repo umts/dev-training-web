@@ -18,6 +18,7 @@ RSpec.describe DevTrainingApplication do
   before do
     app.set :sessions, secret: session_secret
     app.set :app_client, app_client
+    allow(app_client).to receive(:token_valid?).and_return(true)
     OmniAuth.config.test_mode = true
   end
 
