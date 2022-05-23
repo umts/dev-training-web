@@ -10,7 +10,7 @@ gem 'omniauth-github'
 gem 'puma'
 gem 'rake'
 gem 'sassc'
-gem 'sinatra'
+gem 'sinatra', require: 'sinatra/base'
 gem 'sprockets'
 gem 'tilt'
 
