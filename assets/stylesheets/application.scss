@@ -2,3 +2,22 @@
  *= require_tree .
  *= require_self
  */
+
+html, body {
+  height: 100%;
+}
+
+body > footer {
+  position: sticky;
+  top: 100vh;
+  padding: var(--spacing);
+  display: flex;
+  justify-content: center;
+  gap: calc(var(--spacing) * 2);
+  background: var(--secondary);
+  color: var(--secondary-inverse);
+  a {
+    display: block;
+    color: inherit;
+  }
+}
