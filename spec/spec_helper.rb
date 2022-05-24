@@ -6,6 +6,7 @@ Bundler.require(:default, :test)
 SimpleCov.start do
   enable_coverage :branch
   load_profile 'test_frameworks'
+  add_filter %r{^/vendor/}
   track_files 'lib/**/*.rb'
 end
 
