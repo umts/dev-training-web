@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'app_client'
 require 'dev_training/repository'
 require 'dev_training/training'
 require 'dev_training_application'
@@ -10,11 +11,14 @@ RSpec.describe DevTrainingApplication do
   include RSpecHtmlMatchers
 
   let(:app) { described_class }
+  let(:app_client) { instance_double AppClient }
   let(:auth) { Faker::Omniauth.github }
   let(:session_secret) { 'SECRETSECRET' }
 
   before do
     app.set :sessions, secret: session_secret
+    app.set :app_client, app_client
+    allow(app_client).to receive(:token_valid?).and_return(true)
     OmniAuth.config.test_mode = true
   end
 
@@ -60,6 +64,7 @@ RSpec.describe DevTrainingApplication do
       %i[create_issues! add_collaborators! create_readme!].each do |method|
         allow(training).to receive(method)
       end
+      allow(app_client).to receive(:revoke_token)
       get '/'
     end
 
@@ -94,6 +99,11 @@ RSpec.describe DevTrainingApplication do
       app.set :readme, :the_template
       call
       expect(training).to have_received(:create_readme!).with(:the_template)
+    end
+
+    it 'revokes the OAuth token when done' do
+      call
+      expect(app_client).to have_received(:revoke_token).with(:fake_token)
     end
 
     it 'is an HTTP success' do
@@ -140,26 +150,55 @@ RSpec.describe DevTrainingApplication do
         get '/auth/github/callback'
       end
 
-      it 'is an HTTP success' do
-        call
-        expect(last_response.status).to eq(200)
+      context 'with an invalid token' do
+        before do
+          allow(app_client).to receive(:token_valid?).and_return(false)
+        end
+
+        it 'is an HTTP success' do
+          call
+          expect(last_response.status).to eq(200)
+        end
+
+        it 'renders the welcome view' do
+          call
+          expect(last_response.body).to have_tag(:h1, text: 'Welcome!')
+        end
+
+        it 'has a button to authorize' do
+          call
+          expect(last_response.body).to have_tag(:form, with: { action: '/auth/github' }) do
+            with_tag :input, with: { type: 'submit', value: 'Authorize' }
+          end
+        end
       end
 
-      it 'renders the ready view' do
-        call
-        expect(last_response.body).to have_tag(:h1, text: /Welcome Back/)
-      end
+      context 'with a valid token' do
+        before do
+          allow(app_client).to receive(:token_valid?).and_return(true)
+        end
 
-      it 'says what the repo will be' do
-        call
-        repo_name = "#{auth[:info][:nickname]}/#{DevTraining::Repository::NAME}"
-        expect(last_response.body).to have_tag(:tt, text: repo_name)
-      end
+        it 'is an HTTP success' do
+          call
+          expect(last_response.status).to eq(200)
+        end
 
-      it 'has a button to create the training repo' do
-        call
-        expect(last_response.body).to have_tag(:form, with: { action: '/create' }) do
-          with_tag :input, with: { type: 'submit', value: 'Create' }
+        it 'renders the ready view' do
+          call
+          expect(last_response.body).to have_tag(:h1, text: /Welcome Back/)
+        end
+
+        it 'says what the repo will be' do
+          call
+          repo_name = "#{auth[:info][:nickname]}/#{DevTraining::Repository::NAME}"
+          expect(last_response.body).to have_tag(:tt, text: repo_name)
+        end
+
+        it 'has a button to create the training repo' do
+          call
+          expect(last_response.body).to have_tag(:form, with: { action: '/create' }) do
+            with_tag :input, with: { type: 'submit', value: 'Create' }
+          end
         end
       end
     end
