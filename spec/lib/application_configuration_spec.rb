@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'application_configuration'
-require 'tempfile'
 
 RSpec.describe ApplicationConfiguration do
   include MockYamlFile
