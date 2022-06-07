@@ -5,12 +5,8 @@ require 'yaml'
 
 module MockYamlFile
   def mock_yaml(name, content)
-    parts = name.split('.')
-    base = parts[0..-2].join('.')
-    ext = ".#{parts[-1]}"
-    Tempfile.new([base, ext]).then do |file|
+    Tempfile.open(name.split(/(?=\.[^.]+\z)/)) do |file|
       file.write(YAML.dump(content))
-      file.close
       file.path
     end
   end
