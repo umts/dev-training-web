@@ -17,6 +17,7 @@ set :keep_releases, 5
 append :linked_files, 'config/application.yml'
 append :linked_dirs, 'log', 'node_modules', 'public/assets'
 
+before 'git:check', 'git:allow_shared'
 before 'deploy:updated', 'yarn:install'
 
 set :log_level, :info
