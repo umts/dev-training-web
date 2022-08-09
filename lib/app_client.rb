@@ -3,7 +3,7 @@
 require 'octokit'
 
 ##
-# A wrapper around an Octokit::Client that authnticates as an OAuth
+# A wrapper around an `Octokit::Client` that authenticates as an OAuth
 # application. Contains a few methods for manipulating OAuth tokens
 # as well.
 class AppClient < Delegator
