@@ -21,8 +21,6 @@
 <link href="../css/rdoc.css" rel="stylesheet">
 
 
-
-
 <body id="top" role="document" class="class">
 <nav role="navigation">
   <div id="project-navigation">
@@ -59,39 +57,32 @@
 
   <div id="class-metadata">
     
-    <div id="parent-class-section" class="nav-section">
+    
+<div id="parent-class-section" class="nav-section">
   <h3>Parent</h3>
 
-  
   <p class="link">Object
-  
 </div>
 
-    <div id="includes-section" class="nav-section">
+    
+<div id="includes-section" class="nav-section">
   <h3>Included Modules</h3>
 
   <ul class="link-list">
-  
-  
     <li><a class="include" href="FormattingHelpers.html">DevTraining::FormattingHelpers</a>
-  
-  
   </ul>
 </div>
 
     
-    <!-- Method Quickref -->
+    
+<!-- Method Quickref -->
 <div id="method-list-section" class="nav-section">
   <h3>Methods</h3>
 
   <ul class="link-list" role="directory">
-    
     <li ><a href="#method-c-new">::new</a>
-    
     <li ><a href="#method-i-body">#body</a>
-    
     <li ><a href="#method-i-resource">#resource</a>
-    
   </ul>
 </div>
 
@@ -109,21 +100,15 @@
 
   </section>
 
-  
   <section id="5Buntitled-5D" class="documentation-section">
-    
 
-    
 
-    
 
-    
     <section class="attribute-method-details" class="method-section">
       <header>
         <h3>Attributes</h3>
       </header>
 
-      
       <div id="attribute-i-description" class="method-detail">
         <div class="method-heading attribute-method-heading">
           <span class="method-name">description</span><span
@@ -131,12 +116,9 @@
         </div>
 
         <div class="method-description">
-        
         <p>The issue description – part of the body, optional, read from the <code>data</code></p>
-        
         </div>
       </div>
-      
       <div id="attribute-i-subtasks" class="method-detail">
         <div class="method-heading attribute-method-heading">
           <span class="method-name">subtasks</span><span
@@ -144,12 +126,9 @@
         </div>
 
         <div class="method-description">
-        
         <p>An array of tasks – rendered as a task list as part of the body, optional, and read from the <code>data</code></p>
-        
         </div>
       </div>
-      
       <div id="attribute-i-title" class="method-detail">
         <div class="method-heading attribute-method-heading">
           <span class="method-name">title</span><span
@@ -157,35 +136,25 @@
         </div>
 
         <div class="method-description">
-        
         <p>The issue title – read from, and required to be in the <code>data</code></p>
-        
         </div>
       </div>
-      
     </section>
-    
 
-    
+
      <section id="public-class-5Buntitled-5D-method-details" class="method-section">
        <header>
          <h3>Public Class Methods</h3>
        </header>
 
-    
       <div id="method-c-new" class="method-detail ">
-        
         <div class="method-heading">
           <span class="method-name">new</span><span
             class="method-args">(client, repo, milestone, data)</span>
-          
           <span class="method-click-advice">click to toggle source</span>
-          
         </div>
-        
 
         <div class="method-description">
-          
           <p>Arguments:</p>
 <ul><li>
 <p><code>client</code>: An <code>Octokit::Client</code></p>
@@ -196,10 +165,7 @@
 </li><li>
 <p><code>data</code>: A <code>Hash</code> containing the keys, <code>title</code>, <code>description</code> (optional),  and <code>subtasks</code> (optional). Likely read in from a YAML file.</p>
 </li></ul>
-          
-          
 
-          
           <div class="method-source-code" id="new-source">
             <pre><span class="ruby-comment"># File lib/dev_training/issue.rb, line 29</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">client</span>, <span class="ruby-identifier">repo</span>, <span class="ruby-identifier">milestone</span>, <span class="ruby-identifier">data</span>)
@@ -211,99 +177,69 @@
   <span class="ruby-ivar">@subtasks</span> = <span class="ruby-identifier">data</span>[<span class="ruby-string">&#39;subtasks&#39;</span>]
 <span class="ruby-keyword">end</span></pre>
           </div>
-          
         </div>
 
-        
 
-        
       </div>
 
-    
     </section>
-  
+
      <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
        <header>
          <h3>Public Instance Methods</h3>
        </header>
 
-    
       <div id="method-i-body" class="method-detail ">
-        
         <div class="method-heading">
           <span class="method-name">body</span><span
             class="method-args">()</span>
-          
           <span class="method-click-advice">click to toggle source</span>
-          
         </div>
-        
 
         <div class="method-description">
-          
           <p>The text of this issue&#39;s body (uses <a href="FormattingHelpers.html#method-i-format_body"><code>DevTraining::FormattingHelpers.format_body</code></a>)</p>
-          
-          
 
-          
           <div class="method-source-code" id="body-source">
             <pre><span class="ruby-comment"># File lib/dev_training/issue.rb, line 40</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">body</span>
   <span class="ruby-identifier">format_body</span>(<span class="ruby-ivar">@description</span>, <span class="ruby-ivar">@subtasks</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
-          
         </div>
 
-        
 
-        
       </div>
 
-    
       <div id="method-i-resource" class="method-detail ">
-        
         <div class="method-heading">
           <span class="method-name">resource</span><span
             class="method-args">()</span>
-          
           <span class="method-click-advice">click to toggle source</span>
-          
         </div>
-        
 
         <div class="method-description">
-          
           <p>The <code>Sawyer::Resource</code> representing the GitHub issue. It will be found by <code>title</code> and <code>milestone</code>, or created in the repository if not found.</p>
-          
-          
 
-          
           <div class="method-source-code" id="resource-source">
             <pre><span class="ruby-comment"># File lib/dev_training/issue.rb, line 47</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">resource</span>
   <span class="ruby-ivar">@resource</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">find</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">create</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
-          
         </div>
 
-        
 
-        
       </div>
 
-    
     </section>
-  
-  </section>
 
+  </section>
 </main>
 
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="https://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.2.1.1.
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.3.3.
   <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

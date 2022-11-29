@@ -21,8 +21,6 @@
 <link href="../css/rdoc.css" rel="stylesheet">
 
 
-
-
 <body id="top" role="document" class="class">
 <nav role="navigation">
   <div id="project-navigation">
@@ -59,28 +57,24 @@
 
   <div id="class-metadata">
     
-    <div id="parent-class-section" class="nav-section">
+    
+<div id="parent-class-section" class="nav-section">
   <h3>Parent</h3>
 
-  
   <p class="link">Object
-  
 </div>
 
     
     
-    <!-- Method Quickref -->
+    
+<!-- Method Quickref -->
 <div id="method-list-section" class="nav-section">
   <h3>Methods</h3>
 
   <ul class="link-list" role="directory">
-    
     <li ><a href="#method-c-new">::new</a>
-    
     <li ><a href="#method-i-add_collaborator">#add_collaborator</a>
-    
     <li ><a href="#method-i-resource">#resource</a>
-    
   </ul>
 </div>
 
@@ -105,55 +99,36 @@
 
   </section>
 
-  
   <section id="5Buntitled-5D" class="documentation-section">
-    
 
-    
 
-    
     <section class="constants-list">
       <header>
         <h3>Constants</h3>
       </header>
       <dl>
-      
         <dt id="NAME">NAME
-        
         <dd>
-        
-      
       </dl>
     </section>
-    
 
-    
 
-    
+
      <section id="public-class-5Buntitled-5D-method-details" class="method-section">
        <header>
          <h3>Public Class Methods</h3>
        </header>
 
-    
       <div id="method-c-new" class="method-detail ">
-        
         <div class="method-heading">
           <span class="method-name">new</span><span
             class="method-args">(client)</span>
-          
           <span class="method-click-advice">click to toggle source</span>
-          
         </div>
-        
 
         <div class="method-description">
-          
           <p>Takes an <code>Octokit::Client</code></p>
-          
-          
 
-          
           <div class="method-source-code" id="new-source">
             <pre><span class="ruby-comment"># File lib/dev_training/repository.rb, line 20</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">client</span>)
@@ -161,99 +136,69 @@
   <span class="ruby-ivar">@repo</span> = <span class="ruby-constant">Octokit</span><span class="ruby-operator">::</span><span class="ruby-constant">Repository</span>.<span class="ruby-identifier">new</span> <span class="ruby-value">owner:</span> <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">user</span>.<span class="ruby-identifier">login</span>, <span class="ruby-value">name:</span> <span class="ruby-constant">NAME</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
-          
         </div>
 
-        
 
-        
       </div>
 
-    
     </section>
-  
+
      <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
        <header>
          <h3>Public Instance Methods</h3>
        </header>
 
-    
       <div id="method-i-add_collaborator" class="method-detail ">
-        
         <div class="method-heading">
           <span class="method-name">add_collaborator</span><span
             class="method-args">(login)</span>
-          
           <span class="method-click-advice">click to toggle source</span>
-          
         </div>
-        
 
         <div class="method-description">
-          
           <p>Add the GitHub user, <code>login</code> as an outside collaborator on the repository.</p>
-          
-          
 
-          
           <div class="method-source-code" id="add_collaborator-source">
             <pre><span class="ruby-comment"># File lib/dev_training/repository.rb, line 27</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add_collaborator</span>(<span class="ruby-identifier">login</span>)
   <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">add_collaborator</span>(<span class="ruby-identifier">resource</span>.<span class="ruby-identifier">full_name</span>, <span class="ruby-identifier">login</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
-          
         </div>
 
-        
 
-        
       </div>
 
-    
       <div id="method-i-resource" class="method-detail ">
-        
         <div class="method-heading">
           <span class="method-name">resource</span><span
             class="method-args">()</span>
-          
           <span class="method-click-advice">click to toggle source</span>
-          
         </div>
-        
 
         <div class="method-description">
-          
           <p>The <code>Sawyer::Resource</code> representing the repository. It will be found by name, or created if not found for the authenticated user.</p>
-          
-          
 
-          
           <div class="method-source-code" id="resource-source">
             <pre><span class="ruby-comment"># File lib/dev_training/repository.rb, line 34</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">resource</span>
   <span class="ruby-ivar">@resource</span> <span class="ruby-operator">||=</span> (<span class="ruby-identifier">repo?</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">repo</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">create_repo</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
-          
         </div>
 
-        
 
-        
       </div>
 
-    
     </section>
-  
-  </section>
 
+  </section>
 </main>
 
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="https://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.2.1.1.
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.3.3.
   <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 
