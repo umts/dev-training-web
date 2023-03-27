@@ -3,6 +3,15 @@ title: Read the transportation programmer policies
 description: >
   This document lives in [one-drive](https://umass-my.sharepoint.com/).
 ---
+title: Read through university owned computer policies
+description: >
+  Since you will be trusted with university-owned computers and potentially
+  sensitive data, you must review these documents
+subtasks:
+  - '[Security Checklist](https://www.umass.edu/it/support/security/security-checklist-university-owned-computers)'
+  - '[Understanding Sensitive Data](https://www.umass.edu/it/support/security/understand-sensitive-data-umass-amherst)'
+  - '[Data Classification](https://www.umass.edu/it/support/security/data-classification-umass-amherst)'
+---
 title: Configure your laptop for development
 description: >
   go to https://strap.umasstransit.it/ and follow the instructions.
@@ -17,15 +26,6 @@ subtasks:
     The minimum we require is that you have 'Email' checked under the header 'Participating'.
   - You should clone repositories using the SSH URL from now on. Please follow the instructions
     for [connecting to GitHub using SSH](https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh).
----
-title: Read through documents related to university owned computers
-description: >
-  Since you will be trusted with university-owned computers and potentially
-  sensitive data, you should review these documents
-subtasks:
-  - '[Security Checklist](https://www.umass.edu/it/support/security/security-checklist-university-owned-computers)'
-  - '[Understanding Sensitive Data](https://www.umass.edu/it/support/security/understand-sensitive-data-umass-amherst)'
-  - '[Data Classification](https://www.umass.edu/it/support/security/data-classification-umass-amherst)'
 ---
 title: Join Teams
 description: >
