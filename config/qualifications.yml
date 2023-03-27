@@ -61,7 +61,7 @@ description: >
   or you can download the [Ruby Koans](http://rubykoans.com/). If neither of those
   options appeal to you you may choose another tutorial with your supervisor's approval.
 ---
-title: Complete a rails Tutorial
+title: Complete a rails tutorial
 description: >
   The current tutorial in use is Michael Hartl's [Ruby on Rails Tutorial](https://learning.oreilly.com/library/view/ruby-on-rails/9780136702726/).
   Log in for free using your UMass account to O'Reilly or, if you wish to use an alternate tutorial, talk to your supervisor.
@@ -73,7 +73,7 @@ description: >
     Since you'll be deploying code to production in a few short months, you can skip setting up a heroku account
     and all related steps.
 ---
-title: Demonstrate understanding of correct and proper git usage
+title: Demonstrate an understanding of correct and proper git usage
 description: >
   Show that you understand how to properly use Git by writing commits that
   generally relate to atomic features or thoughts. Make sure you know how to
@@ -84,24 +84,24 @@ description: >
   Use effective descriptions that provide context of code and rationale for change.
   Tag some related issues.
 ---
-title: Demonstrate understanding of Ruby core methods / Rails object extensions
+title: Demonstrate an understanding of Ruby core methods / Rails object extensions
 description: >
   Some methods used in our Rails applications are Ruby methods. Some are
   written in Rails, like `try` and `1.week`. Close this issue by referencing
   some work where you have used both (can be two separate projects).
 ---
-title: Understand the basics of databases and models and their relationship
+title: Demonstrate an understanding of SQL databases and their integrations with ActiveRecord
 description: >
   Write a migration and use a model relationship correctly.
 ---
-title: Understand how to employ ActiveRecord
+title: Demonstrate an understanding of how to employ ActiveRecord
 description: https://guides.rubyonrails.org/active_record_querying.html
 subtasks:
   - Use `joins` or `includes`
   - Use `order` or `sort`
   - Use `where`, `find`, or `find_by` and explain the differences between these three
 ---
-title: Have demonstrated familiarity with MVC architecture and the Rails asset pipeline
+title: Demonstrate an understanding of MVC architecture
 subtasks:
   - Demonstrate or explain that you know when to place logic in a controller and model,
     and what logic does _not_ go in a view.
@@ -109,16 +109,16 @@ subtasks:
   - Demonstrate understanding of how to use routes (a link, a redirect, or creating routes)
   - Use params in a controller
 ---
-title: Display an understanding of front-end development
+title: Demonstrate an understanding of front-end development
 description: >
   Use CSS to apply styling to pages, and construct some HAML or ERB. Select
   DOM elements using JQuery.
 ---
-title: display a good understanding of how and why to write tests
+title: Demonstrate an understanding of how and why to write tests
 description: >
-  Demonstrate knowledge of basic model/controller/system test structure.
+  Demonstrate knowledge of basic model/request/system test structure.
   Demonstrate understanding of mocks/stubs and what purpose they serve.
 ---
-title: have given feedback on another programmers code
+title: Give feedback on another programmer's code
 description: >
   Ask helpful questions/suggest alternatives on someone else's code
