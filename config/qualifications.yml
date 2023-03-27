@@ -17,9 +17,16 @@ description: >
   We use [Microsoft Teams](https://aka.ms/mstfw) for communication every day.
   Log into teams with your "-af" account.
 ---
-title: Configure your laptop for development
+title: Prepare a development environment
 description: >
-  go to https://strap.umasstransit.it/ and follow the instructions.
+  Work with another developer to set up the following items:
+subtasks:
+  - Install the xcode command line tools (`xcode-select –install`)
+  - Install [`homebrew`](https://brew.sh)
+  - Install [`mariadb`](https://formulae.brew.sh/formula/mariadb)
+  - Install [`rbenv`](https://github.com/rbenv/rbenv)
+  - Prepare an [`ssh key`](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+  - Install a text editor/ide of your choice (i.e. VSCode)
 ---
 title: Set up GitHub
 description: >
@@ -31,13 +38,6 @@ subtasks:
     The minimum we require is that you have 'Email' checked under the header 'Participating'.
   - You should clone repositories using the SSH URL from now on. Please follow the instructions
     for [connecting to GitHub using SSH](https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh).
----
-title: Choose a text editor
-description: >
-  We don't care what text editor you use. However, we do have some suggestions.
-  Other people in the office have used [atom](https://atom.io/), [sublime](https://www.sublimetext.com/3)...
-  and [Vim](https://www.tutorialspoint.com/vim/vim_introduction.htm). Vim is already installed on your laptop,
-  so if you'd like a quick introduction, type `vimtutor` in your terminal.
 ---
 title: Complete a command line tutorial
 description: >
