@@ -88,7 +88,7 @@ title: Demonstrate an understanding of Ruby core methods / Rails object extensio
 description: >
   Some methods used in our Rails applications are Ruby methods. Some are
   written in Rails, like `try` and `1.week`. Close this issue by referencing
-  some work where you have used both (can be two separate projects).
+  some work where you have used both (can be separate projects).
 ---
 title: Demonstrate an understanding of SQL databases and their integrations with ActiveRecord
 description: >
@@ -103,21 +103,22 @@ subtasks:
 ---
 title: Demonstrate an understanding of MVC architecture
 subtasks:
-  - Demonstrate or explain that you know when to place logic in a controller and model,
-    and what logic does _not_ go in a view.
+  - Demonstrate or explain what kinds of code belong where (models/controllers/helpers/views)
   - Use a partial
   - Demonstrate understanding of how to use routes (a link, a redirect, or creating routes)
   - Use params in a controller
 ---
 title: Demonstrate an understanding of front-end development
-description: >
-  Use CSS to apply styling to pages, and construct some HAML or ERB. Select
-  DOM elements using JQuery.
+subtasks:
+  - Generate HTML using HAML/ERB
+  - Use bootstrap/CSS to apply styling
+  - Use javascript to create/adjust interactive elements
 ---
 title: Demonstrate an understanding of how and why to write tests
-description: >
-  Demonstrate knowledge of basic model/request/system test structure.
-  Demonstrate understanding of mocks/stubs and what purpose they serve.
+subtasks:
+  - Write a model spec
+  - Write a request spec
+  - Write a system spec
 ---
 title: Give feedback on another programmer's code
 description: >
