@@ -24,6 +24,7 @@ subtasks:
   - Install the xcode command line tools (`xcode-select –install`)
   - Install [`homebrew`](https://brew.sh)
   - Install [`mariadb`](https://formulae.brew.sh/formula/mariadb)
+  - Install [`nodenv`](https://github.com/rbenv/nodenv)
   - Install [`rbenv`](https://github.com/rbenv/rbenv)
   - Prepare an [`ssh` key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
   - Install a text editor/ide of your choice (i.e. VSCode)
