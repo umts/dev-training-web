@@ -25,19 +25,19 @@ subtasks:
   - Install [`homebrew`](https://brew.sh)
   - Install [`mariadb`](https://formulae.brew.sh/formula/mariadb)
   - Install [`rbenv`](https://github.com/rbenv/rbenv)
-  - Prepare an [`ssh key`](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+  - Prepare an [`ssh` key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
   - Install a text editor/ide of your choice (i.e. VSCode)
 ---
-title: Set up GitHub
+title: Configure GitHub
 description: >
-  [Login to or sign up for GitHub.](https://github.com/)
+  Your github account must be configured and added to our organization.
 subtasks:
-  - Set up two-factor authentication.
-  - Tell us your username so we can add you to our organization.
+  - Set up two-factor authentication
+  - Tell us your username so we can add you to our organization
   - Your notification settings for GitHub can be found [here](https://github.com/settings/notifications).
-    The minimum we require is that you have 'Email' checked under the header 'Participating'.
-  - You should clone repositories using the SSH URL from now on. Please follow the instructions
-    for [connecting to GitHub using SSH](https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh).
+    The minimum we require is that you have 'Email' checked under the header 'Participating'
+  - You should clone repositories using the `ssh` URL from now on. Please follow the instructions
+    for [connecting to GitHub using `ssh`](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)).
 ---
 title: Complete a command line tutorial
 description: >
