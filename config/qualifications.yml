@@ -1,43 +1,43 @@
 ---
-title: Configure your laptop for development
+title: Read the transportation programmer policies
 description: >
-  go to https://strap.umasstransit.it/ and follow the instructions.
+  This document lives in [one-drive](https://umass.sharepoint.com/:b:/r/sites/TransportationIT/Shared%20Documents/Programmer%20Training/UMass%20Transportation%20Student%20Programmer%20Policies.pdf).
 ---
-title: Set up GitHub
-description: >
-  [Login to or sign up for GitHub.](https://github.com/)
-subtasks:
-  - Set up two-factor authentication.
-  - Tell us your username so we can add you to our organization.
-  - Your notification settings for GitHub can be found [here](https://github.com/settings/notifications).
-    The minimum we require is that you have 'Email' checked under the header 'Participating'.
-  - You should clone repositories using the SSH URL from now on. Please follow the instructions
-    for [connecting to GitHub using SSH](https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh).
----
-title: Read through documents related to university owned computers
+title: Read through university owned computer policies
 description: >
   Since you will be trusted with university-owned computers and potentially
-  sensitive data, you should review these documents
+  sensitive data, you must review these documents
 subtasks:
   - '[Security Checklist](https://www.umass.edu/it/support/security/security-checklist-university-owned-computers)'
   - '[Understanding Sensitive Data](https://www.umass.edu/it/support/security/understand-sensitive-data-umass-amherst)'
   - '[Data Classification](https://www.umass.edu/it/support/security/data-classification-umass-amherst)'
----
-title: Read the transportation programmer policies
-description: >
-  This document lives in [one-drive](https://umass-my.sharepoint.com/). Ask Adam for access.
 ---
 title: Join Teams
 description: >
   We use [Microsoft Teams](https://aka.ms/mstfw) for communication every day.
   Log into teams with your "-af" account.
 ---
-title: Choose a text editor
+title: Prepare a development environment
 description: >
-  We don't care what text editor you use. However, we do have some suggestions.
-  Other people in the office have used [atom](https://atom.io/), [sublime](https://www.sublimetext.com/3)...
-  and [Vim](https://www.tutorialspoint.com/vim/vim_introduction.htm). Vim is already installed on your laptop,
-  so if you'd like a quick introduction, type `vimtutor` in your terminal.
+  Work with another developer to set up the following items:
+subtasks:
+  - Use [`strap`](https://strap.umasstransit.it/) to configure macOS
+  - Install [`mariadb`](https://formulae.brew.sh/formula/mariadb)
+  - Install [`rbenv`](https://github.com/rbenv/rbenv)
+  - Install [`nodenv`](https://github.com/nodenv/nodenv)
+  - Prepare an [`ssh` key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+  - Install a text editor/ide of your choice (e.g. [VSCode](https://code.visualstudio.com))
+---
+title: Configure GitHub
+description: >
+  Your github account must be configured and added to our organization.
+subtasks:
+  - Set up two-factor authentication
+  - Tell us your username so we can add you to our organization
+  - Your notification settings for GitHub can be found [here](https://github.com/settings/notifications).
+    The minimum we require is that you have 'Email' checked under the header 'Participating'
+  - You should clone repositories using the `ssh` URL from now on. Please follow the instructions
+    for [connecting to GitHub using `ssh`](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)).
 ---
 title: Complete a command line tutorial
 description: >
@@ -54,7 +54,13 @@ description: >
   complete [this](https://learning.oreilly.com/videos/git-essentials-become/9781800565630/)
   or another approved tutorial and link to it in a comment to close this issue.
 ---
-title: Complete a Rails Tutorial
+title: Complete a ruby tutorial
+description: >
+  There are many Ruby tutorials available which you can choose from. Download the [Ruby Koans](http://rubykoans.com/),
+  or the free [codeacademy](https://www.codecademy.com/learn/learn-ruby) course.
+  If neither of those options appeal to you you may choose another tutorial with your supervisor's approval.
+---
+title: Complete a rails tutorial
 description: >
   The current tutorial in use is Michael Hartl's [Ruby on Rails Tutorial](https://learning.oreilly.com/library/view/ruby-on-rails/9780136702726/).
   Log in for free using your UMass account to O'Reilly or, if you wish to use an alternate tutorial, talk to your supervisor.
@@ -66,39 +72,7 @@ description: >
     Since you'll be deploying code to production in a few short months, you can skip setting up a heroku account
     and all related steps.
 ---
-title: Complete a ruby tutorial
-description: >
-  There are many Ruby tutorials available which you can choose from. Log in for
-  free using your UMass account and watch [these videos](https://learning.oreilly.com/videos/ruby-fundamentals/300000006A0154),
-  or you can download the [Ruby Koans](http://rubykoans.com/). If neither of those
-  options appeal to you you may choose another tutorial with your supervisor's approval.
----
-title: Demonstrate understanding of Ruby core methods / Rails object extensions
-description: >
-  Some methods used in our Rails applications are Ruby methods. Some are
-  written in Rails, like `try` and `1.week`. Close this issue by referencing
-  some work where you have used both (can be two separate projects).
----
-title: Understand the basics of databases and models and their relationship
-description: >
-  Write a migration and use a model relationship correctly.
----
-title: Understand how to employ ActiveRecord
-description: https://guides.rubyonrails.org/active_record_querying.html
-subtasks:
-  - Use `joins` or `includes`
-  - Use `order` or `sort`
-  - Use `where`, `find`, or `find_by` and explain the differences between these three
----
-title: Have demonstrated familiarity with MVC architecture and the Rails asset pipeline
-subtasks:
-  - Demonstrate or explain that you know when to place logic in a controller and model,
-    and what logic does _not_ go in a view.
-  - Use a partial
-  - Demonstrate understanding of how to use routes (a link, a redirect, or creating routes)
-  - Use params in a controller
----
-title: Demonstrate understanding of correct and proper git usage
+title: Demonstrate an understanding of correct and proper git usage
 description: >
   Show that you understand how to properly use Git by writing commits that
   generally relate to atomic features or thoughts. Make sure you know how to
@@ -109,16 +83,42 @@ description: >
   Use effective descriptions that provide context of code and rationale for change.
   Tag some related issues.
 ---
-title: have given feedback on another programmers code
+title: Demonstrate an understanding of Ruby core methods / Rails object extensions
+description: >
+  Some methods used in our Rails applications are Ruby methods. Some are
+  written in Rails, like `try` and `1.week`. Close this issue by referencing
+  some work where you have used both (can be separate projects).
+---
+title: Demonstrate an understanding of SQL databases and their integrations with ActiveRecord
+description: >
+  Write a migration and use a model relationship correctly.
+---
+title: Demonstrate an understanding of how to employ ActiveRecord
+description: https://guides.rubyonrails.org/active_record_querying.html
+subtasks:
+  - Use `joins` or `includes`
+  - Use `order` or `sort`
+  - Use `where`, `find`, or `find_by` and explain the differences between these three
+---
+title: Demonstrate an understanding of MVC architecture
+subtasks:
+  - Demonstrate or explain what kinds of code belong where (models/controllers/helpers/views)
+  - Use a partial
+  - Demonstrate understanding of how to use routes (a link, a redirect, or creating routes)
+  - Use params in a controller
+---
+title: Demonstrate an understanding of front-end development
+subtasks:
+  - Generate HTML using HAML/ERB
+  - Use bootstrap/CSS to apply styling
+  - Use javascript to create/adjust interactive elements
+---
+title: Demonstrate an understanding of how and why to write tests
+subtasks:
+  - Write a model spec
+  - Write a request spec
+  - Write a system spec
+---
+title: Give feedback on another programmer's code
 description: >
   Ask helpful questions/suggest alternatives on someone else's code
----
-title: display a good understanding of how and why to write tests
-description: >
-  Demonstrate knowledge of basic model/controller/system test structure.
-  Demonstrate understanding of mocks/stubs and what purpose they serve.
----
-title: Display an understanding of front-end development
-description: >
-  Use CSS to apply styling to pages, and construct some HAML or ERB. Select
-  DOM elements using JQuery.
