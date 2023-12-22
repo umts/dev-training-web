@@ -17,7 +17,7 @@ class AppClient < Delegator
   # are used to initialize an `Octokit::Client` acting as the OAuth
   # application. This class delegates missing instance methods to that client.
   def initialize(client_id, client_secret)
-    super Octokit::Client.new(client_id: client_id, client_secret: client_secret)
+    super(Octokit::Client.new(client_id: client_id, client_secret: client_secret))
   end
 
   ##
