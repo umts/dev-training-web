@@ -10,16 +10,13 @@
     Before we can do that, however, we need you to authorize this application
     to make changes on GitHub on your behalf. When you click the button below,
     you'll be sent over to GitHub, given a summary of the access we're
-    requesting, and asked whether you want to authorize our application
-    = succeed '.' do
-      %sup *
+    requesting, and asked whether you want to authorize our application. If you
+    don't have a GitHub account yet, you'll also be given an opportunity to sign
+    up at this point.
   %p
     Assuming you agree, you'll be brought back here to complete the next step.
   %p
-    %sup *
     %small
-      If you don't have a GitHub account yet, you'll also be given an
-      opportunity to sign up at this point.
   %footer
     %form{ method: :post, action: '/auth/github' }
       %input{ type: :hidden, name: :authenticity_token, value: @csrf_token }
