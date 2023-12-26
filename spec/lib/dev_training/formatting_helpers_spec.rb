@@ -38,7 +38,7 @@ RSpec.describe DevTraining::FormattingHelpers do
       end
 
       it 'appends a tasklist' do
-        expect(call.scan(/\* \[ \]/).count).to be 2
+        expect(call.scan('* [ ]').count).to be 2
       end
     end
   end
