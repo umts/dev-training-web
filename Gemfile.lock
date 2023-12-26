@@ -120,7 +120,7 @@ GEM
     puma (6.4.0)
       nio4r (~> 2.0)
     racc (1.7.3)
-    rack (2.2.6.4)
+    rack (2.2.8)
     rack-protection (2.2.3)
       rack
     rack-test (1.1.0)
@@ -186,9 +186,9 @@ GEM
       rack (~> 2.2)
       rack-protection (= 2.2.3)
       tilt (~> 2.0)
-    sprockets (4.0.3)
+    sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
-      rack (> 1, < 3)
+      rack (>= 2.2.4, < 4)
     sshkit (1.21.7)
       mutex_m
       net-scp (>= 1.1.2)
