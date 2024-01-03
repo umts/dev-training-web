@@ -21,12 +21,12 @@ RSpec.describe AppClient do
   describe '.initialize' do
     it 'sets the client id' do
       expect(Octokit::Client).to have_received(:new)
-        .with(hash_including(client_id: client_id))
+        .with(hash_including(client_id:))
     end
 
     it 'sets the client secret' do
       expect(Octokit::Client).to have_received(:new)
-        .with(hash_including(client_secret: client_secret))
+        .with(hash_including(client_secret:))
     end
   end
 
