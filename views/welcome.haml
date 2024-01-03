@@ -15,8 +15,6 @@
     up at this point.
   %p
     Assuming you agree, you'll be brought back here to complete the next step.
-  %p
-    %small
   %footer
     %form{ method: :post, action: '/auth/github' }
       %input{ type: :hidden, name: :authenticity_token, value: @csrf_token }
