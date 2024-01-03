@@ -59,8 +59,6 @@ GEM
       temple (>= 0.8.2)
       thor
       tilt
-    haml-lint (0.999.999)
-      haml_lint
     haml_lint (0.52.0)
       haml (>= 4.0)
       parallel (~> 1.10)
@@ -215,7 +213,7 @@ DEPENDENCIES
   faker
   figaro
   haml
-  haml-lint
+  haml_lint
   octokit
   omniauth-github
   pry-byebug
