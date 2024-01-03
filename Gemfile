@@ -24,7 +24,7 @@ end
 
 group :development do
   gem 'bcrypt_pbkdf', require: false
-  gem 'capistrano', '~> 3.17', require: false
+  gem 'capistrano', '~> 3.18', require: false
   gem 'capistrano-bundler', require: false
   gem 'capistrano-passenger', require: false
   gem 'capistrano-pending', require: false
