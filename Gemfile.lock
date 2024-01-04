@@ -35,6 +35,8 @@ GEM
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
     faraday-net_http (3.0.2)
+    faraday-retry (2.2.0)
+      faraday (~> 2.0)
     ffi (1.15.5)
     figaro (1.2.0)
       thor (>= 0.14.0, < 2)
@@ -198,6 +200,7 @@ DEPENDENCIES
   capistrano-rails
   ed25519
   faker
+  faraday-retry
   figaro
   haml
   haml_lint
