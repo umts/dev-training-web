@@ -3,6 +3,7 @@
 source 'https://rubygems.org'
 ruby file: '.ruby-version'
 
+gem 'faraday-retry'
 gem 'figaro'
 gem 'haml'
 gem 'octokit'
