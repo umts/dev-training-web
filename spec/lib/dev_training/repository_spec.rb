@@ -15,8 +15,7 @@ RSpec.describe DevTraining::Repository do
     let(:resource) { Struct.new(:full_name).new("user/#{repo_name}") }
 
     before do
-      allow(client).to receive(:repository?).and_return(true)
-      allow(client).to receive(:repository).and_return(resource)
+      allow(client).to receive_messages(repository?: true, repository: resource)
       allow(client).to receive(:add_collaborator)
     end
 
@@ -32,8 +31,7 @@ RSpec.describe DevTraining::Repository do
 
     context 'when the repository exists on GitHub' do
       before do
-        allow(client).to receive(:repository?).and_return(true)
-        allow(client).to receive(:repository).and_return(:that_resource)
+        allow(client).to receive_messages(repository?: true, repository: :that_resource)
       end
 
       it 'returns the existing resource' do
@@ -43,8 +41,7 @@ RSpec.describe DevTraining::Repository do
 
     context 'when the repository does not exist on GitHub' do
       before do
-        allow(client).to receive(:repository?).and_return(false)
-        allow(client).to receive(:create_repository).and_return(:a_new_resource)
+        allow(client).to receive_messages(repository?: false, create_repository: :a_new_resource)
       end
 
       it 'returns the new resource' do

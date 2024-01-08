@@ -17,7 +17,7 @@ class AppClient < Delegator
   # are used to initialize an `Octokit::Client` acting as the OAuth
   # application. This class delegates missing instance methods to that client.
   def initialize(client_id, client_secret)
-    super Octokit::Client.new(client_id: client_id, client_secret: client_secret)
+    super(Octokit::Client.new(client_id:, client_secret:))
   end
 
   ##
@@ -25,13 +25,13 @@ class AppClient < Delegator
   def revoke_token(token)
     return unless token_valid? token
 
-    delete "applications/#{client_id}/grant", access_token: token
+    delete_app_authorization token
   end
 
   ##
   # Check to see whether the given token is valid for the OAuth application.
   def token_valid?(token)
-    check_application_authorization token, accept: 'application/vnd.github.v3+json'
+    check_token token
     true
   rescue Octokit::NotFound
     false

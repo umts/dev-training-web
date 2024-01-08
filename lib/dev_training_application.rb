@@ -21,10 +21,12 @@ class DevTrainingApplication < Sinatra::Base
     File.open logfile, 'a+'
   end)
 
-  set :collaborators, (proc { File.join root, 'config', 'collaborators.yml' })
-  set :qualifications, (proc { File.join root, 'config', 'qualifications.yml' })
-  set :readme, (proc { File.join root, 'config', 'README.md.erb' })
-  set :app_client, (proc { AppClient.new ENV['github_key'], ENV['github_secret'] })
+  set :collaborators, proc { File.join root, 'config', 'collaborators.yml' }
+  set :qualifications, proc { File.join root, 'config', 'qualifications.yml' }
+  set :readme, proc { File.join root, 'config', 'README.md.erb' }
+  set :app_client, (proc do
+    AppClient.new ENV.fetch('github_key'), ENV.fetch('github_secret')
+  end)
 
   set :sprockets, ApplicationAssets.new
   set :sessions, (ENV['session_secret'] ? { secret: ENV['session_secret'] } : {})
@@ -47,7 +49,7 @@ class DevTrainingApplication < Sinatra::Base
   end
 
   helpers do
-    def asset_path(file)  # :nodoc:
+    def asset_path(file) # :nodoc:
       settings.sprockets.asset_path(file, digest: settings.environment == :production)
     end
   end
@@ -55,7 +57,7 @@ class DevTrainingApplication < Sinatra::Base
   use OmniAuth::Builder do
     options = { scope: 'user:email, repo' }
     options[:provider_ignores_state] = true if ENV['RACK_ENV'] == 'development'
-    provider :github, ENV['github_key'], ENV['github_secret'], options
+    provider :github, ENV.fetch('github_key'), ENV.fetch('github_secret'), options
   end
 
   use Rack::Protection, use: %i[authenticity_token cookie_tossing form_token remote_referrer]
@@ -73,7 +75,7 @@ class DevTrainingApplication < Sinatra::Base
     token = session[:auth][:credentials][:token]
     training = DevTraining.new(token)
 
-    collaborators = YAML.safe_load(File.read(settings.collaborators))
+    collaborators = YAML.safe_load_file(settings.collaborators)
     qualifications = YAML.load_stream(File.read(settings.qualifications))
 
     training.create_issues! qualifications

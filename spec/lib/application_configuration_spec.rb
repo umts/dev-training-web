@@ -21,7 +21,7 @@ RSpec.describe ApplicationConfiguration do
     end
 
     it 'populates ENV' do
-      expect(ENV['test_key']).to eq('test_value')
+      expect(ENV.fetch('test_key', nil)).to eq('test_value')
     end
   end
 end

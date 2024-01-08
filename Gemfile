@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-ruby File.read(File.expand_path('.ruby-version', __dir__)).strip
+ruby file: '.ruby-version'
 
+gem 'faraday-retry'
 gem 'figaro'
 gem 'haml'
 gem 'octokit'
@@ -24,13 +25,13 @@ end
 
 group :development do
   gem 'bcrypt_pbkdf', require: false
-  gem 'capistrano', '~> 3.17', require: false
+  gem 'capistrano', '~> 3.18', require: false
   gem 'capistrano-bundler', require: false
   gem 'capistrano-passenger', require: false
   gem 'capistrano-pending', require: false
   gem 'capistrano-rails', require: false
   gem 'ed25519', require: false
-  gem 'haml-lint', require: false
+  gem 'haml_lint', require: false
   gem 'rubocop', require: false
   gem 'rubocop-rake', require: false
   gem 'rubocop-rspec', require: false

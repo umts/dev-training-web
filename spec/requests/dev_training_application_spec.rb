@@ -13,12 +13,11 @@ RSpec.describe DevTrainingApplication do
   let(:app) { described_class }
   let(:app_client) { instance_double AppClient }
   let(:auth) { Faker::Omniauth.github }
-  let(:session_secret) { 'SECRETSECRET' }
 
   before do
-    app.set :sessions, secret: session_secret
     app.set :app_client, app_client
     allow(app_client).to receive(:token_valid?).and_return(true)
+    stub_const 'ENV', { 'github_key' => 'key', 'github_secret' => 'secret' }
     OmniAuth.config.test_mode = true
   end
 
