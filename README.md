@@ -62,7 +62,12 @@ instance of `DevTraining::Readme`, see the documentation for more information.
 Running the App
 ===============
 
-It's a Rack app, so just `bundle exec rackup` should do it.
+```bash
+script/server
+```
+
+will start the development server using Puma. Alternately, it's a Rack app, so
+any other rack-compatible server will work if pointed at the `config.ru` file.
 
 Developing
 ==========
