@@ -2,8 +2,6 @@
 # frozen_string_literal: true
 
 require 'bundler'
-require 'irb'
-require 'irb/completion'
 
 $LOAD_PATH.unshift File.join(__dir__, '..', 'lib')
 Bundler.require(:default, :development)
@@ -16,12 +14,13 @@ require 'dev_training'
 
 $stdout.sync = true
 IRB.setup nil
-IRB.conf.merge!(
-  AUTO_INDENT: true,
-  IRB_NAME: 'dev-training',
-  IRB_PATH: '(dev-training)',
-  PROMPT_MODE: :CLASSIC,
-  RC: false
-)
+IRB.conf.tap do |c|
+  prompt = c[:PROMPT][:DEFAULT].dup
+  prompt[:RETURN].prepend '#'
+
+  c[:IRB_NAME] = 'dev-training'
+  c[:PROMPT][:CUSTOM] = prompt
+  c[:PROMPT_MODE] = :CUSTOM
+end
 
 IRB::Irb.new.run(IRB.conf)
