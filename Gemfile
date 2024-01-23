@@ -32,11 +32,12 @@ group :development do
   gem 'capistrano-rails', require: false
   gem 'ed25519', require: false
   gem 'haml_lint', require: false
+  gem 'irb'
   gem 'rubocop', require: false
   gem 'rubocop-rake', require: false
   gem 'rubocop-rspec', require: false
 end
 
 group :development, :test do
-  gem 'pry-byebug'
+  gem 'debug'
 end
