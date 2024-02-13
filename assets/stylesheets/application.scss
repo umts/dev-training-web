@@ -1,7 +1,31 @@
-/*
- *= require_tree .
- *= require_self
- */
+@use '@picocss/pico/scss/pico' with (
+  $enable-semantic-container: true,
+  $enable-classes: false,
+
+  $modules: (
+    "content/embedded": false,
+    "content/table": false,
+    "content/figure": false,
+
+    "forms/checkbox-radio-switch": false,
+    "forms/input-color": false,
+    "forms/input-date": false,
+    "forms/input-file": false,
+    "forms/input-range": false,
+    "forms/input-search": false,
+
+    "components/accordion": false,
+    "components/dropdown": false,
+    "components/group": false,
+    "components/loading": false,
+    "components/modal": false,
+    "components/nav": false,
+    "components/progress": false,
+    "components/tooltip": false
+  )
+);
+
+@import "pico";
 
 html, body {
   height: 100%;
@@ -10,6 +34,7 @@ html, body {
 body > footer {
   position: sticky;
   top: 100vh;
+  max-width: 100%;
   padding: var(--pico-spacing);
   display: flex;
   justify-content: center;

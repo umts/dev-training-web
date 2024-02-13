@@ -1,13 +1,56 @@
-$primary-hue: 0;
-$primary-50: hsl($primary-hue, 71%, 85%) !default;
-$primary-100: hsl($primary-hue, 69%, 77%) !default;
-$primary-200: hsl($primary-hue, 67%, 68%) !default;
-$primary-300: hsl($primary-hue, 65%, 59%) !default;
-$primary-400: hsl($primary-hue, 63%, 50%) !default;
-$primary-500: hsl($primary-hue, 61%, 41%) !default;
-$primary-600: hsl($primary-hue, 66%, 32%) !default; /* This is UMass Maroon */
-$primary-700: hsl($primary-hue, 71%, 23%) !default;
-$primary-800: hsl($primary-hue, 76%, 14%) !default;
-$primary-900: hsl($primary-hue, 81%, 6%) !default;
+/* https://maketintsandshades.com/#881c1c */
+$maroon-950: #f3e8e8;
+$maroon-900: #e7d2d2;
+$maroon-850: #dbbbbb;
+$maroon-800: #cfa4a4;
+$maroon-750: #c48e8e;
+$maroon-700: #b87777;
+$maroon-650: #ac6060;
+$maroon-600: #a04949;
+$maroon-550: #943333;
+$maroon-500: #881c1c;
+$maroon-450: #7a1919;
+$maroon-400: #6d1616;
+$maroon-350: #5f1414;
+$maroon-300: #521111;
+$maroon-250: #440e0e;
+$maroon-200: #360b0b;
+$maroon-150: #290808;
+$maroon-100: #1b0606;
+$maroon-50: #0e0303;
+$white: #fff;
 
-@import '@picocss/pico/scss/pico';
+[data-theme=light], :root:not([data-theme=dark]) {
+  --pico-text-selection-color: rgba(#{$maroon-400}, 0.25);
+  --pico-primary: #{$maroon-550};
+  --pico-primary-background: #{$maroon-550};
+  --pico-primary-underline: rgba(#{$maroon-550}, 0.5);
+  --pico-primary-hover: #{$maroon-650};
+  --pico-primary-hover-background: #{$maroon-600};
+  --pico-primary-focus: rgba(#{$maroon-400}, 0.5);
+  --pico-primary-inverse: #{$white};
+}
+
+@media only screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --pico-text-selection-color: rgba(#{$maroon-350}, 0.1875);
+    --pico-primary: #{$maroon-350};
+    --pico-primary-background: #{$maroon-550};
+    --pico-primary-underline: rgba(#{$maroon-350}, 0.5);
+    --pico-primary-hover: #{$maroon-250};
+    --pico-primary-hover-background: #{$maroon-500};
+    --pico-primary-focus: rgba(#{$maroon-350}, 0.375);
+    --pico-primary-inverse: #{$white};
+  }
+}
+
+[data-theme=dark] {
+  --pico-text-selection-color: rgba(#{$maroon-350}, 0.1875);
+  --pico-primary: #{$maroon-350};
+  --pico-primary-background: #{$maroon-550};
+  --pico-primary-underline: rgba(#{$maroon-350}, 0.5);
+  --pico-primary-hover: #{$maroon-250};
+  --pico-primary-hover-background: #{$maroon-500};
+  --pico-primary-focus: rgba(#{$maroon-350}, 0.375);
+  --pico-primary-inverse: #{$white};
+}
