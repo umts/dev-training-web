@@ -10,12 +10,12 @@ html, body {
 body > footer {
   position: sticky;
   top: 100vh;
-  padding: var(--spacing);
+  padding: var(--pico-spacing);
   display: flex;
   justify-content: center;
-  gap: calc(var(--spacing) * 2);
-  background: var(--secondary);
-  color: var(--secondary-inverse);
+  gap: calc(var(--pico-spacing) * 2);
+  background: var(--pico-secondary);
+  color: var(--pico-secondary-inverse);
   a {
     display: block;
     color: inherit;
