@@ -10,9 +10,9 @@ gem 'octokit'
 gem 'omniauth-github'
 gem 'puma'
 gem 'rake'
-gem 'sassc'
 gem 'sinatra', require: 'sinatra/base'
 gem 'sprockets'
+gem 'sprockets-sass_embedded'
 gem 'tilt'
 
 group :test do

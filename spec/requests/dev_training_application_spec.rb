@@ -190,7 +190,7 @@ RSpec.describe DevTrainingApplication do
         it 'says what the repo will be' do
           call
           repo_name = "#{auth[:info][:nickname]}/#{DevTraining::Repository::NAME}"
-          expect(last_response.body).to have_tag(:tt, text: repo_name)
+          expect(last_response.body).to have_tag(:code, text: repo_name)
         end
 
         it 'has a button to create the training repo' do
