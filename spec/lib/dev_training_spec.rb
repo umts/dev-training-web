@@ -8,12 +8,12 @@ RSpec.describe DevTraining do
     subject(:call) { described_class.new(:fake_token) }
 
     before do
-      allow(DevTraining::Training).to receive(:new) { |arg| arg }
+      allow(described_class::Training).to receive(:new) { |arg| arg }
     end
 
-    it 'returns a new `DevTraining::Training`' do
+    it 'returns a new `::Training`' do
       call
-      expect(DevTraining::Training).to have_received(:new)
+      expect(described_class::Training).to have_received(:new)
     end
 
     it 'passes along the token' do

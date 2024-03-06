@@ -66,7 +66,7 @@ RSpec.describe DevTraining::Readme do
       it 'creates a new readme' do
         call
         expect(client).to have_received(:create_contents)
-          .with('repo/name', DevTraining::Readme::FILENAME, anything, anything)
+          .with('repo/name', described_class::FILENAME, anything, anything)
       end
 
       it 'returns the created readme' do
