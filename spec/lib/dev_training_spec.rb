@@ -7,16 +7,14 @@ RSpec.describe DevTraining do
   describe '.new' do
     subject(:call) { described_class.new(:fake_token) }
 
-    # rubocop:disable RSpec/DescribedClass
     before do
-      allow(DevTraining::Training).to receive(:new) { |arg| arg }
+      allow(described_class::Training).to receive(:new) { |arg| arg }
     end
 
-    it 'returns a new `DevTraining::Training`' do
+    it 'returns a new `::Training`' do
       call
-      expect(DevTraining::Training).to have_received(:new)
+      expect(described_class::Training).to have_received(:new)
     end
-    # rubocop:enable RSpec/DescribedClass
 
     it 'passes along the token' do
       expect(call).to be(:fake_token)
