@@ -27,5 +27,5 @@ RSpec/MultipleMemoizedHelpers:
 RSpec/NestedGroups:
   Max: 4
 
-RSpec/Rails:
+RSpecRails:
   Enabled: false
