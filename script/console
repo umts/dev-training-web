@@ -16,7 +16,7 @@ $stdout.sync = true
 IRB.setup nil
 IRB.conf.tap do |c|
   prompt = c[:PROMPT][:DEFAULT].dup
-  prompt[:RETURN].prepend '#'
+  prompt[:RETURN] = "##{prompt[:RETURN]}"
 
   c[:IRB_NAME] = 'dev-training'
   c[:PROMPT][:CUSTOM] = prompt
