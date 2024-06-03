@@ -28,6 +28,7 @@ end
 # rubocop:enable Rake/Desc
 
 unless env == 'production'
+  require 'fileutils'
   require 'haml_lint/rake_task'
   require 'rdoc/task'
   require 'rspec/core/rake_task'
@@ -38,6 +39,10 @@ unless env == 'production'
     rdoc.rdoc_files.include('README.md', 'lib/**/*.rb')
     rdoc.main = 'README.md'
     rdoc.rdoc_dir = 'docs'
+  end
+
+  Rake::Task['rdoc'].enhance do
+    FileUtils.touch 'docs/.nojekyll'
   end
 
   RuboCop::RakeTask.new do |rubocop|
