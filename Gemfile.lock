@@ -9,7 +9,7 @@ GEM
     base64 (0.2.0)
     bcrypt_pbkdf (1.1.1)
     bcrypt_pbkdf (1.1.1-arm64-darwin)
-    capistrano (3.19.0)
+    capistrano (3.19.1)
       airbrussh (>= 1.0.0)
       i18n
       rake (>= 10.0.0)
