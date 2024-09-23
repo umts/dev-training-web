@@ -40,8 +40,8 @@ GEM
       faraday (~> 2.0)
     figaro (1.2.0)
       thor (>= 0.14.0, < 2)
-    google-protobuf (3.25.2-arm64-darwin)
-    google-protobuf (3.25.2-x86_64-linux)
+    google-protobuf (3.25.5-arm64-darwin)
+    google-protobuf (3.25.5-x86_64-linux)
     haml (6.3.0)
       temple (>= 0.8.2)
       thor
