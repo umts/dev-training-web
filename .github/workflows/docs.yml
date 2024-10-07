@@ -22,4 +22,11 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./docs
+  deploy:
+    runs-on: ubuntu-latest
+    needs: rdoc
+    permissions:
+      pages: write
+      id-token: write
+    steps:
       - uses: actions/deploy-pages@v4
