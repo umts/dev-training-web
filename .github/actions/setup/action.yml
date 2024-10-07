@@ -10,3 +10,4 @@ runs:
       with:
         node-version: 'lts/*'
     - run: script/setup
+      shell: bash
