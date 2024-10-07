@@ -16,7 +16,7 @@ FileUtils.chdir APP_ROOT do
   system! 'gem install bundler --conservative'
   system('bundle check') || system!('bundle install')
   system('if command -v rbenv &> /dev/null; then rbenv rehash; fi')
-  system 'bin/yarn'
+  system 'npm install'
 
   unless File.exist?('config/application.yml')
     FileUtils.cp 'config/application.yml.example', 'config/application.yml'
