@@ -14,8 +14,8 @@ jobs:
       - uses: actions/create-github-app-token@v1
         id: docs-github-app-token
         with:
-          app_id: ${{ vars.DOCS_APP_ID }}
-          private_key: ${{ secrets.DOCS_APP_SECRET_KEY }}
+          app-id: ${{ vars.DOCS_APP_ID }}
+          private-key: ${{ secrets.DOCS_APP_SECRET_KEY }}
       - uses: actions/checkout@v4
         with:
           token: ${{ steps.docs-github-app-token.outputs.token }}
@@ -23,6 +23,7 @@ jobs:
 
   rdoc:
     runs-on: ubuntu-latest
+    needs: setup
     steps:
       - run: 'bin/rake rdoc'
 
