@@ -45,7 +45,7 @@ a trainee's repository as collaborators.
 Each YAML document in this file corresponds to an issue that the trainee will be
 assigned to complete. Each document can have the following fields:
 
-* `title`: This will be the issue title, it is **required**
+* `title`: This will be the issue title, it's **required**
 * `description`: This will be the issue body
 * `subtasks`: This is an array of "sub-tasks" that will be used to construct a
   GitHub-flavored Markdown task-list appended to the issue body.
@@ -80,8 +80,7 @@ script/console
 ```
 
 will load the `ApplicationConfiguration`, require the `DevTraining` libraries,
-and (if possible) initialize a `DevTraining` to `@training` with your personal
-access token.
+and (if possible) initialize a `DevTraining` with your PAT to `@training`.
 
 Docs
 ----
