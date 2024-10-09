@@ -2,7 +2,7 @@ Introduction
 ============
 
 This application is a Sinatra-based web app for authorizing our developer
-trainees with GitHub and then creating a developer-training tacking repository
+trainees with GitHub and then creating a developer-training tracking repository
 for them on GitHub.
 
 The training repo is created in the trainee's account, and select staff are
@@ -96,6 +96,7 @@ this project.
 
 Tests and Linting
 -----------------
+
 RSpec, Rubocop, and Haml-Lint are in the `Gemfile`. You can run then the usual
 way. Alternatively, the default Rake task,
 
