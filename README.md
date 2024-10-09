@@ -80,7 +80,8 @@ script/console
 ```
 
 will load the `ApplicationConfiguration`, require the `DevTraining` libraries,
-and (if possible) initialize a `DevTraining` with your PAT to `@training`.
+and (if possible) initialize a `DevTraining` to `@training` with your personal
+access token.
 
 Docs
 ----
