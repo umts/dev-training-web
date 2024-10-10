@@ -7,24 +7,32 @@ on:
       - 'README.md'
       - 'lib/**/*.rb'
 jobs:
-  rdoc:
+  build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/create-github-app-token@v1
+        id: docs-github-app-token
+        with:
+          app-id: ${{ vars.DOCS_APP_ID }}
+          private-key: ${{ secrets.DOCS_APP_SECRET_KEY }}
       - uses: actions/checkout@v4
+        with:
+          token: ${{ steps.docs-github-app-token.outputs.token }}
       - uses: ./.github/actions/setup
       - run: 'bin/rake rdoc'
       - run: |-
           git config --global user.name 'GitHub Actions'
           git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add docs/
-          git commit -m 'Update documentation' || true
+          git commit -m 'Update documentation [skip ci]' || true
           git push
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./docs
+
   deploy:
     runs-on: ubuntu-latest
-    needs: rdoc
+    needs: build
     permissions:
       pages: write
       id-token: write
