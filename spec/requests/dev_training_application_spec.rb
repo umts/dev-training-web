@@ -16,6 +16,7 @@ RSpec.describe DevTrainingApplication do
 
   before do
     app.set :app_client, app_client
+    app.set :host_authorization, { allow_if: ->(_) { true } }
     allow(app_client).to receive(:token_valid?).and_return(true)
     stub_const 'ENV', { 'github_key' => 'key', 'github_secret' => 'secret' }
     OmniAuth.config.test_mode = true
