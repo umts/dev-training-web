@@ -6,10 +6,8 @@ description: >
 title: Read through university owned computer policies
 description: >
   Since you will be trusted with university-owned computers and potentially
-  sensitive data, you must review these documents
-subtasks:
-  - '[Security Checklist](https://www.umass.edu/it/support/security/security-checklist-university-owned-computers)'
-  - '[Data Categorization](https://www.umass.edu/it/security/data-categorization)'
+  sensitive data, you must review the [Service Categorizations](https://www.umass.edu/it/security/service-categorizations) 
+  document.
 ---
 title: Join Teams
 description: >
