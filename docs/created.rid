@@ -1,13 +1,13 @@
-Thu, 10 Oct 2024 16:54:54 +0000
-README.md	Thu, 10 Oct 2024 16:54:42 +0000
-lib/app_client.rb	Thu, 10 Oct 2024 16:54:42 +0000
-lib/application_assets.rb	Thu, 10 Oct 2024 16:54:42 +0000
-lib/application_configuration.rb	Thu, 10 Oct 2024 16:54:42 +0000
-lib/dev_training.rb	Thu, 10 Oct 2024 16:54:42 +0000
-lib/dev_training/formatting_helpers.rb	Thu, 10 Oct 2024 16:54:42 +0000
-lib/dev_training/issue.rb	Thu, 10 Oct 2024 16:54:42 +0000
-lib/dev_training/milestone.rb	Thu, 10 Oct 2024 16:54:42 +0000
-lib/dev_training/readme.rb	Thu, 10 Oct 2024 16:54:42 +0000
-lib/dev_training/repository.rb	Thu, 10 Oct 2024 16:54:42 +0000
-lib/dev_training/training.rb	Thu, 10 Oct 2024 16:54:42 +0000
-lib/dev_training_application.rb	Thu, 10 Oct 2024 16:54:42 +0000
+Wed, 29 Jan 2025 18:04:58 -0500
+README.md	Tue, 03 Dec 2024 16:00:33 -0500
+lib/app_client.rb	Mon, 08 Jan 2024 11:04:43 -0500
+lib/application_assets.rb	Fri, 22 Dec 2023 13:49:23 -0500
+lib/application_configuration.rb	Fri, 22 Dec 2023 13:49:23 -0500
+lib/dev_training.rb	Fri, 22 Dec 2023 13:49:23 -0500
+lib/dev_training/formatting_helpers.rb	Fri, 22 Dec 2023 13:49:23 -0500
+lib/dev_training/issue.rb	Fri, 22 Dec 2023 13:49:23 -0500
+lib/dev_training/milestone.rb	Fri, 22 Dec 2023 13:49:23 -0500
+lib/dev_training/readme.rb	Tue, 03 Dec 2024 16:00:33 -0500
+lib/dev_training/repository.rb	Fri, 22 Dec 2023 13:49:23 -0500
+lib/dev_training/training.rb	Thu, 04 Jan 2024 18:04:14 -0500
+lib/dev_training_application.rb	Tue, 26 Dec 2023 12:06:06 -0500
