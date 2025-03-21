@@ -45,10 +45,18 @@ GEM
       faraday (~> 2.0)
     figaro (1.2.0)
       thor (>= 0.14.0, < 2)
-    google-protobuf (3.25.5-arm64-darwin)
-    google-protobuf (3.25.5-x86-linux)
-    google-protobuf (3.25.5-x86_64-darwin)
-    google-protobuf (3.25.5-x86_64-linux)
+    google-protobuf (4.30.1-arm64-darwin)
+      bigdecimal
+      rake (>= 13)
+    google-protobuf (4.30.1-x86-linux)
+      bigdecimal
+      rake (>= 13)
+    google-protobuf (4.30.1-x86_64-darwin)
+      bigdecimal
+      rake (>= 13)
+    google-protobuf (4.30.1-x86_64-linux)
+      bigdecimal
+      rake (>= 13)
     haml (6.3.0)
       temple (>= 0.8.2)
       thor
@@ -182,14 +190,15 @@ GEM
       rubocop (~> 1.72, >= 1.72.1)
     ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
-    sass-embedded (1.70.0-arm64-darwin)
-      google-protobuf (~> 3.25)
-    sass-embedded (1.70.0-x86-linux-gnu)
-      google-protobuf (~> 3.25)
-    sass-embedded (1.70.0-x86_64-darwin)
-      google-protobuf (~> 3.25)
-    sass-embedded (1.70.0-x86_64-linux-gnu)
-      google-protobuf (~> 3.25)
+    sass-embedded (1.86.0)
+      google-protobuf (~> 4.30)
+      rake (>= 13)
+    sass-embedded (1.86.0-arm64-darwin)
+      google-protobuf (~> 4.30)
+    sass-embedded (1.86.0-x86_64-darwin)
+      google-protobuf (~> 4.30)
+    sass-embedded (1.86.0-x86_64-linux-gnu)
+      google-protobuf (~> 4.30)
     sawyer (0.9.2)
       addressable (>= 2.3.5)
       faraday (>= 0.17.3, < 3)
@@ -295,10 +304,10 @@ CHECKSUMS
   faraday-net_http (3.3.0) sha256=93e6b0f679b1e8e358bcb4e983a52328dfc47ebbe6a232e4f9e8aba9c924e565
   faraday-retry (2.2.1) sha256=4146fed14549c0580bf14591fca419a40717de0dd24f267a8ec2d9a728677608
   figaro (1.2.0) sha256=5c035fec76e597226e591ce4501aba37e059013d87ab47a1de5ab3cd0649e2fa
-  google-protobuf (3.25.5-arm64-darwin) sha256=02be442a2fe498ce7eaba48d332c8f19b516126b1facd0710079f9da0bc781d2
-  google-protobuf (3.25.5-x86-linux) sha256=7bc46ce7838064c2d2eb8ea7afc9a9ec71f2c659f76941af2e383246443fd2fd
-  google-protobuf (3.25.5-x86_64-darwin) sha256=5792cb1c742ce54950e83c454ce6c9f4f73b05017643a88a67dda2556d96f429
-  google-protobuf (3.25.5-x86_64-linux) sha256=d5174f864440e724d2cc84ef183cd19625086db45351c9e81eeea48008db1c3d
+  google-protobuf (4.30.1-arm64-darwin) sha256=f69682f65a0c2f689040714e2c6407c838b9113dce87d76e7e568f1213b7fdeb
+  google-protobuf (4.30.1-x86-linux) sha256=8a0184b952f2af573b15056ed467f771cb99512e8f8904b53eba086ffd91b05a
+  google-protobuf (4.30.1-x86_64-darwin) sha256=626836baf2470c5590fedda795598cea1c3385f690a97f2ed6d7d43a31110d9a
+  google-protobuf (4.30.1-x86_64-linux) sha256=84c87b239dec7a200dddbcbd9bdb03a59c109f4b32667a50bec84286faa9784e
   haml (6.3.0) sha256=8e6eb87d869639e348852009e74a2a1663d79663ed7e7dbcb38beb1f12bcdd97
   haml_lint (0.61.0) sha256=a8d7c912a9cad1ff1785011289fc54ff3be019cc786e1f0d0af04134c81fd623
   hashie (5.0.0) sha256=9d6c4e51f2a36d4616cbc8a322d619a162d8f42815a792596039fc95595603da
@@ -357,10 +366,10 @@ CHECKSUMS
   rubocop-rspec (3.5.0) sha256=710c942fe1af884ba8eea75cbb8bdbb051929a2208880a6fc2e2dce1eed5304c
   ruby-progressbar (1.13.0) sha256=80fc9c47a9b640d6834e0dc7b3c94c9df37f08cb072b7761e4a71e22cff29b33
   ruby2_keywords (0.0.5) sha256=ffd13740c573b7301cf7a2e61fc857b2a8e3d3aff32545d6f8300d8bae10e3ef
-  sass-embedded (1.70.0-arm64-darwin) sha256=035dd4d3fffe3516204b1b5e336a3af5a705fc163571d3a3104d41abdb547cc1
-  sass-embedded (1.70.0-x86-linux-gnu) sha256=ae2140391d245bc62cc60604e0e7403b82b1467d8dc7bab3471f7b56ee840557
-  sass-embedded (1.70.0-x86_64-darwin) sha256=502233ee9c9f0165ac6b5da85c70b7b7f8ec149387eda7391580e546ea520f87
-  sass-embedded (1.70.0-x86_64-linux-gnu) sha256=7f4a01bee4753e24fe9552f740c51f0ff503a8e9c7e90bed44392cb690bb2247
+  sass-embedded (1.86.0) sha256=c001646c6d996e38ec5a85d6f4f86472f4afa937a9490180f8552ace6e51f5db
+  sass-embedded (1.86.0-arm64-darwin) sha256=3d0911a600a3521c4c70b2fe902a2ea652853588488445d9af7a1cda8ed5d8b5
+  sass-embedded (1.86.0-x86_64-darwin) sha256=145d0c6011ca1d2ce2336c4baa6fb090e2d90cb1049fbb182591b28a56575311
+  sass-embedded (1.86.0-x86_64-linux-gnu) sha256=f93dcd93e92d473d137757958729f903fc17ffb5e444b4a42908777ad97a8ffb
   sawyer (0.9.2) sha256=fa3a72d62a4525517b18857ddb78926aab3424de0129be6772a8e2ba240e7aca
   simplecov (0.22.0) sha256=fe2622c7834ff23b98066bb0a854284b2729a569ac659f82621fc22ef36213a5
   simplecov-html (0.12.3) sha256=4b1aad33259ffba8b29c6876c12db70e5750cb9df829486e4c6e5da4fa0aa07b
