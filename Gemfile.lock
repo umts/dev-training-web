@@ -85,14 +85,14 @@ GEM
       net-ssh (>= 5.0.0, < 8.0.0)
     net-ssh (7.3.0)
     nio4r (2.7.4)
-    nokogiri (1.18.3)
+    nokogiri (1.18.4)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
-    nokogiri (1.18.3-arm64-darwin)
+    nokogiri (1.18.4-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.18.3-x86_64-darwin)
+    nokogiri (1.18.4-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.18.3-x86_64-linux-gnu)
+    nokogiri (1.18.4-x86_64-linux-gnu)
       racc (~> 1.4)
     oauth2 (2.0.9)
       faraday (>= 0.17.3, < 3.0)
@@ -318,10 +318,10 @@ CHECKSUMS
   net-sftp (4.0.0) sha256=65bb91c859c2f93b09826757af11b69af931a3a9155050f50d1b06d384526364
   net-ssh (7.3.0) sha256=172076c4b30ce56fb25a03961b0c4da14e1246426401b0f89cba1a3b54bf3ef0
   nio4r (2.7.4) sha256=d95dee68e0bb251b8ff90ac3423a511e3b784124e5db7ff5f4813a220ae73ca9
-  nokogiri (1.18.3) sha256=6b9fc3b14fd0cedd21f6cad8cf565123ba7401e56b5d0aec180c23cdca28fd5a
-  nokogiri (1.18.3-arm64-darwin) sha256=ce088965cd424b8e752d82087dcf017069d55791f157098ed1f671d966857610
-  nokogiri (1.18.3-x86_64-darwin) sha256=d729406bb5a7b1bbe7ed3c0922336dd2c46085ed444d6de2a0a4c33950a4edea
-  nokogiri (1.18.3-x86_64-linux-gnu) sha256=3c7ad5cee39855ed9c746065f39b584b9fd2aaff61df02d0f85ba8d671bbe497
+  nokogiri (1.18.4) sha256=bb7820521c1bbae1d3e0092ff03b27a8e700912b37d80f962b7e4567947a64ac
+  nokogiri (1.18.4-arm64-darwin) sha256=73902663b23b1123282b9c0b6d9654b1fb286dfee8d65cb1f6029087b7f0d037
+  nokogiri (1.18.4-x86_64-darwin) sha256=e4776f58eea9b94d05caf8bf351e3c6aa1cce01edcc2ed530f3c302c13178965
+  nokogiri (1.18.4-x86_64-linux-gnu) sha256=b1c6407b346b88704e97a342a80acd4755175324e624da34d0c5cfdc8d34191e
   oauth2 (2.0.9) sha256=b21f9defcf52dc1610e0dfab4c868342173dcd707fd15c777d9f4f04e153f7fb
   octokit (9.2.0) sha256=4fa47ff35ce654127edf2c836ab9269bcc8829f5542dc1e86871f697ce7f4316
   omniauth (2.1.2) sha256=def03277298b8f8a5d3ff16cdb2eb5edb9bffed60ee7dda24cc0c89b3ae6a0ce
