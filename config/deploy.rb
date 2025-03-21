@@ -15,10 +15,10 @@ set :deploy_to, "/srv/#{fetch :application}"
 set :keep_releases, 5
 
 append :linked_files, 'config/application.yml'
-append :linked_dirs, 'log', 'node_modules', 'public/assets'
+append :linked_dirs, 'log', 'public/assets'
 
 before 'git:check', 'git:allow_shared'
-before 'deploy:updated', 'yarn:install'
+before 'deploy:updated', 'npm:install'
 
 set :log_level, :info
 
