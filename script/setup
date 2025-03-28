@@ -18,7 +18,5 @@ FileUtils.chdir APP_ROOT do
   system('if command -v rbenv &> /dev/null; then rbenv rehash; fi')
   system 'npm install'
 
-  unless File.exist?('config/application.yml')
-    FileUtils.cp 'config/application.yml.example', 'config/application.yml'
-  end
+  FileUtils.cp 'config/application.yml.example', 'config/application.yml' unless File.exist?('config/application.yml')
 end
