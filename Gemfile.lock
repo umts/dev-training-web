@@ -35,13 +35,13 @@ GEM
     ed25519 (1.3.0)
     faker (3.5.1)
       i18n (>= 1.8.11, < 2)
-    faraday (2.12.0)
-      faraday-net_http (>= 2.0, < 3.4)
+    faraday (2.12.2)
+      faraday-net_http (>= 2.0, < 3.5)
       json
       logger
-    faraday-net_http (3.3.0)
-      net-http
-    faraday-retry (2.2.1)
+    faraday-net_http (3.4.0)
+      net-http (>= 0.5.0)
+    faraday-retry (2.3.0)
       faraday (~> 2.0)
     figaro (1.2.0)
       thor (>= 0.14.0, < 2)
@@ -79,13 +79,13 @@ GEM
     jwt (2.7.1)
     language_server-protocol (3.17.0.4)
     lint_roller (1.1.0)
-    logger (1.6.1)
+    logger (1.7.0)
     mini_portile2 (2.8.8)
     multi_xml (0.7.1)
       bigdecimal (~> 3.1)
     mustermann (3.0.3)
       ruby2_keywords (~> 0.0.1)
-    net-http (0.4.1)
+    net-http (0.6.0)
       uri
     net-scp (4.0.0)
       net-ssh (>= 2.6.5, < 8.0.0)
@@ -240,7 +240,7 @@ GEM
     unicode-display_width (3.1.4)
       unicode-emoji (~> 4.0, >= 4.0.4)
     unicode-emoji (4.0.4)
-    uri (0.13.2)
+    uri (1.0.3)
     version_gem (1.1.3)
 
 PLATFORMS
@@ -302,9 +302,9 @@ CHECKSUMS
   docile (1.4.0) sha256=5f1734bde23721245c20c3d723e76c104208e1aa01277a69901ce770f0ebb8d3
   ed25519 (1.3.0) sha256=514a5584f84d39daac568a17ec93a4e7261e140c52c562ed8c382c18456e627d
   faker (3.5.1) sha256=1ad1fbea279d882f486059c23fe3ddb816ccd1d7052c05a45014b4450d859bfc
-  faraday (2.12.0) sha256=d106d0b1bc2548a8c0c34619a657a5e4aeae2780f951b0e095c8f803bbbf4517
-  faraday-net_http (3.3.0) sha256=93e6b0f679b1e8e358bcb4e983a52328dfc47ebbe6a232e4f9e8aba9c924e565
-  faraday-retry (2.2.1) sha256=4146fed14549c0580bf14591fca419a40717de0dd24f267a8ec2d9a728677608
+  faraday (2.12.2) sha256=157339c25c7b8bcb739f5cf1207cb0cefe8fa1c65027266bcbc34c90c84b9ad6
+  faraday-net_http (3.4.0) sha256=a1f1e4cd6a2cf21599c8221595e27582d9936819977bbd4089a601f24c64e54a
+  faraday-retry (2.3.0) sha256=7e17d1738e256cfdacadfb5558bb9a62b7b5054784fe8072c4e967c313677acc
   figaro (1.2.0) sha256=5c035fec76e597226e591ce4501aba37e059013d87ab47a1de5ab3cd0649e2fa
   google-protobuf (4.30.1-arm64-darwin) sha256=f69682f65a0c2f689040714e2c6407c838b9113dce87d76e7e568f1213b7fdeb
   google-protobuf (4.30.1-x86-linux) sha256=8a0184b952f2af573b15056ed467f771cb99512e8f8904b53eba086ffd91b05a
@@ -320,11 +320,11 @@ CHECKSUMS
   jwt (2.7.1) sha256=07357cd2f180739b2f8184eda969e252d850ac996ed0a23f616e8ff0a90ae19b
   language_server-protocol (3.17.0.4) sha256=c484626478664fd13482d8180947c50a8590484b1258b99b7aedb3b69df89669
   lint_roller (1.1.0) sha256=2c0c845b632a7d172cb849cc90c1bce937a28c5c8ccccb50dfd46a485003cc87
-  logger (1.6.1) sha256=3ad9587ed3940bf7897ea64a673971415523f4f7d6b22c5e3af5219705669653
+  logger (1.7.0) sha256=196edec7cc44b66cfb40f9755ce11b392f21f7967696af15d274dde7edff0203
   mini_portile2 (2.8.8) sha256=8e47136cdac04ce81750bb6c09733b37895bf06962554e4b4056d78168d70a75
   multi_xml (0.7.1) sha256=4fce100c68af588ff91b8ba90a0bb3f0466f06c909f21a32f4962059140ba61b
   mustermann (3.0.3) sha256=d1f8e9ba2ddaed47150ddf81f6a7ea046826b64c672fbc92d83bce6b70657e88
-  net-http (0.4.1) sha256=a96efc5ea18bcb9715e24dda4159d10f67ff0345c8a980d04630028055b2c282
+  net-http (0.6.0) sha256=9621b20c137898af9d890556848c93603716cab516dc2c89b01a38b894e259fb
   net-scp (4.0.0) sha256=b32ded0d48c88ce70844a063e4e14efb44a95e51a9e0c0bfb0c54b4313b622ea
   net-sftp (4.0.0) sha256=65bb91c859c2f93b09826757af11b69af931a3a9155050f50d1b06d384526364
   net-ssh (7.3.0) sha256=172076c4b30ce56fb25a03961b0c4da14e1246426401b0f89cba1a3b54bf3ef0
@@ -389,7 +389,7 @@ CHECKSUMS
   tilt (2.6.0) sha256=263d748466e0d83e510aa1a2e2281eff547937f0ef06be33d3632721e255f76b
   unicode-display_width (3.1.4) sha256=8caf2af1c0f2f07ec89ef9e18c7d88c2790e217c482bfc78aaa65eadd5415ac1
   unicode-emoji (4.0.4) sha256=2c2c4ef7f353e5809497126285a50b23056cc6e61b64433764a35eff6c36532a
-  uri (0.13.2) sha256=a557196e652011bcff0b36d29f9e427fefcf60cc35c0ab8cce08768a6287e457
+  uri (1.0.3) sha256=e9f2244608eea2f7bc357d954c65c910ce0399ca5e18a7a29207ac22d8767011
   version_gem (1.1.3) sha256=07ba4b679abc44198950d191a994d5a504f8f6aad470178e491467f638d0df60
 
 RUBY VERSION
