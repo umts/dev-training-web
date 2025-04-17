@@ -25,7 +25,7 @@ GEM
     capistrano-rails (1.7.0)
       capistrano (~> 3.1)
       capistrano-bundler (>= 1.1, < 3)
-    concurrent-ruby (1.3.4)
+    concurrent-ruby (1.3.5)
     date (3.4.1)
     debug (1.10.0)
       irb (~> 1.10)
@@ -45,16 +45,16 @@ GEM
       faraday (~> 2.0)
     figaro (1.2.0)
       thor (>= 0.14.0, < 2)
-    google-protobuf (4.30.1-arm64-darwin)
+    google-protobuf (4.30.2-arm64-darwin)
       bigdecimal
       rake (>= 13)
-    google-protobuf (4.30.1-x86-linux)
+    google-protobuf (4.30.2-x86-linux)
       bigdecimal
       rake (>= 13)
-    google-protobuf (4.30.1-x86_64-darwin)
+    google-protobuf (4.30.2-x86_64-darwin)
       bigdecimal
       rake (>= 13)
-    google-protobuf (4.30.1-x86_64-linux)
+    google-protobuf (4.30.2-x86_64-linux)
       bigdecimal
       rake (>= 13)
     haml (6.3.0)
@@ -138,7 +138,7 @@ GEM
     puma (6.6.0)
       nio4r (~> 2.0)
     racc (1.8.1)
-    rack (3.1.12)
+    rack (3.1.13)
     rack-protection (4.1.1)
       base64 (>= 0.1.0)
       logger (>= 1.6.0)
@@ -192,14 +192,14 @@ GEM
       rubocop (~> 1.72, >= 1.72.1)
     ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
-    sass-embedded (1.86.0)
+    sass-embedded (1.86.3)
       google-protobuf (~> 4.30)
       rake (>= 13)
-    sass-embedded (1.86.0-arm64-darwin)
+    sass-embedded (1.86.3-arm64-darwin)
       google-protobuf (~> 4.30)
-    sass-embedded (1.86.0-x86_64-darwin)
+    sass-embedded (1.86.3-x86_64-darwin)
       google-protobuf (~> 4.30)
-    sass-embedded (1.86.0-x86_64-linux-gnu)
+    sass-embedded (1.86.3-x86_64-linux-gnu)
       google-protobuf (~> 4.30)
     sawyer (0.9.2)
       addressable (>= 2.3.5)
@@ -223,7 +223,8 @@ GEM
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
-    sprockets-sass_embedded (0.2.2)
+    sprockets-sass_embedded (0.3.1)
+      base64
       sass-embedded (>= 1.54.6)
       sprockets (~> 4.0)
     sshkit (1.23.2)
@@ -295,7 +296,7 @@ CHECKSUMS
   capistrano-passenger (0.2.1) sha256=07a1d25edd5c1d909c19d4fe45fe2ea5f11200569f6967f6bff1d605ade98e13
   capistrano-pending (0.2.0) sha256=f9e8c1e6b6a2ce760ed49ccb470c474f802c1d453704fb62d67ca4c1ee547066
   capistrano-rails (1.7.0) sha256=aca57455e8c5435785e0f938e16aa5b79c263694a755e1dca1c5d1743b40aae7
-  concurrent-ruby (1.3.4) sha256=d4aa926339b0a86b5b5054a0a8c580163e6f5dcbdfd0f4bb916b1a2570731c32
+  concurrent-ruby (1.3.5) sha256=813b3e37aca6df2a21a3b9f1d497f8cbab24a2b94cab325bffe65ee0f6cbebc6
   date (3.4.1) sha256=bf268e14ef7158009bfeaec40b5fa3c7271906e88b196d958a89d4b408abe64f
   debug (1.10.0) sha256=11e28ca74875979e612444104f3972bd5ffb9e79179907d7ad46dba44bd2e7a4
   diff-lcs (1.5.1) sha256=273223dfb40685548436d32b4733aa67351769c7dea621da7d9dd4813e63ddfe
@@ -306,10 +307,10 @@ CHECKSUMS
   faraday-net_http (3.4.0) sha256=a1f1e4cd6a2cf21599c8221595e27582d9936819977bbd4089a601f24c64e54a
   faraday-retry (2.3.1) sha256=4004faa21f41fc5360d359bc79889fc58fb7fae0ce93bfb737a784ac76805c03
   figaro (1.2.0) sha256=5c035fec76e597226e591ce4501aba37e059013d87ab47a1de5ab3cd0649e2fa
-  google-protobuf (4.30.1-arm64-darwin) sha256=f69682f65a0c2f689040714e2c6407c838b9113dce87d76e7e568f1213b7fdeb
-  google-protobuf (4.30.1-x86-linux) sha256=8a0184b952f2af573b15056ed467f771cb99512e8f8904b53eba086ffd91b05a
-  google-protobuf (4.30.1-x86_64-darwin) sha256=626836baf2470c5590fedda795598cea1c3385f690a97f2ed6d7d43a31110d9a
-  google-protobuf (4.30.1-x86_64-linux) sha256=84c87b239dec7a200dddbcbd9bdb03a59c109f4b32667a50bec84286faa9784e
+  google-protobuf (4.30.2-arm64-darwin) sha256=c66a93ceef100fb2390615e76310491cc6e1944f7b9cda2cf1e3279887f817d1
+  google-protobuf (4.30.2-x86-linux) sha256=8b56a7a1465ffdcfa86bd3067e6b4db7a96dc10f6697ccf3e09d2443398278e9
+  google-protobuf (4.30.2-x86_64-darwin) sha256=17f4567dff431f8dd5be5ff6395824ec044413f67d2803a9941ebc8c70dec604
+  google-protobuf (4.30.2-x86_64-linux) sha256=c96993d98732ea185d98279f6c76e130eb9595437dda39610b3398c9e348518e
   haml (6.3.0) sha256=8e6eb87d869639e348852009e74a2a1663d79663ed7e7dbcb38beb1f12bcdd97
   haml_lint (0.62.0) sha256=e5262eee682848b9bd89cd3d20eb0efdaf3126762ad93e6707c9858eb3abef61
   hashie (5.0.0) sha256=9d6c4e51f2a36d4616cbc8a322d619a162d8f42815a792596039fc95595603da
@@ -348,7 +349,7 @@ CHECKSUMS
   public_suffix (6.0.1) sha256=61d44e1cab5cbbbe5b31068481cf16976dd0dc1b6b07bd95617ef8c5e3e00c6f
   puma (6.6.0) sha256=f25c06873eb3d5de5f0a4ebc783acc81a4ccfe580c760cfe323497798018ad87
   racc (1.8.1) sha256=4a7f6929691dbec8b5209a0b373bc2614882b55fc5d2e447a21aaa691303d62f
-  rack (3.1.12) sha256=00d83055c89273eb13679ab562767b8826955aa6c4371d7d161deb975c50c540
+  rack (3.1.13) sha256=170c79db621882884d9a28d9cd5bd228c663fddcd367c4dea22c9a1808645792
   rack-protection (4.1.1) sha256=51a254a5d574a7f0ca4f0672025ce2a5ef7c8c3bd09c431349d683e825d7d16a
   rack-session (2.0.0) sha256=db04b2063e180369192a9046b4559af311990af38c6a93d4c600cee4eb6d4e81
   rack-test (2.2.0) sha256=005a36692c306ac0b4a9350355ee080fd09ddef1148a5f8b2ac636c720f5c463
@@ -369,10 +370,10 @@ CHECKSUMS
   rubocop-rspec (3.5.0) sha256=710c942fe1af884ba8eea75cbb8bdbb051929a2208880a6fc2e2dce1eed5304c
   ruby-progressbar (1.13.0) sha256=80fc9c47a9b640d6834e0dc7b3c94c9df37f08cb072b7761e4a71e22cff29b33
   ruby2_keywords (0.0.5) sha256=ffd13740c573b7301cf7a2e61fc857b2a8e3d3aff32545d6f8300d8bae10e3ef
-  sass-embedded (1.86.0) sha256=c001646c6d996e38ec5a85d6f4f86472f4afa937a9490180f8552ace6e51f5db
-  sass-embedded (1.86.0-arm64-darwin) sha256=3d0911a600a3521c4c70b2fe902a2ea652853588488445d9af7a1cda8ed5d8b5
-  sass-embedded (1.86.0-x86_64-darwin) sha256=145d0c6011ca1d2ce2336c4baa6fb090e2d90cb1049fbb182591b28a56575311
-  sass-embedded (1.86.0-x86_64-linux-gnu) sha256=f93dcd93e92d473d137757958729f903fc17ffb5e444b4a42908777ad97a8ffb
+  sass-embedded (1.86.3) sha256=476dd84d18bf6e3f905f576da75eb723bbc7f76620eed5fec7c0f7bca674905a
+  sass-embedded (1.86.3-arm64-darwin) sha256=722cae205a971efb982e151a3d098e62b331d7b97525376a2fee5b2b84e6158d
+  sass-embedded (1.86.3-x86_64-darwin) sha256=92e64cf8358a439fed165995a0e3783464f7768882c07ae0f40af2a2eb906a58
+  sass-embedded (1.86.3-x86_64-linux-gnu) sha256=7a62a2e706a457e063f2877a6953c1ae8fed60ffee312bcf3969810d54bd9b5f
   sawyer (0.9.2) sha256=fa3a72d62a4525517b18857ddb78926aab3424de0129be6772a8e2ba240e7aca
   simplecov (0.22.0) sha256=fe2622c7834ff23b98066bb0a854284b2729a569ac659f82621fc22ef36213a5
   simplecov-html (0.12.3) sha256=4b1aad33259ffba8b29c6876c12db70e5750cb9df829486e4c6e5da4fa0aa07b
@@ -380,7 +381,7 @@ CHECKSUMS
   sinatra (4.1.1) sha256=4e997b859aa1b5d2e624f85d5b0fd0f0b3abc0da44daa6cbdf10f7c0da9f4d00
   snaky_hash (2.0.1) sha256=1ac87ec157fcfe7a460e821e0cd48ae1e6f5e3e082ab520f03f31a9259dbdc31
   sprockets (4.2.1) sha256=951b13dd2f2fcae840a7184722689a803e0ff9d2702d902bd844b196da773f97
-  sprockets-sass_embedded (0.2.2) sha256=ab8169a9d03da384cd3979d9b664267050fee8953dd5c9e4923a6a63d6797bee
+  sprockets-sass_embedded (0.3.1) sha256=929c5f51fc8e361b3d6e02b076417d0ebaa438f0e3c4e7bc0c1d48d81b2db89c
   sshkit (1.23.2) sha256=76d7088fddeaf3ac37bad20e7121f7352367cae6bb0cdbc7d7354efc714d213b
   stringio (3.1.6) sha256=292c495d1657adfcdf0a32eecf12a60e6691317a500c3112ad3b2e31068274f5
   sysexits (1.2.0) sha256=598241c4ae57baa403c125182dfdcc0d1ac4c0fb606dd47fbed57e4aaf795662
