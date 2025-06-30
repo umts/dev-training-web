@@ -62,7 +62,7 @@ GEM
       temple (>= 0.8.2)
       thor
       tilt
-    haml_lint (0.62.0)
+    haml_lint (0.64.0)
       haml (>= 5.0)
       parallel (~> 1.10)
       rainbow
@@ -316,7 +316,7 @@ CHECKSUMS
   google-protobuf (4.30.2-x86_64-darwin) sha256=17f4567dff431f8dd5be5ff6395824ec044413f67d2803a9941ebc8c70dec604
   google-protobuf (4.30.2-x86_64-linux) sha256=c96993d98732ea185d98279f6c76e130eb9595437dda39610b3398c9e348518e
   haml (6.3.0) sha256=8e6eb87d869639e348852009e74a2a1663d79663ed7e7dbcb38beb1f12bcdd97
-  haml_lint (0.62.0) sha256=e5262eee682848b9bd89cd3d20eb0efdaf3126762ad93e6707c9858eb3abef61
+  haml_lint (0.64.0) sha256=0b9738a9fff57bf7478c72b34d7f4b45d0721239270625939b7cda88c28273bf
   hashie (5.0.0) sha256=9d6c4e51f2a36d4616cbc8a322d619a162d8f42815a792596039fc95595603da
   i18n (1.14.6) sha256=dc229a74f5d181f09942dd60ab5d6e667f7392c4ee826f35096db36d1fe3614c
   io-console (0.8.0) sha256=cd6a9facbc69871d69b2cb8b926fc6ea7ef06f06e505e81a64f14a470fddefa2
