@@ -41,10 +41,6 @@ unless env == 'production'
     rdoc.rdoc_dir = 'docs'
   end
 
-  Rake::Task['rdoc'].enhance do
-    FileUtils.touch 'docs/.nojekyll'
-  end
-
   RuboCop::RakeTask.new do |rubocop|
     next unless ENV['CI']
 
