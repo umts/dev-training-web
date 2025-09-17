@@ -33,7 +33,7 @@ jobs:
           git add docs/
           git commit -m 'Update documentation [skip ci]' || true
           git push
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v4
         with:
           path: ./docs
 
