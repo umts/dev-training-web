@@ -22,7 +22,7 @@ jobs:
           owner: umts
           repositories: dev-training-web
           permission-contents: write
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           token: ${{ steps.docs-github-app-token.outputs.token }}
       - uses: ./.github/actions/setup
