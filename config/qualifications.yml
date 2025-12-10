@@ -59,9 +59,14 @@ description: >
 ---
 title: Complete a ruby tutorial
 description: >
-  There are many Ruby tutorials available which you can choose from. Download the [Ruby Koans](http://rubykoans.com/),
-  or the free [codeacademy](https://www.codecademy.com/learn/learn-ruby) course.
-  If neither of those options appeal to you you may choose another tutorial with your supervisor's approval.
+  The majority of our applications are written in ruby, so a firm grasp on the language is essential.
+
+  Work through the [Ruby Koans](http://rubykoans.com/), which are a set of worksheets that teach you ruby
+  syntax/concepts as you go.
+
+  Check in with your lead developer to get them set up properly.
+  
+  Check in with your lead developer to review the materials and have any questions answered once you are finished.
 ---
 title: Complete a rails tutorial
 description: >
