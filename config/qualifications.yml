@@ -59,12 +59,12 @@ description: >
 ---
 title: Complete a ruby tutorial
 description: >
-  The majority of our applications are written in ruby, so a firm grasp on the language is essential.
+  The majority of our applications are written in ruby.
 
   Work through the [Ruby Koans](http://rubykoans.com/), which are a set of worksheets that teach you ruby
   syntax/concepts as you go.
 
-  Check in with your lead developer to get them set up properly.
+  Check in with your lead developer to get set up properly before starting.
   
   Check in with your lead developer to review the materials and have any questions answered once you are finished.
 ---
@@ -72,19 +72,26 @@ title: Complete a web development crash course
 description: >
   We write and maintain web applications, so an understanding of web technologies is essential.
 
-  Meet with your lead developer to go over fundamentals and architecture, as well as basic HTML/CSS/JS.
+  Meet with your lead developer to go over fundamentals and architecture, relational databases, as well as basic
+  HTML/CSS/JS.
 ---
 title: Complete a rails tutorial
 description: >
-  The current tutorial in use is Michael Hartl's [Ruby on Rails Tutorial](https://learning.oreilly.com/library/view/ruby-on-rails/9780136702726/).
-  Log in for free using your UMass account to O'Reilly or, if you wish to use an alternate tutorial, talk to your supervisor.
+  A smaller majority of our applications are written with Ruby on Rails.
 
-  You can follow the tutorial pretty closely, except for the following caveats below.
-  - In section 1.1.1 "Development environment", don't set up cloud9.
-    Your laptop has been set up with a development environment.
-  - In section 1.4.1 "Heroku setup and Deployment", there are instructions to set up a Heroku account to deploy your code to.
-    Since you'll be deploying code to production in a few short months, you can skip setting up a heroku account
-    and all related steps.
+  Work through [The Odin Project's Ruby on Rails Course](https://www.theodinproject.com/paths/full-stack-ruby-on-rails/courses/ruby-on-rails),
+  which will expose you to all the Rails subsystems.
+
+  There are some sections you will need to skip or get alternative explanations/directions about, specifically:
+  - All Projects (i.e. lessons starting with "Project:")
+  - Introduction / Installing PostgreSQL
+  - Rails Basics / Deployment
+  - Assets and Navigation / Importmaps
+  - Assets and Navigation / Turbo Drive
+  - APIs / Working with External APIs
+  - Rails Sprinkles (entire module)
+
+  Check in with your lead developer to get set up properly before starting and in-between each module.
 ---
 title: Demonstrate an understanding of correct and proper git usage
 description: >
