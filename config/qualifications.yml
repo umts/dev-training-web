@@ -44,14 +44,18 @@ description: >
   Work through [Software Carpentry's Unix Shell Course](https://swcarpentry.github.io/shell-novice/) to
   get the basics down.
 
-  Check in with your lead developer to review the materials and have any questions answered before closing this issue.
+  Check in with your lead developer to review the materials and have any questions answered once you are finished.
 ---
 title: Complete a git tutorial
 description: >
-  We use Git in combination with Github to work collaboratively on our code.
-  Log in to O'Reilly's learning tools for free with your UMass account and
-  complete [this](https://learning.oreilly.com/videos/git-essentials-become/9781800565630/)
-  or another approved tutorial and link to it in a comment to close this issue.
+  We use Git as version control and to work collaboratively on our code.
+
+  Work through the relevant sections of the [Pro Git Book](https://git-scm.com/book/en/v2):
+  - [ ] 1.1 - 1.4
+  - [ ] 2.1 - 2.5
+  - [ ] 3.1 - 3.7 (Whole chapter)
+
+  Check in with your lead developer to review the materials and have any questions answered once you are finished.
 ---
 title: Complete a ruby tutorial
 description: >
