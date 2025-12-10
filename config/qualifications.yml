@@ -68,6 +68,12 @@ description: >
   
   Check in with your lead developer to review the materials and have any questions answered once you are finished.
 ---
+title: Complete a web development crash course
+description: >
+  We write and maintain web applications, so an understanding of web technologies is essential.
+
+  Meet with your lead developer to go over fundamentals and architecture, as well as basic HTML/CSS/JS.
+---
 title: Complete a rails tutorial
 description: >
   The current tutorial in use is Michael Hartl's [Ruby on Rails Tutorial](https://learning.oreilly.com/library/view/ruby-on-rails/9780136702726/).
