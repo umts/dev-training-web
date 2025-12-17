@@ -25,7 +25,7 @@ end
 
 group :development do
   gem 'bcrypt_pbkdf', require: false
-  gem 'capistrano', '~> 3.19', require: false
+  gem 'capistrano', '~> 3.20', require: false
   gem 'capistrano-bundler', require: false
   gem 'capistrano-passenger', require: false
   gem 'capistrano-pending', require: false
@@ -33,6 +33,7 @@ group :development do
   gem 'ed25519', require: false
   gem 'haml_lint', require: false
   gem 'irb'
+  gem 'rdoc', require: false
   gem 'rubocop', require: false
   gem 'rubocop-rake', require: false
   gem 'rubocop-rspec', require: false
