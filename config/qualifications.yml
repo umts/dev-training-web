@@ -41,7 +41,7 @@ description: >
   Work through [Software Carpentry's Unix Shell Course](https://swcarpentry.github.io/shell-novice/) to
   get the basics down.
 
-  Check in with your lead developer to review the materials and have any questions answered once you are finished.
+  Reach out to your lead developer on Teams to review the materials and have any questions answered once you are finished.
 ---
 title: Complete a git tutorial
 description: >
@@ -52,7 +52,8 @@ description: >
   - [ ] 2.1 - 2.5
   - [ ] 3.1 - 3.7 (Whole chapter)
 
-  Check in with your lead developer to review the materials and have any questions answered once you are finished.
+  Reach out to your lead developer on Teams to review the materials and have any questions answered once you are
+  finished.
 ---
 title: Complete a ruby tutorial
 description: >
@@ -61,9 +62,10 @@ description: >
   Work through the [Ruby Koans](http://rubykoans.com/), which are a set of worksheets that teach you ruby
   syntax/concepts as you go.
 
-  Check in with your lead developer to get set up properly before starting.
+  Reach out to your lead developer on Teams to get set up properly before starting.
   
-  Check in with your lead developer to review the materials and have any questions answered once you are finished.
+  Reach out to your lead developer on Teams to review the materials and have any questions answered once you are
+  finished.
 ---
 title: Complete a web development crash course
 description: >
@@ -79,7 +81,10 @@ description: >
   Work through [The Odin Project's Ruby on Rails Course](https://www.theodinproject.com/paths/full-stack-ruby-on-rails/courses/ruby-on-rails),
   which will expose you to all the Rails subsystems.
 
-  There are some sections you will need to skip or get alternative explanations/directions about, specifically:
+  Reach out to your lead developer on Teams to get set up properly before starting and in-between each module.
+
+  There are some sections you will need to skip or get alternative explanations/directions about as well.
+  Reach out to your lead developer on Teams before starting:
   - All Projects (i.e. lessons starting with "Project:")
   - Introduction / Installing PostgreSQL
   - Rails Basics / Deployment
@@ -87,8 +92,6 @@ description: >
   - Assets and Navigation / Turbo Drive
   - APIs / Working with External APIs
   - Rails Sprinkles (entire module)
-
-  Check in with your lead developer to get set up properly before starting and in-between each module.
 ---
 title: Demonstrate an understanding of correct and proper git usage
 description: >
