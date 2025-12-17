@@ -19,9 +19,6 @@ description: >
   Work with another developer to set up the following items:
 subtasks:
   - Use [`strap`](https://strap.umasstransit.it/) to configure macOS
-  - Install [`mysql`](https://formulae.brew.sh/formula/mysql)
-  - Install [`rbenv`](https://github.com/rbenv/rbenv)
-  - Install [`nodenv`](https://github.com/nodenv/nodenv)
   - Prepare an [`ssh` key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
   - Install a text editor/ide of your choice (e.g. [VSCode](https://code.visualstudio.com))
 ---
