@@ -277,6 +277,7 @@ DEPENDENCIES
   puma
   rack-test
   rake
+  rdoc
   rspec
   rspec-html-matchers
   rubocop

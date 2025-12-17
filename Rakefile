@@ -36,6 +36,7 @@ unless env == 'production'
 
   RDoc::Task.new do |rdoc|
     rdoc.markup = 'markdown'
+    rdoc.generator = 'aliki'
     rdoc.rdoc_files.include('README.md', 'lib/**/*.rb')
     rdoc.main = 'README.md'
     rdoc.rdoc_dir = 'docs'
