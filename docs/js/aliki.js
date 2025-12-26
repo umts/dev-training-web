@@ -28,7 +28,7 @@ function createSearchInstance(input, result) {
 
   result.classList.remove("initially-hidden");
 
-  const search = new Search(search_data, input, result);
+  const search = new SearchController(search_data, input, result);
 
   search.renderItem = function(result) {
     const li = document.createElement('li');
@@ -40,8 +40,12 @@ function createSearchInstance(input, result) {
       html += `<span class="params">${result.params}</span>`;
     html += '</a>';
 
-    if (result.namespace)
-      html += `<p class="search-namespace">${this.hlt(result.namespace)}`;
+    // Add type indicator
+    if (result.type) {
+      const typeLabel = this.formatType(result.type);
+      const typeClass = result.type.replace(/_/g, '-');
+      html += `<span class="search-type search-type-${this.escapeHTML(typeClass)}">${typeLabel}</span>`;
+    }
 
     if (result.snippet)
       html += `<div class="search-snippet">${result.snippet}</div>`;
@@ -51,16 +55,19 @@ function createSearchInstance(input, result) {
     return li;
   }
 
+  search.formatType = function(type) {
+    const typeLabels = {
+      'class': 'class',
+      'module': 'module',
+      'constant': 'const',
+      'instance_method': 'method',
+      'class_method': 'method'
+    };
+    return typeLabels[type] || type;
+  }
+
   search.select = function(result) {
-    let href = result.firstChild.firstChild.href;
-    const query = this.input.value;
-    if (query) {
-      const url = new URL(href, window.location.origin);
-      url.searchParams.set('q', query);
-      url.searchParams.set('nav', '0');
-      href = url.toString();
-    }
-    window.location.href = href;
+    window.location.href = result.firstChild.firstChild.href;
   }
 
   search.scrollIntoView = search.scrollInWindow;
@@ -70,7 +77,7 @@ function createSearchInstance(input, result) {
 
 function hookSearch() {
   const input  = document.querySelector('#search-field');
-  const result = document.querySelector('#search-results');
+  const result = document.querySelector('#search-results-desktop');
 
   if (!input || !result) return; // Exit if search elements not found
 
@@ -82,15 +89,27 @@ function hookSearch() {
   const search = createSearchInstance(input, result);
   if (!search) return;
 
+  // Hide search results when clicking outside the search area
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.navbar-search-desktop')) {
+      search.hide();
+    }
+  });
+
+  // Show search results when focusing on input (if there's a query)
+  input.addEventListener('focus', () => {
+    if (input.value.trim()) {
+      search.show();
+    }
+  });
+
   // Check for ?q= URL parameter and trigger search automatically
   if (typeof URLSearchParams !== 'undefined') {
     const urlParams = new URLSearchParams(window.location.search);
     const queryParam = urlParams.get('q');
     if (queryParam) {
-      const navParam = urlParams.get('nav');
-      const autoSelect = navParam !== '0';
       input.value = queryParam;
-      search.search(queryParam, autoSelect);
+      search.search(queryParam, false);
     }
   }
 }
@@ -143,9 +162,12 @@ function hookSidebar() {
   });
 
   const isSmallViewport = window.matchMedia("(max-width: 1023px)").matches;
-  if (isSmallViewport) {
-    closeNav();
 
+  // The sidebar is hidden by default with the `hidden` attribute
+  // On large viewports, we display the sidebar with JavaScript
+  // This is better than the opposite approach of hiding it with JavaScript
+  // because it avoids flickering the sidebar when the page is loaded, especially on mobile devices
+  if (isSmallViewport) {
     // Close nav when clicking links inside it
     document.addEventListener('click', (e) => {
       if (e.target.closest('#navigation a')) {
@@ -161,6 +183,8 @@ function hookSidebar() {
         closeNav();
       }
     });
+  } else {
+    openNav();
   }
 }
 
@@ -363,9 +387,7 @@ function hookSearchModal() {
     if (queryParam && isSmallViewport) {
       openSearchModal();
       searchInput.value = queryParam;
-      const navParam = urlParams.get('nav');
-      const autoSelect = navParam !== '0';
-      mobileSearch.search(queryParam, autoSelect);
+      mobileSearch.search(queryParam, false);
     }
   }
 }
