@@ -50,41 +50,41 @@
 </script>
 
 <script
-  src="../js/theme-toggle.js?v=6.17.0"
+  src="../js/theme-toggle.js?v=7.0.3"
 ></script>
 
 <script
-  src="../js/navigation.js?v=6.17.0"
+  src="../js/search_navigation.js?v=7.0.3"
   defer
 ></script>
 
 <script
-  src="../js/search.js?v=6.17.0"
+  src="../js/search_data.js?v=7.0.3"
   defer
 ></script>
 
 <script
-  src="../js/search_index.js?v=6.17.0"
+  src="../js/search_ranker.js?v=7.0.3"
   defer
 ></script>
 
 <script
-  src="../js/searcher.js?v=6.17.0"
+  src="../js/search_controller.js?v=7.0.3"
   defer
 ></script>
 
 <script
-  src="../js/c_highlighter.js?v=6.17.0"
+  src="../js/c_highlighter.js?v=7.0.3"
   defer
 ></script>
 
 <script
-  src="../js/aliki.js?v=6.17.0"
+  src="../js/aliki.js?v=7.0.3"
   defer
 ></script>
 
 <link
-  href="../css/rdoc.css?v=6.17.0"
+  href="../css/rdoc.css?v=7.0.3"
   rel="stylesheet"
 >
 
@@ -310,13 +310,13 @@
   <div class="navbar-search navbar-search-desktop" role="search">
     <form action="#" method="get" accept-charset="utf-8">
       <input id="search-field" role="combobox" aria-label="Search"
-             aria-autocomplete="list" aria-controls="search-results"
+             aria-autocomplete="list" aria-controls="search-results-desktop"
              type="text" name="search" placeholder="Search (/) for a class, method..."
              spellcheck="false" autocomplete="off"
              title="Type to search, Up and Down to navigate, Enter to load">
-      <ul id="search-results" aria-label="Search Results"
+      <ul id="search-results-desktop" aria-label="Search Results"
           aria-busy="false" aria-expanded="false"
-          aria-atomic="false" class="initially-hidden"></ul>
+          aria-atomic="false" class="initially-hidden search-results"></ul>
     </form>
   </div>
 
@@ -350,7 +350,7 @@
     <div class="search-modal-body">
       <ul id="search-results-mobile" aria-label="Search Results"
           aria-busy="false" aria-expanded="false"
-          aria-atomic="false" class="search-modal-results initially-hidden"></ul>
+          aria-atomic="false" class="search-results search-modal-results initially-hidden"></ul>
       <div class="search-modal-empty">
         <p>No recent searches</p>
       </div>
@@ -363,7 +363,7 @@
 </div>
 
 
-<nav id="navigation" role="navigation">
+<nav id="navigation" role="navigation" hidden>
   
 
 
@@ -573,6 +573,9 @@
 
 
 
+
+
+
      <section id="public-class-5Buntitled-5D-method-details" class="method-section anchor-link">
        <header>
          <h3 id="public-class-methods"><a href="#public-class-methods">Public Class Methods</a></h3>
@@ -597,11 +600,6 @@
               <summary>Source</summary>
             </details>
           </div>
-
-
-
-        <div class="method-description">
-
           <div class="method-source-code" id="new-source">
             <pre class="ruby" data-language="ruby"><span class="ruby-comment"># File lib/dev_training/training.rb, line 25</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">token</span>)
@@ -611,6 +609,9 @@
 <span class="ruby-keyword">end</span></pre>
           </div>
 
+
+
+        <div class="method-description">
 
 
           <p>Initialized with a GitHub token. In the console, you can use a Personal Access Token, but the Sinatra app uses an OAuth token. Note that many of the objects in a training instance create GitHub resources lazily. So, nothing will be created on GitHub at initialization.</p>
@@ -626,6 +627,12 @@
 
 
     </section>
+
+
+
+
+
+
 
      <section id="public-instance-5Buntitled-5D-method-details" class="method-section anchor-link">
        <header>
@@ -651,11 +658,6 @@
               <summary>Source</summary>
             </details>
           </div>
-
-
-
-        <div class="method-description">
-
           <div class="method-source-code" id="add_collaborators-21-source">
             <pre class="ruby" data-language="ruby"><span class="ruby-comment"># File lib/dev_training/training.rb, line 34</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add_collaborators!</span>(<span class="ruby-identifier">collaborators</span>)
@@ -663,6 +665,9 @@
 <span class="ruby-keyword">end</span></pre>
           </div>
 
+
+
+        <div class="method-description">
 
 
           <p>Takes an array of login names and adds them in turn as outside collaborators to the repository.</p>
@@ -695,11 +700,6 @@
               <summary>Source</summary>
             </details>
           </div>
-
-
-
-        <div class="method-description">
-
           <div class="method-source-code" id="create_issues-21-source">
             <pre class="ruby" data-language="ruby"><span class="ruby-comment"># File lib/dev_training/training.rb, line 49</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create_issues!</span>(<span class="ruby-identifier">stream</span>)
@@ -709,6 +709,9 @@
 <span class="ruby-keyword">end</span></pre>
           </div>
 
+
+
+        <div class="method-description">
 
 
           <p>Takes an <code>Array</code> of <code>Hash</code>es, each in the format a <a href="Issue.html"><code>DevTraining::Issue</code></a> expects, and returns an <code>Array</code> of resources as created on or returned from GitHub.</p>
@@ -741,11 +744,6 @@
               <summary>Source</summary>
             </details>
           </div>
-
-
-
-        <div class="method-description">
-
           <div class="method-source-code" id="create_readme-21-source">
             <pre class="ruby" data-language="ruby"><span class="ruby-comment"># File lib/dev_training/training.rb, line 41</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create_readme!</span>(<span class="ruby-identifier">filename</span>)
@@ -753,6 +751,9 @@
 <span class="ruby-keyword">end</span></pre>
           </div>
 
+
+
+        <div class="method-description">
 
 
           <p>Takes a filename that will be passed to a new <a href="Readme.html"><code>DevTraining::Readme</code></a>, and then returns the resource as created on or returned from GitHub.</p>
@@ -768,6 +769,9 @@
 
 
     </section>
+
+
+
 
   </section>
 
@@ -788,7 +792,7 @@
 
   <div class="footer-bottom">
     <p>
-      Generated by <a href="https://ruby.github.io/rdoc/">RDoc 6.17.0</a>
+      Generated by <a href="https://ruby.github.io/rdoc/">RDoc 7.0.3</a>
       using the Aliki theme by <a href="http://st0012.dev">Stan Lo</a>
     </p>
   </div>

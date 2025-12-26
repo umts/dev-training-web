@@ -1,13 +1,13 @@
-Wed, 17 Dec 2025 15:30:00 +0000
-README.md	Wed, 17 Dec 2025 15:29:51 +0000
-lib/app_client.rb	Wed, 17 Dec 2025 15:29:51 +0000
-lib/application_assets.rb	Wed, 17 Dec 2025 15:29:51 +0000
-lib/application_configuration.rb	Wed, 17 Dec 2025 15:29:51 +0000
-lib/dev_training.rb	Wed, 17 Dec 2025 15:29:51 +0000
-lib/dev_training/formatting_helpers.rb	Wed, 17 Dec 2025 15:29:51 +0000
-lib/dev_training/issue.rb	Wed, 17 Dec 2025 15:29:51 +0000
-lib/dev_training/milestone.rb	Wed, 17 Dec 2025 15:29:51 +0000
-lib/dev_training/readme.rb	Wed, 17 Dec 2025 15:29:51 +0000
-lib/dev_training/repository.rb	Wed, 17 Dec 2025 15:29:51 +0000
-lib/dev_training/training.rb	Wed, 17 Dec 2025 15:29:51 +0000
-lib/dev_training_application.rb	Wed, 17 Dec 2025 15:29:51 +0000
+Fri, 26 Dec 2025 16:33:41 +0000
+README.md	Fri, 26 Dec 2025 16:33:29 +0000
+lib/app_client.rb	Fri, 26 Dec 2025 16:33:29 +0000
+lib/application_assets.rb	Fri, 26 Dec 2025 16:33:29 +0000
+lib/application_configuration.rb	Fri, 26 Dec 2025 16:33:29 +0000
+lib/dev_training.rb	Fri, 26 Dec 2025 16:33:29 +0000
+lib/dev_training/formatting_helpers.rb	Fri, 26 Dec 2025 16:33:29 +0000
+lib/dev_training/issue.rb	Fri, 26 Dec 2025 16:33:29 +0000
+lib/dev_training/milestone.rb	Fri, 26 Dec 2025 16:33:29 +0000
+lib/dev_training/readme.rb	Fri, 26 Dec 2025 16:33:29 +0000
+lib/dev_training/repository.rb	Fri, 26 Dec 2025 16:33:29 +0000
+lib/dev_training/training.rb	Fri, 26 Dec 2025 16:33:29 +0000
+lib/dev_training_application.rb	Fri, 26 Dec 2025 16:33:29 +0000
