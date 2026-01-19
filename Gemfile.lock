@@ -62,7 +62,7 @@ GEM
       temple (>= 0.8.2)
       thor
       tilt
-    haml_lint (0.68.0)
+    haml_lint (0.69.0)
       haml (>= 5.0)
       parallel (~> 1.10)
       rainbow
@@ -241,7 +241,7 @@ GEM
     stringio (3.2.0)
     sysexits (1.2.0)
     temple (0.10.4)
-    thor (1.4.0)
+    thor (1.5.0)
     tilt (2.7.0)
     tsort (0.2.0)
     unicode-display_width (3.2.0)
@@ -320,7 +320,7 @@ CHECKSUMS
   google-protobuf (4.30.2-x86_64-darwin) sha256=17f4567dff431f8dd5be5ff6395824ec044413f67d2803a9941ebc8c70dec604
   google-protobuf (4.30.2-x86_64-linux) sha256=c96993d98732ea185d98279f6c76e130eb9595437dda39610b3398c9e348518e
   haml (7.1.0) sha256=aed691bddcaaf4855398b3e4dd39d8590600b0f0151f4def1c2aa83bfd444248
-  haml_lint (0.68.0) sha256=25a9f3887886e7bf432ee15f3223d321995d3013872a23edc99d50e382416569
+  haml_lint (0.69.0) sha256=8b6aff90691fe5b58e3a8e0cd5455a32f79adf23838ec460d325bcaca3dd7d99
   hashie (5.0.0) sha256=9d6c4e51f2a36d4616cbc8a322d619a162d8f42815a792596039fc95595603da
   i18n (1.14.7) sha256=ceba573f8138ff2c0915427f1fc5bdf4aa3ab8ae88c8ce255eb3ecf0a11a5d0f
   io-console (0.8.2) sha256=d6e3ae7a7cc7574f4b8893b4fca2162e57a825b223a177b7afa236c5ef9814cc
@@ -394,7 +394,7 @@ CHECKSUMS
   stringio (3.2.0) sha256=c37cb2e58b4ffbd33fe5cd948c05934af997b36e0b6ca6fdf43afa234cf222e1
   sysexits (1.2.0) sha256=598241c4ae57baa403c125182dfdcc0d1ac4c0fb606dd47fbed57e4aaf795662
   temple (0.10.4) sha256=b7a1e94b6f09038ab0b6e4fe0126996055da2c38bec53a8a336f075748fff72c
-  thor (1.4.0) sha256=8763e822ccb0f1d7bee88cde131b19a65606657b847cc7b7b4b82e772bcd8a3d
+  thor (1.5.0) sha256=e3a9e55fe857e44859ce104a84675ab6e8cd59c650a49106a05f55f136425e73
   tilt (2.7.0) sha256=0d5b9ba69f6a36490c64b0eee9f6e9aad517e20dcc848800a06eb116f08c6ab3
   tsort (0.2.0) sha256=9650a793f6859a43b6641671278f79cfead60ac714148aabe4e3f0060480089f
   unicode-display_width (3.2.0) sha256=0cdd96b5681a5949cdbc2c55e7b420facae74c4aaf9a9815eee1087cb1853c42
