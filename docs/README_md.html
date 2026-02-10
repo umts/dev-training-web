@@ -45,41 +45,46 @@
 </script>
 
 <script
-  src="./js/theme-toggle.js?v=7.0.3"
+  src="./js/theme-toggle.js?v=7.2.0"
 ></script>
 
 <script
-  src="./js/search_navigation.js?v=7.0.3"
+  src="./js/search_navigation.js?v=7.2.0"
   defer
 ></script>
 
 <script
-  src="./js/search_data.js?v=7.0.3"
+  src="./js/search_data.js?v=7.2.0"
   defer
 ></script>
 
 <script
-  src="./js/search_ranker.js?v=7.0.3"
+  src="./js/search_ranker.js?v=7.2.0"
   defer
 ></script>
 
 <script
-  src="./js/search_controller.js?v=7.0.3"
+  src="./js/search_controller.js?v=7.2.0"
   defer
 ></script>
 
 <script
-  src="./js/c_highlighter.js?v=7.0.3"
+  src="./js/c_highlighter.js?v=7.2.0"
   defer
 ></script>
 
 <script
-  src="./js/aliki.js?v=7.0.3"
+  src="./js/bash_highlighter.js?v=7.2.0"
+  defer
+></script>
+
+<script
+  src="./js/aliki.js?v=7.2.0"
   defer
 ></script>
 
 <link
-  href="./css/rdoc.css?v=7.0.3"
+  href="./css/rdoc.css?v=7.2.0"
   rel="stylesheet"
 >
 
@@ -422,32 +427,37 @@
 
 <main role="main" aria-label="Page README.md">
 
-<h1 id="label-Introduction"><a href="#label-Introduction">Introduction</a></h1>
+<span id="label-Introduction" class="legacy-anchor"></span>
+<h1 id="introduction"><a href="#introduction">Introduction</a></h1>
 
 <p>This application is a Sinatra-based web app for authorizing our developer trainees with GitHub and then creating a developer-training tracking repository for them on GitHub.</p>
 
 <p>The training repo is created in the trainee’s account, and select staff are added as “outside collaborators” to it.</p>
 
-<h1 id="label-Setup"><a href="#label-Setup">Setup</a></h1>
+<span id="label-Setup" class="legacy-anchor"></span>
+<h1 id="setup"><a href="#setup">Setup</a></h1>
 
 <p>Clone the repository and run the setup script</p>
 
-<pre class="ruby"><span class="ruby-identifier">script</span><span class="ruby-operator">/</span><span class="ruby-identifier">setup</span>
-</pre>
+<pre class="bash">script/setup</pre>
 
-<h1 id="label-Configuration"><a href="#label-Configuration">Configuration</a></h1>
+<span id="label-Configuration" class="legacy-anchor"></span>
+<h1 id="configuration"><a href="#configuration">Configuration</a></h1>
 
-<h2 id="label-application.yml"><a href="#label-application.yml"><code>application.yml</code></a></h2>
+<span id="label-application.yml" class="legacy-anchor"></span>
+<h2 id="applicationyml"><a href="#applicationyml"><code>application.yml</code></a></h2>
 
 <p>You’ll need an OAuth app on GitHub in order to interact with the GitHub API. See “<a href="https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app">Creating an OAuth App</a>” for more information. For local development, create an app with an “authorization callback URL” of <code>http://localhost:9292/auth/github/callback</code>.</p>
 
 <p>Finally, if you want to interact with the GitHub API in the developer console, You can create a <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">Personal Access Token</a> (PAT). This is optional, but if it’s defined in the config, then <code>@training</code> in the console will be initialized with that token.</p>
 
-<h2 id="label-collaborators.yml"><a href="#label-collaborators.yml"><code>collaborators.yml</code></a></h2>
+<span id="label-collaborators.yml" class="legacy-anchor"></span>
+<h2 id="collaboratorsyml"><a href="#collaboratorsyml"><code>collaborators.yml</code></a></h2>
 
 <p>This is just a YAML array containing the GitHub usernames that will be added to a trainee’s repository as collaborators.</p>
 
-<h2 id="label-qualifications.yml"><a href="#label-qualifications.yml"><code>qualifications.yml</code></a></h2>
+<span id="label-qualifications.yml" class="legacy-anchor"></span>
+<h2 id="qualificationsyml"><a href="#qualificationsyml"><code>qualifications.yml</code></a></h2>
 
 <p>Each YAML document in this file corresponds to an issue that the trainee will be assigned to complete. Each document can have the following fields:</p>
 <ul><li>
@@ -460,27 +470,30 @@
 
 <p>This file is kept in source-control with the intention that changes to our training process can go through the normal PR, review, merge process.</p>
 
-<h2 id="label-README.md.erb"><a href="#label-README.md.erb"><code>README.md.erb</code></a></h2>
+<span id="label-README.md.erb" class="legacy-anchor"></span>
+<h2 id="readmemderb"><a href="#readmemderb"><code>README.md.erb</code></a></h2>
 
 <p>This is the template used for new training repositories. It’s passed to an instance of <a href="DevTraining/Readme.html"><code>DevTraining::Readme</code></a>, see the documentation for more information.</p>
 
-<h1 id="label-Running+the+App"><a href="#label-Running+the+App">Running the App</a></h1>
+<span id="label-Running+the+App" class="legacy-anchor"></span>
+<h1 id="running-the-app"><a href="#running-the-app">Running the App</a></h1>
 
-<pre class="ruby"><span class="ruby-identifier">script</span><span class="ruby-operator">/</span><span class="ruby-identifier">server</span>
-</pre>
+<pre class="bash">script/server</pre>
 
 <p>will start the development server using Puma. Alternately, it’s a Rack app, so any other rack-compatible server will work if pointed at the <code>config.ru</code> file.</p>
 
-<h1 id="label-Developing"><a href="#label-Developing">Developing</a></h1>
+<span id="label-Developing" class="legacy-anchor"></span>
+<h1 id="developing"><a href="#developing">Developing</a></h1>
 
-<h2 id="label-Developer+Console"><a href="#label-Developer+Console">Developer Console</a></h2>
+<span id="label-Developer+Console" class="legacy-anchor"></span>
+<h2 id="developer-console"><a href="#developer-console">Developer Console</a></h2>
 
-<pre class="ruby"><span class="ruby-identifier">script</span><span class="ruby-operator">/</span><span class="ruby-identifier">console</span>
-</pre>
+<pre class="bash">script/console</pre>
 
 <p>will load the <a href="ApplicationConfiguration.html"><code>ApplicationConfiguration</code></a>, require the <a href="DevTraining.html"><code>DevTraining</code></a> libraries, and (if possible) initialize a <a href="DevTraining.html"><code>DevTraining</code></a> with your PAT to <code>@training</code>.</p>
 
-<h2 id="label-Docs"><a href="#label-Docs">Docs</a></h2>
+<span id="label-Docs" class="legacy-anchor"></span>
+<h2 id="docs"><a href="#docs">Docs</a></h2>
 
 <p>API Documentation is generated with RDoc:</p>
 
@@ -489,12 +502,12 @@
 
 <p>The <a href="https://umts.github.io/dev-training-web/">compiled documentation</a> is available in the GH pages environment for this project.</p>
 
-<h2 id="label-Tests+and+Linting"><a href="#label-Tests+and+Linting">Tests and Linting</a></h2>
+<span id="label-Tests+and+Linting" class="legacy-anchor"></span>
+<h2 id="tests-and-linting"><a href="#tests-and-linting">Tests and Linting</a></h2>
 
 <p>RSpec, Rubocop, and Haml-Lint are in the <code>Gemfile</code>. You can run then the usual way. Alternatively, the default Rake task,</p>
 
-<pre class="ruby"><span class="ruby-identifier">bundle</span> <span class="ruby-identifier">exec</span> <span class="ruby-identifier">rake</span>
-</pre>
+<pre class="bash">bundle exec rake</pre>
 
 <p>will run all of them (stopping on the first tool to fail).</p>
 
@@ -515,7 +528,7 @@
 
   <div class="footer-bottom">
     <p>
-      Generated by <a href="https://ruby.github.io/rdoc/">RDoc 7.0.3</a>
+      Generated by <a href="https://ruby.github.io/rdoc/">RDoc 7.2.0</a>
       using the Aliki theme by <a href="http://st0012.dev">Stan Lo</a>
     </p>
   </div>
