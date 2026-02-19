@@ -23,3 +23,4 @@ before 'deploy:updated', 'npm:install'
 set :log_level, :info
 
 set :capistrano_pending_role, :app
+set :bundle_version, 4
