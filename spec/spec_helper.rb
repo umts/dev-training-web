@@ -1,8 +1,5 @@
 # frozen_string_literal: true
 
-require 'bundler'
-Bundler.require(:default, :test)
-
 SimpleCov.start do
   enable_coverage :branch
   load_profile 'test_frameworks'
@@ -10,7 +7,8 @@ SimpleCov.start do
   track_files 'lib/**/*.rb'
 end
 
-$LOAD_PATH.unshift File.join(__dir__, '..', 'lib')
+ENV['RACK_ENV'] = 'test'
+require_relative 'config/environment'
 
 Dir.glob(File.join(__dir__, 'support/**/*.rb')).each { |f| require f }
 

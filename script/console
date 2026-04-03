@@ -1,10 +1,7 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require 'bundler'
-
-$LOAD_PATH.unshift File.join(__dir__, '..', 'lib')
-Bundler.require(:default, :development)
+require_relative '../config/environment'
 
 require 'application_configuration'
 ApplicationConfiguration.load!

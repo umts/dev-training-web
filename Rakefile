@@ -1,10 +1,6 @@
 # frozen_string_literal: true
 
-$LOAD_PATH.unshift File.join(__dir__, 'lib')
-
-require 'bundler'
-env = ENV['RACK_ENV'] || 'development'
-Bundler.require(:default, env)
+require_relative 'config/environment'
 
 require 'application_configuration'
 ApplicationConfiguration.load!
