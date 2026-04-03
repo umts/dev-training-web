@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-SimpleCov.start do
+Simplecov.start do
   enable_coverage :branch
   load_profile 'test_frameworks'
   add_filter %r{^/vendor/}
