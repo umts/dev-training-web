@@ -9,9 +9,12 @@ jobs:
     uses: umts/.github/.github/workflows/haml-lint.yml@main
   rspec:
     name: app
-    uses: umts/.github/.github/workflows/rspec.yml@384a4e64b8b22a06e3e237f3d939ffea78321b60
+    uses: umts/.github/.github/workflows/rspec.yml@main
     with:
       node: true
   rubocop:
     name: app
     uses: umts/.github/.github/workflows/rubocop.yml@main
+  stylelint:
+    name: app
+    users: umts/.github/.github/workflows/stylelint.yml@main
