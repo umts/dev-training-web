@@ -25,11 +25,6 @@ end
 
 group :development do
   gem 'bcrypt_pbkdf', require: false
-  gem 'capistrano', '~> 3.20', require: false
-  gem 'capistrano-bundler', require: false
-  gem 'capistrano-passenger', require: false
-  gem 'capistrano-pending', require: false
-  gem 'capistrano-rails', require: false
   gem 'ed25519', require: false
   gem 'haml_lint', require: false
   gem 'irb'
@@ -41,6 +36,6 @@ group :development do
 end
 
 group :development, :test do
-  gem 'dotenv'
   gem 'debug'
+  gem 'dotenv'
 end

@@ -11,7 +11,7 @@ Rake::SprocketsTask.new do |sprockets|
   sprockets.assets = %w[manifest.js]
 end
 
-# Aliases for capistrano-rails to invoke
+# Aliases
 # rubocop:disable Rake/Desc
 namespace :assets do
   task(:precompile) { Rake::Task['assets'].invoke }
