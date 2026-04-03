@@ -24,7 +24,6 @@
     "components/tooltip": false
   )
 );
-
 @use "site-theme";
 
 html, body {
@@ -41,6 +40,7 @@ body > footer {
   gap: calc(var(--pico-spacing) * 2);
   background: var(--pico-secondary);
   color: var(--pico-secondary-inverse);
+
   a {
     display: block;
     color: inherit;
