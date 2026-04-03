@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'app_client'
-require 'application_assets'
 require 'application_secrets'
 require 'dev_training'
 require 'logger'
@@ -29,7 +28,6 @@ class DevTrainingApplication < Sinatra::Base
     AppClient.new ApplicationSecrets.github_key, ApplicationSecrets.github_secret
   end)
 
-  set :sprockets, ApplicationAssets.new
   enable :sessions
   set :session_secret, ApplicationSecrets.session_secret
   set :haml, layout: :application
@@ -52,7 +50,7 @@ class DevTrainingApplication < Sinatra::Base
 
   helpers do
     def asset_path(file) # :nodoc:
-      settings.sprockets.asset_path(file, digest: settings.environment == :production)
+      # TODO: Reimplement.
     end
   end
 

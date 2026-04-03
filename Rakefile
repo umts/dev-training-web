@@ -2,24 +2,6 @@
 
 require_relative 'config/environment'
 
-require 'application_assets'
-require 'rake/sprocketstask'
-
-Rake::SprocketsTask.new do |sprockets|
-  sprockets.environment = ApplicationAssets.new
-  sprockets.output = File.join(__dir__, "public#{ApplicationAssets::ASSET_ROOT}")
-  sprockets.assets = %w[manifest.js]
-end
-
-# Aliases for capistrano-rails to invoke
-# rubocop:disable Rake/Desc
-namespace :assets do
-  task(:precompile) { Rake::Task['assets'].invoke }
-  task(:clean) { Rake::Task['clean_assets'].invoke }
-  task(:clobber) { Rake::Task['clobber_assets'].invoke }
-end
-# rubocop:enable Rake/Desc
-
 namespace :credentials do
   desc 'Outputs the credentials stored in `ARGV[1]` (used by diff helper)'
   task :diff do

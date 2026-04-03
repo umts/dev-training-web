@@ -11,8 +11,6 @@ gem 'omniauth-github'
 gem 'puma'
 gem 'rake'
 gem 'sinatra', require: 'sinatra/base'
-gem 'sprockets'
-gem 'sprockets-sass_embedded'
 gem 'tilt'
 
 group :test do
