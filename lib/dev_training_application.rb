@@ -30,7 +30,8 @@ class DevTrainingApplication < Sinatra::Base
   end)
 
   set :sprockets, ApplicationAssets.new
-  set :sessions, ApplicationSecrets.sessions
+  enable :sessions
+  set :session_secret, ApplicationSecrets.session_secret
   set :haml, layout: :application
 
   configure do
