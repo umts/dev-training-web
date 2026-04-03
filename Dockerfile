@@ -75,4 +75,4 @@ RUN groupadd --system --gid 1000 dev-training-web && \
 USER 1000:1000
 
 EXPOSE 80
-CMD ["script/server", "--port=80"]
+CMD ["./bin/thrust", "./script/server", "--port=3000"]

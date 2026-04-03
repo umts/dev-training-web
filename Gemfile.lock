@@ -286,6 +286,8 @@ GEM
     sysexits (1.2.0)
     temple (0.10.4)
     thor (1.5.0)
+    thruster (0.1.20-aarch64-linux)
+    thruster (0.1.20-arm64-darwin)
     tilt (2.7.0)
     tsort (0.2.0)
     tzinfo (2.0.6)
@@ -335,6 +337,7 @@ DEPENDENCIES
   sinatra
   sprockets
   sprockets-sass_embedded
+  thruster
   tilt
 
 CHECKSUMS
@@ -451,6 +454,8 @@ CHECKSUMS
   sysexits (1.2.0) sha256=598241c4ae57baa403c125182dfdcc0d1ac4c0fb606dd47fbed57e4aaf795662
   temple (0.10.4) sha256=b7a1e94b6f09038ab0b6e4fe0126996055da2c38bec53a8a336f075748fff72c
   thor (1.5.0) sha256=e3a9e55fe857e44859ce104a84675ab6e8cd59c650a49106a05f55f136425e73
+  thruster (0.1.20-aarch64-linux) sha256=754f1701061235235165dde31e7a3bc87ec88066a02981ff4241fcda0d76d397
+  thruster (0.1.20-arm64-darwin) sha256=630cf8c273f562063b92ea5ccd7a721d7ba6130cc422c823727f4744f6d0770e
   tilt (2.7.0) sha256=0d5b9ba69f6a36490c64b0eee9f6e9aad517e20dcc848800a06eb116f08c6ab3
   tsort (0.2.0) sha256=9650a793f6859a43b6641671278f79cfead60ac714148aabe4e3f0060480089f
   tzinfo (2.0.6) sha256=8daf828cc77bcf7d63b0e3bdb6caa47e2272dcfaf4fbfe46f8c3a9df087a829b

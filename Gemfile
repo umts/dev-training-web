@@ -15,12 +15,8 @@ gem 'sprockets'
 gem 'sprockets-sass_embedded'
 gem 'tilt'
 
-group :test do
-  gem 'faker'
-  gem 'rack-test', require: 'rack/test'
-  gem 'rspec'
-  gem 'rspec-html-matchers'
-  gem 'simplecov'
+group :production do
+  gem 'thruster'
 end
 
 group :development do
@@ -43,4 +39,12 @@ end
 group :development, :test do
   gem 'debug'
   gem 'dotenv'
+end
+
+group :test do
+  gem 'faker'
+  gem 'rack-test', require: 'rack/test'
+  gem 'rspec'
+  gem 'rspec-html-matchers'
+  gem 'simplecov'
 end

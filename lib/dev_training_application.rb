@@ -33,17 +33,12 @@ class DevTrainingApplication < Sinatra::Base
   enable :sessions
   set :session_secret, ApplicationSecrets.session_secret
   set :haml, layout: :application
+  set :static, false
 
   configure do
     enable :logging
     use Rack::CommonLogger, settings.access_log
   end
-
-  # :nocov:
-  configure :production do
-    set :static, false
-  end
-  # :nocov:
 
   before do
     @csrf_token = request.env['rack.session']['csrf']
