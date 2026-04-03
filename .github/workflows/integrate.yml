@@ -12,7 +12,6 @@ jobs:
     uses: umts/.github/.github/workflows/rspec.yml@384a4e64b8b22a06e3e237f3d939ffea78321b60
     with:
       node: true
-      rack: true
   rubocop:
     name: app
     uses: umts/.github/.github/workflows/rubocop.yml@main
