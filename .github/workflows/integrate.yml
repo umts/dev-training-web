@@ -17,4 +17,4 @@ jobs:
     uses: umts/.github/.github/workflows/rubocop.yml@main
   stylelint:
     name: app
-    users: umts/.github/.github/workflows/stylelint.yml@main
+    uses: umts/.github/.github/workflows/stylelint.yml@main
