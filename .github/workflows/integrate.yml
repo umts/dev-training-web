@@ -9,7 +9,10 @@ jobs:
     uses: umts/.github/.github/workflows/haml-lint.yml@main
   rspec:
     name: app
-    uses: umts/.github/.github/workflows/rspec.yml@main
+    uses: umts/.github/.github/workflows/rspec.yml@bb2aadccc5d3ff0792564d83caa49ec75e29fb66
+    with:
+      node: true
+      rack: true
   rubocop:
     name: app
     uses: umts/.github/.github/workflows/rubocop.yml@main
