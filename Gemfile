@@ -8,6 +8,7 @@ gem 'faraday-retry'
 gem 'haml'
 gem 'octokit'
 gem 'omniauth-github'
+gem 'propshaft'
 gem 'puma'
 gem 'rake'
 gem 'sinatra', require: 'sinatra/base'
@@ -31,6 +32,7 @@ group :development do
   gem 'ed25519', require: false
   gem 'haml_lint', require: false
   gem 'irb'
+  gem 'listen'
   gem 'railties', require: false
   gem 'rdoc', require: false
   gem 'rubocop', require: false

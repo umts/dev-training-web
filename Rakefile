@@ -2,6 +2,20 @@
 
 require_relative 'config/environment'
 
+require 'asset_assembly'
+
+namespace :assets do
+  desc 'Precompile application assets'
+  task precompile: :'css:build' do
+    AssetAssembly.new.processor.process
+  end
+
+  desc 'Delete precompiled assets'
+  task :clobber do
+    rm_rf AssetAssembly.new.config.output_path
+  end
+end
+
 namespace :credentials do
   desc 'Outputs the credentials stored in `ARGV[1]` (used by diff helper)'
   task :diff do
@@ -29,6 +43,18 @@ namespace :credentials do
   desc 'Show the credentials stored in the credentials file'
   task :show do
     puts CREDENTIALS.read.presence || 'No decryptable credentials found'
+  end
+end
+
+namespace :css do
+  desc 'Install CSS dependencies'
+  task :install do
+    system('npm install')
+  end
+
+  desc 'Build CSS'
+  task build: :install do
+    system('npm run build:css')
   end
 end
 
@@ -60,6 +86,9 @@ unless ENV.fetch('RACK_ENV', 'development') == 'production'
     hl.fail_level = 'error'
     hl.quiet = false
   end
+
+  desc 'Prepare for testing'
+  task 'test:prepare' => 'css:build'
 
   RSpec::Core::RakeTask.new(:spec) do |rspec|
     next unless ENV['CI']
