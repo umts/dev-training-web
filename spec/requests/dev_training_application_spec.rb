@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'app_client'
+require 'application_secrets'
 require 'dev_training/repository'
 require 'dev_training/training'
 require 'dev_training_application'
@@ -18,7 +19,8 @@ RSpec.describe DevTrainingApplication do
     app.set :app_client, app_client
     app.set :host_authorization, { allow_if: ->(_) { true } }
     allow(app_client).to receive(:token_valid?).and_return(true)
-    stub_const 'ENV', { 'github_key' => 'key', 'github_secret' => 'secret' }
+    allow(ApplicationSecrets).to receive(:github_key).and_return('key')
+    allow(ApplicationSecrets).to receive(:github_secret).and_return('secret')
     OmniAuth.config.test_mode = true
   end
 

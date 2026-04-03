@@ -2,9 +2,6 @@
 
 require_relative 'config/environment'
 
-require 'application_configuration'
-ApplicationConfiguration.load!
-
 require 'application_assets'
 require 'dev_training_application'
 
