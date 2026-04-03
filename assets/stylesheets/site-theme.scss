@@ -20,7 +20,7 @@ $maroon-100: #1b0606;
 $maroon-50: #0e0303;
 $white: #fff;
 
-[data-theme=light], :root:not([data-theme=dark]) {
+[data-theme="light"], :root:not([data-theme="dark"]) {
   --pico-text-selection-color: rgba(#{$maroon-400}, 0.25);
   --pico-primary: #{$maroon-550};
   --pico-primary-background: #{$maroon-550};
@@ -44,7 +44,7 @@ $white: #fff;
   }
 }
 
-[data-theme=dark] {
+[data-theme="dark"] {
   --pico-text-selection-color: rgba(#{$maroon-350}, 0.1875);
   --pico-primary: #{$maroon-350};
   --pico-primary-background: #{$maroon-550};
