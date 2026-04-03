@@ -6,10 +6,6 @@ lock '~> 3.17'
 set :application, 'dev-training-web'
 set :repo_url, 'https://github.com/umts/dev-training-web.git'
 set :branch, 'main'
-
-set :app_env, fetch(:stage)
-set :default_env, { APP_ENV: fetch(:app_env) }
-
 set :deploy_to, "/srv/#{fetch :application}"
 
 set :keep_releases, 5

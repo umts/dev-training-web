@@ -3,7 +3,7 @@
 $LOAD_PATH.unshift File.join(__dir__, 'lib')
 
 require 'bundler'
-env = ENV['APP_ENV'] || 'development'
+env = ENV['RACK_ENV'] || 'development'
 Bundler.require(:default, env)
 
 require 'application_configuration'

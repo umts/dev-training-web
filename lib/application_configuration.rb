@@ -16,7 +16,7 @@ module ApplicationConfiguration
     Figaro.adapter = Figaro::Application
     Figaro.application = Figaro::Application.new(
       path: config_file,
-      environment: ENV['APP_ENV'] || 'development'
+      environment: ENV['RACK_ENV'] || 'development'
     )
     Figaro.load
   end
