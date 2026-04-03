@@ -5,7 +5,6 @@ ruby file: '.ruby-version'
 
 gem 'activesupport', require: 'active_support/all'
 gem 'faraday-retry'
-gem 'figaro'
 gem 'haml'
 gem 'octokit'
 gem 'omniauth-github'
