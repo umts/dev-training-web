@@ -42,5 +42,6 @@ group :development do
 end
 
 group :development, :test do
+  gem 'dotenv'
   gem 'debug'
 end
