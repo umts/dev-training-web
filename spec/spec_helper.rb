@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-Simplecov.start do
+require 'simplecov'
+SimpleCov.start do
   enable_coverage :branch
   load_profile 'test_frameworks'
   add_filter %r{^/vendor/}
@@ -8,7 +9,7 @@ Simplecov.start do
 end
 
 ENV['RACK_ENV'] = 'test'
-require_relative 'config/environment'
+require_relative '../config/environment'
 
 Dir.glob(File.join(__dir__, 'support/**/*.rb')).each { |f| require f }
 
