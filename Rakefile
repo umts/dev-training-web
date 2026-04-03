@@ -23,7 +23,7 @@ namespace :assets do
 end
 # rubocop:enable Rake/Desc
 
-unless env == 'production'
+unless ENV.fetch('RACK_ENV', 'development') == 'production'
   require 'fileutils'
   require 'haml_lint/rake_task'
   require 'rdoc/task'
