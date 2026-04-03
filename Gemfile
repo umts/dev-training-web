@@ -3,6 +3,7 @@
 source 'https://rubygems.org'
 ruby file: '.ruby-version'
 
+gem 'activesupport', require: 'active_support/all'
 gem 'faraday-retry'
 gem 'figaro'
 gem 'haml'
@@ -33,6 +34,7 @@ group :development do
   gem 'ed25519', require: false
   gem 'haml_lint', require: false
   gem 'irb'
+  gem 'railties', require: false
   gem 'rdoc', require: false
   gem 'rubocop', require: false
   gem 'rubocop-rake', require: false
