@@ -1,7 +1,13 @@
 {
   "name": "dev-training",
   "private": true,
+  "type": "module",
   "dependencies": {
     "@picocss/pico": "*"
+  },
+  "devDependencies": {
+    "stylelint": "*",
+    "stylelint-config-standard": "*",
+    "stylelint-config-standard-scss": "*"
   }
 }
