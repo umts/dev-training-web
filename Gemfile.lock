@@ -125,7 +125,7 @@ GEM
       oauth2 (>= 1.4, < 3)
       omniauth (~> 2.0)
     ostruct (0.6.3)
-    parallel (1.28.0)
+    parallel (2.0.1)
     parser (3.3.11.1)
       ast (~> 2.4.1)
       racc
@@ -175,11 +175,11 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
     rspec-support (3.13.6)
-    rubocop (1.86.0)
+    rubocop (1.86.1)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.1.0)
-      parallel (~> 1.10)
+      parallel (>= 1.10)
       parser (>= 3.3.0.2)
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 2.9.3, < 3.0)
@@ -349,7 +349,7 @@ CHECKSUMS
   omniauth-github (2.0.1) sha256=8ff8e70ac6d6db9d52485eef52cfa894938c941496e66b52b5e2773ade3ccad4
   omniauth-oauth2 (1.8.0) sha256=b2f8e9559cc7e2d4efba57607691d6d2b634b879fc5b5b6ccfefa3da85089e78
   ostruct (0.6.3) sha256=95a2ed4a4bd1d190784e666b47b2d3f078e4a9efda2fccf18f84ddc6538ed912
-  parallel (1.28.0) sha256=33e6de1484baf2524792d178b0913fc8eb94c628d6cfe45599ad4458c638c970
+  parallel (2.0.1) sha256=337782d3e39f4121e67563bf91dd8ece67f48923d90698614773a0ec9a5b2c7d
   parser (3.3.11.1) sha256=d17ace7aabe3e72c3cc94043714be27cc6f852f104d81aa284c2281aecc65d54
   pp (0.6.3) sha256=2951d514450b93ccfeb1df7d021cae0da16e0a7f95ee1e2273719669d0ab9df6
   prettyprint (0.2.0) sha256=2bc9e15581a94742064a3cc8b0fb9d45aae3d03a1baa6ef80922627a0766f193
@@ -373,7 +373,7 @@ CHECKSUMS
   rspec-html-matchers (0.10.0) sha256=d424bfeb0104884478be299b6695b56c2d0432bb77dc9cedecb5138e91c0e9ae
   rspec-mocks (3.13.6) sha256=78b137ae5e91c5072bf81d40d78189aa911e965a81adc245e2d8d9ba624d9b4e
   rspec-support (3.13.6) sha256=2e8de3702427eab064c9352fe74488cc12a1bfae887ad8b91cba480ec9f8afb2
-  rubocop (1.86.0) sha256=4ff1186fe16ebe9baff5e7aad66bb0ad4cabf5cdcd419f773146dbba2565d186
+  rubocop (1.86.1) sha256=44415f3f01d01a21e01132248d2fd0867572475b566ca188a0a42133a08d4531
   rubocop-ast (1.49.1) sha256=4412f3ee70f6fe4546cc489548e0f6fcf76cafcfa80fa03af67098ffed755035
   rubocop-rake (0.7.1) sha256=3797f2b6810c3e9df7376c26d5f44f3475eda59eb1adc38e6f62ecf027cbae4d
   rubocop-rspec (3.9.0) sha256=8fa70a3619408237d789aeecfb9beef40576acc855173e60939d63332fdb55e2
