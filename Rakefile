@@ -1,10 +1,6 @@
 # frozen_string_literal: true
 
-$LOAD_PATH.unshift File.join(__dir__, 'lib')
-
-require 'bundler'
-env = ENV['APP_ENV'] || 'development'
-Bundler.require(:default, env)
+require_relative 'config/environment'
 
 require 'application_configuration'
 ApplicationConfiguration.load!
@@ -27,7 +23,7 @@ namespace :assets do
 end
 # rubocop:enable Rake/Desc
 
-unless env == 'production'
+unless ENV.fetch('RACK_ENV', 'development') == 'production'
   require 'fileutils'
   require 'haml_lint/rake_task'
   require 'rdoc/task'
