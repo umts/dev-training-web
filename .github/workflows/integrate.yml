@@ -1,0 +1,20 @@
+on:
+  workflow_call:
+jobs:
+  docker:
+    name: app
+    uses: umts/.github/.github/workflows/docker.yml@main
+  haml-lint:
+    name: app
+    uses: umts/.github/.github/workflows/haml-lint.yml@main
+  rspec:
+    name: app
+    uses: umts/.github/.github/workflows/rspec.yml@main
+    with:
+      node: true
+  rubocop:
+    name: app
+    uses: umts/.github/.github/workflows/rubocop.yml@main
+  stylelint:
+    name: app
+    uses: umts/.github/.github/workflows/stylelint.yml@main
