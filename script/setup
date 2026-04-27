@@ -16,5 +16,5 @@ FileUtils.chdir APP_ROOT do
   system! 'gem install bundler --conservative'
   system('bundle check') || system!('bundle install')
   system('if command -v rbenv &> /dev/null; then rbenv rehash; fi')
-  system 'npm install'
+  system 'bin/rake test:prepare'
 end

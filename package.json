@@ -3,10 +3,16 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "build:css": "postcss ./assets/stylesheets/application.scss -o ./assets/builds/application.css",
     "lint:css": "stylelint **/*.css **/*.scss"
   },
   "dependencies": {
-    "@picocss/pico": "*"
+    "@csstools/postcss-sass": "*",
+    "@picocss/pico": "*",
+    "autoprefixer": "*",
+    "postcss": "*",
+    "postcss-cli": "*",
+    "postcss-scss": "*"
   },
   "devDependencies": {
     "stylelint": "*",
