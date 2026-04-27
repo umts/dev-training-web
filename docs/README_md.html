@@ -419,7 +419,7 @@
       </span>
     </summary>
 
-    <ul class="link-list nav-list"><li><code><a href="./AppClient.html">AppClient</a></code></li><li><code><a href="./ApplicationAssets.html">ApplicationAssets</a></code></li><li><code><a href="./ApplicationConfiguration.html">ApplicationConfiguration</a></code></li><li><details><summary><code><a href="./DevTraining.html">DevTraining</a></code></summary><ul class="link-list nav-list"><li><code><a href="./DevTraining/FormattingHelpers.html">FormattingHelpers</a></code></li><li><code><a href="./DevTraining/Issue.html">Issue</a></code></li><li><code><a href="./DevTraining/Milestone.html">Milestone</a></code></li><li><code><a href="./DevTraining/Readme.html">Readme</a></code></li><li><code><a href="./DevTraining/Repository.html">Repository</a></code></li><li><code><a href="./DevTraining/Training.html">Training</a></code></li></ul></details></li><li><code><a href="./DevTrainingApplication.html">DevTrainingApplication</a></code></li></ul>
+    <ul class="link-list nav-list"><li><code><a href="./AppClient.html">AppClient</a></code></li><li><code><a href="./ApplicationAssets.html">ApplicationAssets</a></code></li><li><code><a href="./ApplicationSecrets.html">ApplicationSecrets</a></code></li><li><details><summary><code><a href="./DevTraining.html">DevTraining</a></code></summary><ul class="link-list nav-list"><li><code><a href="./DevTraining/FormattingHelpers.html">FormattingHelpers</a></code></li><li><code><a href="./DevTraining/Issue.html">Issue</a></code></li><li><code><a href="./DevTraining/Milestone.html">Milestone</a></code></li><li><code><a href="./DevTraining/Readme.html">Readme</a></code></li><li><code><a href="./DevTraining/Repository.html">Repository</a></code></li><li><code><a href="./DevTraining/Training.html">Training</a></code></li></ul></details></li><li><code><a href="./DevTrainingApplication.html">DevTrainingApplication</a></code></li></ul>
   </details>
 </div>
 
@@ -443,13 +443,6 @@
 
 <span id="label-Configuration" class="legacy-anchor"></span>
 <h1 id="configuration"><a href="#configuration">Configuration</a></h1>
-
-<span id="label-application.yml" class="legacy-anchor"></span>
-<h2 id="applicationyml"><a href="#applicationyml"><code>application.yml</code></a></h2>
-
-<p>You’ll need an OAuth app on GitHub in order to interact with the GitHub API. See “<a href="https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app">Creating an OAuth App</a>” for more information. For local development, create an app with an “authorization callback URL” of <code>http://localhost:9292/auth/github/callback</code>.</p>
-
-<p>Finally, if you want to interact with the GitHub API in the developer console, You can create a <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">Personal Access Token</a> (PAT). This is optional, but if it’s defined in the config, then <code>@training</code> in the console will be initialized with that token.</p>
 
 <span id="label-collaborators.yml" class="legacy-anchor"></span>
 <h2 id="collaboratorsyml"><a href="#collaboratorsyml"><code>collaborators.yml</code></a></h2>
@@ -478,6 +471,20 @@
 <span id="label-Running+the+App" class="legacy-anchor"></span>
 <h1 id="running-the-app"><a href="#running-the-app">Running the App</a></h1>
 
+<p>You’ll need an OAuth app on GitHub in order to interact with the GitHub API. See “<a href="https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app">Creating an OAuth App</a>” for more information. For local development, create an app with an “authorization callback URL” of <code>http://localhost:9292/auth/github/callback</code>.</p>
+
+<p>Finally, if you want to interact with the GitHub API in the developer console, You can create a <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">Personal Access Token</a> (PAT). This is optional, but if it’s defined in the config, then <code>@training</code> in the console will be initialized with that token.</p>
+
+<pre class="shell"># .env.local
+
+GITHUB_KEY=your_key
+GITHUB_SECRET=your_secret
+
+# if using console PAT
+GITHUB_TOKEN=your_token</pre>
+
+<p>Once your secrets are configured,</p>
+
 <pre class="bash">script/server</pre>
 
 <p>will start the development server using Puma. Alternately, it’s a Rack app, so any other rack-compatible server will work if pointed at the <code>config.ru</code> file.</p>
@@ -490,7 +497,7 @@
 
 <pre class="bash">script/console</pre>
 
-<p>will load the <a href="ApplicationConfiguration.html"><code>ApplicationConfiguration</code></a>, require the <a href="DevTraining.html"><code>DevTraining</code></a> libraries, and (if possible) initialize a <a href="DevTraining.html"><code>DevTraining</code></a> with your PAT to <code>@training</code>.</p>
+<p>will require the <a href="DevTraining.html"><code>DevTraining</code></a> libraries, and (if possible) initialize a <a href="DevTraining.html"><code>DevTraining</code></a> with your PAT to <code>@training</code>.</p>
 
 <span id="label-Docs" class="legacy-anchor"></span>
 <h2 id="docs"><a href="#docs">Docs</a></h2>
