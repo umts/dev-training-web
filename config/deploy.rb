@@ -13,7 +13,7 @@ set :default_env, { RACK_ENV: fetch(:app_env) }
 
 set :keep_releases, 5
 
-append :linked_files, 'config/application.yml'
+append :linked_files, 'config/dev-training-web.key'
 append :linked_dirs, 'log', 'public/assets'
 
 before 'git:check', 'git:allow_shared'

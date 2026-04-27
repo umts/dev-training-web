@@ -2,6 +2,7 @@
 
 require 'app_client'
 require 'application_assets'
+require 'application_secrets'
 require 'dev_training'
 require 'logger'
 require 'rack/common_logger'
@@ -25,11 +26,12 @@ class DevTrainingApplication < Sinatra::Base
   set :qualifications, proc { File.join root, 'config', 'qualifications.yml' }
   set :readme, proc { File.join root, 'config', 'README.md.erb' }
   set :app_client, (proc do
-    AppClient.new ENV.fetch('github_key'), ENV.fetch('github_secret')
+    AppClient.new ApplicationSecrets.github_key, ApplicationSecrets.github_secret
   end)
 
   set :sprockets, ApplicationAssets.new
-  set :sessions, (ENV['session_secret'] ? { secret: ENV['session_secret'] } : {})
+  enable :sessions
+  set :session_secret, ApplicationSecrets.session_secret
   set :haml, layout: :application
 
   configure do
@@ -57,7 +59,7 @@ class DevTrainingApplication < Sinatra::Base
   use OmniAuth::Builder do
     options = { scope: 'user:email, repo' }
     options[:provider_ignores_state] = true if ENV['RACK_ENV'] == 'development'
-    provider :github, ENV.fetch('github_key'), ENV.fetch('github_secret'), options
+    provider :github, ApplicationSecrets.github_key, ApplicationSecrets.github_secret, options
   end
 
   use Rack::Protection, use: %i[authenticity_token cookie_tossing form_token remote_referrer]

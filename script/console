@@ -3,11 +3,8 @@
 
 require_relative '../config/environment'
 
-require 'application_configuration'
-ApplicationConfiguration.load!
-
 require 'dev_training'
-@training = DevTraining.new(ENV['console_token']) if ENV['console_token']
+@training = DevTraining.new(ENV['GITHUB_TOKEN']) if ENV['GITHUB_TOKEN']
 
 $stdout.sync = true
 IRB.setup nil
