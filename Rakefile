@@ -4,6 +4,18 @@ require_relative 'config/environment'
 
 require 'asset_assembly'
 
+namespace :assets do
+  desc 'Precompile application assets'
+  task precompile: :'css:build' do
+    AssetAssembly.new.processor.process
+  end
+
+  desc 'Delete precompiled assets'
+  task :clobber do
+    rm_rf AssetAssembly.new.config.output_path
+  end
+end
+
 namespace :css do
   desc 'Install CSS dependencies'
   task :install do
