@@ -2,7 +2,7 @@
 # check=error=true
 
 # This Dockerfile is designed for production, not development. Use with Kamal or build'n'run by hand:
-# docker build --tag dev-training-web --build-arg RUBY_VERSION="$(cat .ruby-version)" --build-arg NODE_VERSION=$(cat .node-version) .
+# docker build --tag dev-training-web --build-arg RUBY_VERSION="$(cat .ruby-version)" --build-arg NODE_VERSION=$(cat .node-version) --platform linux/amd64 .
 # docker run --interactive --tty --publish 80:80 --env MASTER_KEY="$(cat config/dev-training-web.key)" dev-training-web
 
 # Make sure RUBY_VERSION matches the Ruby version in .ruby-version
@@ -75,4 +75,4 @@ RUN groupadd --system --gid 1000 dev-training-web && \
 USER 1000:1000
 
 EXPOSE 80
-CMD ["script/server", "--port=80"]
+CMD ["./bin/thrust", "./script/server", "--port=3000"]

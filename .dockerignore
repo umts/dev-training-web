@@ -1,5 +1,6 @@
 *
 
+!/assets/
 !/bin/
 !/config/
 !/lib/
@@ -13,6 +14,9 @@
 !/Gemfile.lock
 !/package.json
 !/package-lock.json
+!/postcss.config.js
 !/Rakefile
 
+/assets/builds/
+/public/assets/
 **/*.key

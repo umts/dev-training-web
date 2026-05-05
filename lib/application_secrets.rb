@@ -1,10 +1,14 @@
 # frozen_string_literal: true
 
+require 'securerandom'
+
 ##
 # helper module for loading secret values from environment/credentials.
 module ApplicationSecrets
   class << self
-    def sessions = production? ? { secret: CREDENTIALS['session_secret'] } : {}
+    def session_secret
+      production? ? CREDENTIALS['session_secret'] : ENV.fetch('SESSION_SECRET') { SecureRandom.hex(64) }
+    end
 
     def github_key = production? ? CREDENTIALS['github_key'] : ENV.fetch('GITHUB_KEY', nil)
 
