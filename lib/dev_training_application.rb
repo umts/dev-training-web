@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 require 'app_client'
-require 'application_assets'
 require 'application_secrets'
+require 'asset_assembly'
 require 'dev_training'
 require 'logger'
 require 'rack/common_logger'
@@ -21,6 +21,10 @@ class DevTrainingApplication < Sinatra::Base
     logfile = File.join root, 'log', "#{settings.environment}_error.log"
     File.open logfile, 'a+'
   end)
+  configure do
+    enable :logging
+    use Rack::CommonLogger, settings.access_log
+  end
 
   set :collaborators, proc { File.join root, 'config', 'collaborators.yml' }
   set :qualifications, proc { File.join root, 'config', 'qualifications.yml' }
@@ -29,21 +33,19 @@ class DevTrainingApplication < Sinatra::Base
     AppClient.new ApplicationSecrets.github_key, ApplicationSecrets.github_secret
   end)
 
-  set :sprockets, ApplicationAssets.new
   enable :sessions
   set :session_secret, ApplicationSecrets.session_secret
   set :haml, layout: :application
-
-  configure do
-    enable :logging
-    use Rack::CommonLogger, settings.access_log
-  end
 
   # :nocov:
   configure :production do
     set :static, false
   end
   # :nocov:
+  set :asset_assembly, AssetAssembly.new
+  configure :development, :test do
+    use Propshaft::Server, settings.asset_assembly
+  end
 
   before do
     @csrf_token = request.env['rack.session']['csrf']
@@ -52,7 +54,7 @@ class DevTrainingApplication < Sinatra::Base
 
   helpers do
     def asset_path(file) # :nodoc:
-      settings.sprockets.asset_path(file, digest: settings.environment == :production)
+      settings.asset_assembly.resolver.resolve(file) || raise(Propshaft::MissingAssetError, file)
     end
   end
 

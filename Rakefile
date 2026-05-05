@@ -2,23 +2,19 @@
 
 require_relative 'config/environment'
 
-require 'application_assets'
-require 'rake/sprocketstask'
+require 'asset_assembly'
 
-Rake::SprocketsTask.new do |sprockets|
-  sprockets.environment = ApplicationAssets.new
-  sprockets.output = File.join(__dir__, "public#{ApplicationAssets::ASSET_ROOT}")
-  sprockets.assets = %w[manifest.js]
-end
+namespace :css do
+  desc 'Install CSS dependencies'
+  task :install do
+    system('npm install')
+  end
 
-# Aliases for capistrano-rails to invoke
-# rubocop:disable Rake/Desc
-namespace :assets do
-  task(:precompile) { Rake::Task['assets'].invoke }
-  task(:clean) { Rake::Task['clean_assets'].invoke }
-  task(:clobber) { Rake::Task['clobber_assets'].invoke }
+  desc 'Build CSS'
+  task build: :install do
+    system('npm run build:css')
+  end
 end
-# rubocop:enable Rake/Desc
 
 namespace :credentials do
   desc 'Outputs the credentials stored in `ARGV[1]` (used by diff helper)'
@@ -78,6 +74,9 @@ unless ENV.fetch('RACK_ENV', 'development') == 'production'
     hl.fail_level = 'error'
     hl.quiet = false
   end
+
+  desc 'Prepare for testing'
+  task 'test:prepare' => 'css:build'
 
   RSpec::Core::RakeTask.new(:spec) do |rspec|
     next unless ENV['CI']
