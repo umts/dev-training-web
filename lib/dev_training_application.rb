@@ -37,7 +37,11 @@ class DevTrainingApplication < Sinatra::Base
   set :session_secret, ApplicationSecrets.session_secret
   set :haml, layout: :application
 
-  set :static, false
+  # :nocov:
+  configure :production do
+    set :static, false
+  end
+  # :nocov:
   set :asset_assembly, AssetAssembly.new
   configure :development, :test do
     use Propshaft::Server, settings.asset_assembly
