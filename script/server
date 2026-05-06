@@ -1,12 +1,3 @@
-#!/usr/bin/env ruby
+#!/usr/bin/env bash
 
-# frozen_string_literal: true
-
-require 'fileutils'
-
-# path to your application root.
-APP_ROOT = File.expand_path('..', __dir__)
-
-FileUtils.chdir APP_ROOT do
-  system 'bin/puma config.ru'
-end
+bundle exec puma config.ru "$@"
