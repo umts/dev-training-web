@@ -38,7 +38,6 @@ class DevTrainingApplication < Sinatra::Base
   set :haml, layout: :application
 
   use Rack::Sendfile
-  set :static_cache_control, [:public, immutable: true, max_age: 31_536_000]
   set :asset_assembly, AssetAssembly.new
   configure :development, :test do
     use Propshaft::Server, settings.asset_assembly
@@ -47,6 +46,10 @@ class DevTrainingApplication < Sinatra::Base
   before do
     @csrf_token = request.env['rack.session']['csrf']
     request.env['rack.errors'] = settings.error_log
+  end
+
+  before '/public/assets/*' do
+    cache_control :public, :immutable, max_age: 31_536_000
   end
 
   helpers do
