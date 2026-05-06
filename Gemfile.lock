@@ -32,8 +32,6 @@ GEM
       uri (>= 0.13.1)
     addressable (2.9.0)
       public_suffix (>= 2.0.2, < 8.0)
-    airbrussh (1.6.0)
-      sshkit (>= 1.6.1, != 1.7.0)
     ast (2.4.3)
     base64 (0.3.0)
     bcrypt_pbkdf (1.1.2)
@@ -41,20 +39,6 @@ GEM
     bcrypt_pbkdf (1.1.2-x86_64-darwin)
     bigdecimal (4.0.1)
     builder (3.3.0)
-    capistrano (3.20.0)
-      airbrussh (>= 1.0.0)
-      i18n
-      rake (>= 10.0.0)
-      sshkit (>= 1.9.0)
-    capistrano-bundler (2.2.0)
-      capistrano (~> 3.1)
-    capistrano-passenger (0.2.1)
-      capistrano (~> 3.0)
-    capistrano-pending (0.2.0)
-      capistrano (>= 3.2.0)
-    capistrano-rails (1.7.0)
-      capistrano (~> 3.1)
-      capistrano-bundler (>= 1.1, < 3)
     concurrent-ruby (1.3.6)
     connection_pool (3.0.2)
     crass (1.0.6)
@@ -104,6 +88,17 @@ GEM
       reline (>= 0.4.2)
     json (2.19.3)
     jwt (2.7.1)
+    kamal (2.11.0)
+      activesupport (>= 7.0)
+      base64 (~> 0.2)
+      bcrypt_pbkdf (~> 1.0)
+      concurrent-ruby (~> 1.2)
+      dotenv (~> 3.1)
+      ed25519 (~> 1.4)
+      net-ssh (~> 7.3)
+      sshkit (>= 1.23.0, < 2.0)
+      thor (~> 1.3)
+      zeitwerk (>= 2.6.18, < 3.0)
     language_server-protocol (3.17.0.5)
     lint_roller (1.1.0)
     listen (3.10.0)
@@ -313,20 +308,14 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport
-  bcrypt_pbkdf
-  capistrano (~> 3.20)
-  capistrano-bundler
-  capistrano-passenger
-  capistrano-pending
-  capistrano-rails
   debug
   dotenv
-  ed25519
   faker
   faraday-retry
   haml
   haml_lint
   irb
+  kamal
   listen
   octokit
   omniauth-github
@@ -351,7 +340,6 @@ CHECKSUMS
   actionview (8.1.3) sha256=1347c88c7f3edb38100c5ce0e9fb5e62d7755f3edc1b61cce2eb0b2c6ea2fd5d
   activesupport (8.1.3) sha256=21a5e0dfbd4c3ddd9e1317ec6a4d782fa226e7867dc70b0743acda81a1dca20e
   addressable (2.9.0) sha256=7fdf6ac3660f7f4e867a0838be3f6cf722ace541dd97767fa42bc6cfa980c7af
-  airbrussh (1.6.0) sha256=7e2cf581f2319d2c2b2b672c9fc486efb4dfcfed4bd2dadbef5f10b8b2a000d0
   ast (2.4.3) sha256=954615157c1d6a382bc27d690d973195e79db7f55e9765ac7c481c60bdb4d383
   base64 (0.3.0) sha256=27337aeabad6ffae05c265c450490628ef3ebd4b67be58257393227588f5a97b
   bcrypt_pbkdf (1.1.2) sha256=c2414c23ce66869b3eb9f643d6a3374d8322dfb5078125c82792304c10b94cf6
@@ -359,11 +347,6 @@ CHECKSUMS
   bcrypt_pbkdf (1.1.2-x86_64-darwin) sha256=35f5639d0058e6c2cc2f856f9c0b14080543268d3047abe6bc81c513093caa0e
   bigdecimal (4.0.1) sha256=8b07d3d065a9f921c80ceaea7c9d4ae596697295b584c296fe599dd0ad01c4a7
   builder (3.3.0) sha256=497918d2f9dca528fdca4b88d84e4ef4387256d984b8154e9d5d3fe5a9c8835f
-  capistrano (3.20.0) sha256=0113e58dda99add0342e56a244f664734c59f442c5ed734f5303b0b559b479c9
-  capistrano-bundler (2.2.0) sha256=47b4cf2ea17ea132bb0a5cabc5663443f5190a54f4da5b322d04e1558ff1468c
-  capistrano-passenger (0.2.1) sha256=07a1d25edd5c1d909c19d4fe45fe2ea5f11200569f6967f6bff1d605ade98e13
-  capistrano-pending (0.2.0) sha256=f9e8c1e6b6a2ce760ed49ccb470c474f802c1d453704fb62d67ca4c1ee547066
-  capistrano-rails (1.7.0) sha256=aca57455e8c5435785e0f938e16aa5b79c263694a755e1dca1c5d1743b40aae7
   concurrent-ruby (1.3.6) sha256=6b56837e1e7e5292f9864f34b69c5a2cbc75c0cf5338f1ce9903d10fa762d5ab
   connection_pool (3.0.2) sha256=33fff5ba71a12d2aa26cb72b1db8bba2a1a01823559fb01d29eb74c286e62e0a
   crass (1.0.6) sha256=dc516022a56e7b3b156099abc81b6d2b08ea1ed12676ac7a5657617f012bd45d
@@ -392,6 +375,7 @@ CHECKSUMS
   irb (1.18.0) sha256=de9454a0703a54704b9811a5ef31a60c86949fbf4013fcf244fabc7c775248e3
   json (2.19.3) sha256=289b0bb53052a1fa8c34ab33cc750b659ba14a5c45f3fcf4b18762dc67c78646
   jwt (2.7.1) sha256=07357cd2f180739b2f8184eda969e252d850ac996ed0a23f616e8ff0a90ae19b
+  kamal (2.11.0) sha256=1408864425e0dec7e0a14d712a3b13f614e9f3a425b7661d3f9d287a51d7dd75
   language_server-protocol (3.17.0.5) sha256=fd1e39a51a28bf3eec959379985a72e296e9f9acfce46f6a79d31ca8760803cc
   lint_roller (1.1.0) sha256=2c0c845b632a7d172cb849cc90c1bce937a28c5c8ccccb50dfd46a485003cc87
   listen (3.10.0) sha256=c6e182db62143aeccc2e1960033bebe7445309c7272061979bb098d03760c9d2
