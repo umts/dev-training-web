@@ -9,5 +9,5 @@ runs:
     - uses: actions/setup-node@v5
       with:
         node-version: 'lts/*'
-    - run: script/setup
+    - run: bin/setup
       shell: bash

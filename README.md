@@ -14,7 +14,7 @@ Setup
 Clone the repository and run the setup script
 
 ```bash
-script/setup
+bin/setup
 ```
 
 Configuration
@@ -72,7 +72,7 @@ GITHUB_TOKEN=your_token
 Once your secrets are configured,
 
 ```bash
-script/server
+bin/dev
 ```
 
 will start the development server using Puma. Alternately, it's a Rack app, so
@@ -85,7 +85,7 @@ Developer Console
 -----------------
 
 ```bash
-script/console
+bin/console
 ```
 
 will require the `DevTraining` libraries, and (if possible) initialize a `DevTraining` with your PAT to `@training`.

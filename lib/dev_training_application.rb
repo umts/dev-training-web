@@ -37,11 +37,7 @@ class DevTrainingApplication < Sinatra::Base
   set :session_secret, ApplicationSecrets.session_secret
   set :haml, layout: :application
 
-  # :nocov:
-  configure :production do
-    set :static, false
-  end
-  # :nocov:
+  use Rack::Sendfile
   set :asset_assembly, AssetAssembly.new
   configure :development, :test do
     use Propshaft::Server, settings.asset_assembly
@@ -50,6 +46,10 @@ class DevTrainingApplication < Sinatra::Base
   before do
     @csrf_token = request.env['rack.session']['csrf']
     request.env['rack.errors'] = settings.error_log
+  end
+
+  before '/public/assets/*' do
+    cache_control :public, :immutable, max_age: 31_536_000
   end
 
   helpers do
