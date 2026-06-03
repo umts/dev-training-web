@@ -16,7 +16,5 @@ FileUtils.chdir APP_ROOT do
   system! 'gem install bundler --conservative'
   system('bundle check') || system!('bundle install')
   system('if command -v rbenv &> /dev/null; then rbenv rehash; fi')
-  system 'npm install'
-
-  FileUtils.cp 'config/application.yml.example', 'config/application.yml' unless File.exist?('config/application.yml')
+  system 'bin/rake test:prepare'
 end

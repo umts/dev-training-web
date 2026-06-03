@@ -14,24 +14,11 @@ Setup
 Clone the repository and run the setup script
 
 ```bash
-script/setup
+bin/setup
 ```
 
 Configuration
 =============
-
-`application.yml`
------------------
-
-You'll need an OAuth app on GitHub in order to interact with the GitHub
-API. See "[Creating an OAuth App][oaa]" for more information. For local
-development, create an app with an "authorization callback URL" of
-`http://localhost:9292/auth/github/callback`.
-
-Finally, if you want to interact with the GitHub API in the developer console,
-You can create a [Personal Access Token][pat] (PAT). This is optional, but if
-it's defined in the config, then `@training` in the console will be initialized
-with that token.
 
 `collaborators.yml`
 -------------------
@@ -62,8 +49,30 @@ instance of `DevTraining::Readme`, see the documentation for more information.
 Running the App
 ===============
 
+You'll need an OAuth app on GitHub in order to interact with the GitHub
+API. See "[Creating an OAuth App][oaa]" for more information. For local
+development, create an app with an "authorization callback URL" of
+`http://localhost:9292/auth/github/callback`.
+
+Finally, if you want to interact with the GitHub API in the developer console,
+You can create a [Personal Access Token][pat] (PAT). This is optional, but if
+it's defined in the config, then `@training` in the console will be initialized
+with that token.
+
+```shell
+# .env.local
+
+GITHUB_KEY=your_key
+GITHUB_SECRET=your_secret
+
+# if using console PAT
+GITHUB_TOKEN=your_token
+```
+
+Once your secrets are configured,
+
 ```bash
-script/server
+bin/dev
 ```
 
 will start the development server using Puma. Alternately, it's a Rack app, so
@@ -76,11 +85,10 @@ Developer Console
 -----------------
 
 ```bash
-script/console
+bin/console
 ```
 
-will load the `ApplicationConfiguration`, require the `DevTraining` libraries,
-and (if possible) initialize a `DevTraining` with your PAT to `@training`.
+will require the `DevTraining` libraries, and (if possible) initialize a `DevTraining` with your PAT to `@training`.
 
 Docs
 ----

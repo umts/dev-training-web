@@ -519,7 +519,7 @@
   <span class="ruby-constant">Figaro</span>.<span class="ruby-identifier">adapter</span> = <span class="ruby-constant">Figaro</span><span class="ruby-operator">::</span><span class="ruby-constant">Application</span>
   <span class="ruby-constant">Figaro</span>.<span class="ruby-identifier">application</span> = <span class="ruby-constant">Figaro</span><span class="ruby-operator">::</span><span class="ruby-constant">Application</span>.<span class="ruby-identifier">new</span>(
     <span class="ruby-value">path:</span> <span class="ruby-identifier">config_file</span>,
-    <span class="ruby-value">environment:</span> <span class="ruby-constant">ENV</span>[<span class="ruby-string">&#39;APP_ENV&#39;</span>] <span class="ruby-operator">||</span> <span class="ruby-string">&#39;development&#39;</span>
+    <span class="ruby-value">environment:</span> <span class="ruby-constant">ENV</span>[<span class="ruby-string">&#39;RACK_ENV&#39;</span>] <span class="ruby-operator">||</span> <span class="ruby-string">&#39;development&#39;</span>
   )
   <span class="ruby-constant">Figaro</span>.<span class="ruby-identifier">load</span>
 <span class="ruby-keyword">end</span></pre>

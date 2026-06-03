@@ -1,7 +1,11 @@
-/config/application.yml
+/assets/builds/**/*
+!/assets/builds/.keep
 /coverage/*
 !/coverage/.last_run.json
 /log
 /node_modules
 /public/assets
 /spec/examples.txt
+
+*.key
+*.local

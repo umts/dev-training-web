@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 require 'app_client'
-require 'application_assets'
+require 'application_secrets'
+require 'asset_assembly'
 require 'dev_training'
 require 'logger'
 require 'rack/common_logger'
@@ -20,44 +21,47 @@ class DevTrainingApplication < Sinatra::Base
     logfile = File.join root, 'log', "#{settings.environment}_error.log"
     File.open logfile, 'a+'
   end)
-
-  set :collaborators, proc { File.join root, 'config', 'collaborators.yml' }
-  set :qualifications, proc { File.join root, 'config', 'qualifications.yml' }
-  set :readme, proc { File.join root, 'config', 'README.md.erb' }
-  set :app_client, (proc do
-    AppClient.new ENV.fetch('github_key'), ENV.fetch('github_secret')
-  end)
-
-  set :sprockets, ApplicationAssets.new
-  set :sessions, (ENV['session_secret'] ? { secret: ENV['session_secret'] } : {})
-  set :haml, layout: :application
-
   configure do
     enable :logging
     use Rack::CommonLogger, settings.access_log
   end
 
-  # :nocov:
-  configure :production do
-    set :static, false
+  set :collaborators, proc { File.join root, 'config', 'collaborators.yml' }
+  set :qualifications, proc { File.join root, 'config', 'qualifications.yml' }
+  set :readme, proc { File.join root, 'config', 'README.md.erb' }
+  set :app_client, (proc do
+    AppClient.new ApplicationSecrets.github_key, ApplicationSecrets.github_secret
+  end)
+
+  enable :sessions
+  set :session_secret, ApplicationSecrets.session_secret
+  set :haml, layout: :application
+
+  use Rack::Sendfile
+  set :asset_assembly, AssetAssembly.new
+  configure :development, :test do
+    use Propshaft::Server, settings.asset_assembly
   end
-  # :nocov:
 
   before do
     @csrf_token = request.env['rack.session']['csrf']
     request.env['rack.errors'] = settings.error_log
   end
 
+  before '/public/assets/*' do
+    cache_control :public, :immutable, max_age: 31_536_000
+  end
+
   helpers do
     def asset_path(file) # :nodoc:
-      settings.sprockets.asset_path(file, digest: settings.environment == :production)
+      settings.asset_assembly.resolver.resolve(file) || raise(Propshaft::MissingAssetError, file)
     end
   end
 
   use OmniAuth::Builder do
     options = { scope: 'user:email, repo' }
     options[:provider_ignores_state] = true if ENV['RACK_ENV'] == 'development'
-    provider :github, ENV.fetch('github_key'), ENV.fetch('github_secret'), options
+    provider :github, ApplicationSecrets.github_key, ApplicationSecrets.github_secret, options
   end
 
   use Rack::Protection, use: %i[authenticity_token cookie_tossing form_token remote_referrer]

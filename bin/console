@@ -1,16 +1,10 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require 'bundler'
-
-$LOAD_PATH.unshift File.join(__dir__, '..', 'lib')
-Bundler.require(:default, :development)
-
-require 'application_configuration'
-ApplicationConfiguration.load!
+require_relative '../config/environment'
 
 require 'dev_training'
-@training = DevTraining.new(ENV['console_token']) if ENV['console_token']
+@training = DevTraining.new(ENV['GITHUB_TOKEN']) if ENV['GITHUB_TOKEN']
 
 $stdout.sync = true
 IRB.setup nil
