@@ -12,6 +12,7 @@ jobs:
     uses: umts/.github/.github/workflows/rspec.yml@main
     with:
       node: true
+      setup_command: "bin/rake test:prepare"
   rubocop:
     name: app
     uses: umts/.github/.github/workflows/rubocop.yml@main
