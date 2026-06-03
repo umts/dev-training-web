@@ -19,8 +19,7 @@ RSpec.describe DevTrainingApplication do
     app.set :app_client, app_client
     app.set :host_authorization, { allow_if: ->(_) { true } }
     allow(app_client).to receive(:token_valid?).and_return(true)
-    allow(ApplicationSecrets).to receive(:github_key).and_return('key')
-    allow(ApplicationSecrets).to receive(:github_secret).and_return('secret')
+    allow(ApplicationSecrets).to receive_messages(github_key: 'key', github_secret: 'secret')
     OmniAuth.config.test_mode = true
   end
 
