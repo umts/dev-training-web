@@ -72,7 +72,7 @@ GITHUB_TOKEN=your_token
 Once your secrets are configured,
 
 ```bash
-bin/server
+bin/dev
 ```
 
 will start the development server using Puma. Alternately, it's a Rack app, so
