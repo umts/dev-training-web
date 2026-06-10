@@ -66,6 +66,8 @@ class DevTrainingApplication < Sinatra::Base
 
   use Rack::Protection, use: %i[authenticity_token cookie_tossing form_token remote_referrer]
 
+  get('/up') { 204 }
+
   get '/auth/github/callback' do
     auth = request.env['omniauth.auth']
     session[:auth] = { info: auth['info'], credentials: auth['credentials'] }
