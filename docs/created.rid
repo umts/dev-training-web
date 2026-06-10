@@ -1,13 +1,13 @@
-Wed, 03 Jun 2026 17:24:22 +0000
-README.md	Wed, 03 Jun 2026 17:24:08 +0000
-lib/app_client.rb	Wed, 03 Jun 2026 17:24:08 +0000
-lib/application_secrets.rb	Wed, 03 Jun 2026 17:24:08 +0000
-lib/asset_assembly.rb	Wed, 03 Jun 2026 17:24:08 +0000
-lib/dev_training.rb	Wed, 03 Jun 2026 17:24:08 +0000
-lib/dev_training/formatting_helpers.rb	Wed, 03 Jun 2026 17:24:08 +0000
-lib/dev_training/issue.rb	Wed, 03 Jun 2026 17:24:08 +0000
-lib/dev_training/milestone.rb	Wed, 03 Jun 2026 17:24:08 +0000
-lib/dev_training/readme.rb	Wed, 03 Jun 2026 17:24:08 +0000
-lib/dev_training/repository.rb	Wed, 03 Jun 2026 17:24:08 +0000
-lib/dev_training/training.rb	Wed, 03 Jun 2026 17:24:08 +0000
-lib/dev_training_application.rb	Wed, 03 Jun 2026 17:24:08 +0000
+Wed, 10 Jun 2026 13:53:08 +0000
+README.md	Wed, 10 Jun 2026 13:52:54 +0000
+lib/app_client.rb	Wed, 10 Jun 2026 13:52:54 +0000
+lib/application_secrets.rb	Wed, 10 Jun 2026 13:52:54 +0000
+lib/asset_assembly.rb	Wed, 10 Jun 2026 13:52:54 +0000
+lib/dev_training.rb	Wed, 10 Jun 2026 13:52:54 +0000
+lib/dev_training/formatting_helpers.rb	Wed, 10 Jun 2026 13:52:54 +0000
+lib/dev_training/issue.rb	Wed, 10 Jun 2026 13:52:54 +0000
+lib/dev_training/milestone.rb	Wed, 10 Jun 2026 13:52:54 +0000
+lib/dev_training/readme.rb	Wed, 10 Jun 2026 13:52:54 +0000
+lib/dev_training/repository.rb	Wed, 10 Jun 2026 13:52:54 +0000
+lib/dev_training/training.rb	Wed, 10 Jun 2026 13:52:54 +0000
+lib/dev_training_application.rb	Wed, 10 Jun 2026 13:52:54 +0000
