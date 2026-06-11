@@ -15,7 +15,7 @@ servers:
     - afs-umts-web4.admin.umass.edu
 proxy:
   ssl: true
-  host: https://umts-dt.admin.umass.edu
+  host: umts-dt.admin.umass.edu
 registry:
   server: localhost:5555
 builder:
