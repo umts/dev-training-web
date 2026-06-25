@@ -23,6 +23,7 @@ group :development do
   gem 'irb'
   gem 'kamal', require: false
   gem 'listen'
+  gem 'overcommit', require: false
   gem 'railties', require: false
   gem 'rdoc', require: false
   gem 'rubocop', require: false
