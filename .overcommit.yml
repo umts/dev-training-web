@@ -1,0 +1,25 @@
+PreCommit:
+  ForbiddenBranches:
+    enabled: true
+    branch_patterns: ["master", "main"]
+  HamlLint:
+    enabled: true
+    on_warn: fail
+    required_executable: bundle
+    command: ["bundle", "exec", "haml-lint"]
+  RuboCop:
+    enabled: true
+    required_executable: bundle
+    command: ["bundle", "exec", "rubocop"]
+  StyleLint:
+    enabled: true
+    required_executable: npm
+    command: ["npm", "run", "lint:css"]
+PrePush:
+  RSpec:
+    enabled: true
+    required_executable: bundle
+    command: ["bundle", "exec", "rspec"]
+CommitMsg:
+  ALL:
+    enabled: false

@@ -6,6 +6,7 @@
 /node_modules
 /public/assets
 /spec/examples.txt
+.local-overcommit.yml
 
 *.key
 *.local
