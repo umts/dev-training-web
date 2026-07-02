@@ -244,7 +244,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
     rspec-support (3.13.6)
-    rubocop (1.88.0)
+    rubocop (1.88.1)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.1.0)
@@ -297,10 +297,10 @@ GEM
     sysexits (1.2.0)
     temple (0.10.4)
     thor (1.5.0)
-    thruster (0.1.21)
-    thruster (0.1.21-arm64-darwin)
-    thruster (0.1.21-x86_64-darwin)
-    thruster (0.1.21-x86_64-linux)
+    thruster (0.1.22)
+    thruster (0.1.22-arm64-darwin)
+    thruster (0.1.22-x86_64-darwin)
+    thruster (0.1.22-x86_64-linux)
     tilt (2.7.0)
     tsort (0.2.0)
     tzinfo (2.0.6)
@@ -451,7 +451,7 @@ CHECKSUMS
   rspec-html-matchers (0.10.0) sha256=d424bfeb0104884478be299b6695b56c2d0432bb77dc9cedecb5138e91c0e9ae
   rspec-mocks (3.13.6) sha256=78b137ae5e91c5072bf81d40d78189aa911e965a81adc245e2d8d9ba624d9b4e
   rspec-support (3.13.6) sha256=2e8de3702427eab064c9352fe74488cc12a1bfae887ad8b91cba480ec9f8afb2
-  rubocop (1.88.0) sha256=e420ddf1662d0ef34bc8a2910ac4b396a7ddda0b51a708264405241734b08e0b
+  rubocop (1.88.1) sha256=726af773d6bc169ed3ff852f3ca020b7c58d39c34e7a8d879a8e0147cc994f26
   rubocop-ast (1.49.1) sha256=4412f3ee70f6fe4546cc489548e0f6fcf76cafcfa80fa03af67098ffed755035
   rubocop-rake (0.7.1) sha256=3797f2b6810c3e9df7376c26d5f44f3475eda59eb1adc38e6f62ecf027cbae4d
   rubocop-rspec (3.10.2) sha256=0b3e2ecc592cd10ecbf0095bb58d1e357905276e069643523cc19eb7495f65e2
@@ -468,10 +468,10 @@ CHECKSUMS
   sysexits (1.2.0) sha256=598241c4ae57baa403c125182dfdcc0d1ac4c0fb606dd47fbed57e4aaf795662
   temple (0.10.4) sha256=b7a1e94b6f09038ab0b6e4fe0126996055da2c38bec53a8a336f075748fff72c
   thor (1.5.0) sha256=e3a9e55fe857e44859ce104a84675ab6e8cd59c650a49106a05f55f136425e73
-  thruster (0.1.21) sha256=dc67928f36e5894844579a95e45637a5091db7a7ea05468ee8c2c6eb0a3f77cf
-  thruster (0.1.21-arm64-darwin) sha256=bd8db9f57fae2cbb3fe08ebab49cb47fe49608122dac23daf0ce709adfb9bfc8
-  thruster (0.1.21-x86_64-darwin) sha256=ccd6acd144fad27856800edfa0573944018333fac8e10a2e5d09726b70c8b0db
-  thruster (0.1.21-x86_64-linux) sha256=6e2fbcf826540a72d3710ae4db072c2333287ac2ee57e7e52f35bc10900d74a7
+  thruster (0.1.22) sha256=f34fb82bd3e31570ae8f8b930e484f9e1db7b080cbc993d49090b161879c3e05
+  thruster (0.1.22-arm64-darwin) sha256=d0506142832b1b020ab687dbfb938ec7cb07eeaabebc7f8682a73e8f0636917b
+  thruster (0.1.22-x86_64-darwin) sha256=2598d4122176bebd9d2debfcc5d330886168ca95e1e4705a5f38e80734c4e959
+  thruster (0.1.22-x86_64-linux) sha256=b96436be7f0854db632f421b4a53b795429a0bc95c15c2e1c1a7a6fdd1ed090f
   tilt (2.7.0) sha256=0d5b9ba69f6a36490c64b0eee9f6e9aad517e20dcc848800a06eb116f08c6ab3
   tsort (0.2.0) sha256=9650a793f6859a43b6641671278f79cfead60ac714148aabe4e3f0060480089f
   tzinfo (2.0.6) sha256=8daf828cc77bcf7d63b0e3bdb6caa47e2272dcfaf4fbfe46f8c3a9df087a829b
