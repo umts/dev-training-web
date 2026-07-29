@@ -33,8 +33,8 @@ GEM
     addressable (2.9.0)
       public_suffix (>= 2.0.2, < 8.0)
     ast (2.4.3)
-    auth-sanitizer (0.1.2)
-      version_gem (~> 1.1, >= 1.1.9)
+    auth-sanitizer (0.2.3)
+      version_gem (~> 1.1, >= 1.1.14)
     base64 (0.3.0)
     bcrypt_pbkdf (1.1.2)
     bcrypt_pbkdf (1.1.2-arm64-darwin)
@@ -79,7 +79,8 @@ GEM
       rainbow
       rubocop (>= 1.0)
       sysexits (~> 1.1)
-    hashie (5.0.0)
+    hashie (5.1.0)
+      logger
     i18n (1.15.1)
       concurrent-ruby (~> 1.0)
     iniparse (1.5.0)
@@ -117,7 +118,7 @@ GEM
     minitest (6.0.6)
       drb (~> 2.0)
       prism (~> 1.5)
-    multi_xml (0.8.1)
+    multi_xml (0.9.1)
       bigdecimal (>= 3.1, < 5)
     mustermann (3.0.4)
       ruby2_keywords (~> 0.0.1)
@@ -138,15 +139,15 @@ GEM
       racc (~> 1.4)
     nokogiri (1.19.4-x86_64-linux-gnu)
       racc (~> 1.4)
-    oauth2 (2.0.19)
-      auth-sanitizer (~> 0.1)
+    oauth2 (2.0.22)
+      auth-sanitizer (~> 0.2, >= 0.2.1)
       faraday (>= 0.17.3, < 4.0)
       jwt (>= 1.0, < 4.0)
       logger (~> 1.2)
       multi_xml (~> 0.5)
       rack (>= 1.2, < 4)
-      snaky_hash (~> 2.0, >= 2.0.3)
-      version_gem (~> 1.1, >= 1.1.9)
+      snaky_hash (~> 2.0, >= 2.0.5)
+      version_gem (~> 1.1, >= 1.1.11)
     octokit (10.0.0)
       faraday (>= 1, < 3)
       sawyer (~> 0.9)
@@ -278,9 +279,9 @@ GEM
       rack-protection (= 4.2.1)
       rack-session (>= 2.0.0, < 3)
       tilt (~> 2.0)
-    snaky_hash (2.0.4)
+    snaky_hash (2.0.7)
       hashie (>= 0.1.0, < 6)
-      version_gem (>= 1.1.8, < 3)
+      version_gem (~> 1.1, >= 1.1.14)
     sshkit (1.25.0)
       base64
       logger
@@ -304,7 +305,7 @@ GEM
     unicode-emoji (4.2.0)
     uri (1.1.1)
     useragent (0.16.11)
-    version_gem (1.1.9)
+    version_gem (1.1.14)
     zeitwerk (2.8.2)
 
 PLATFORMS
@@ -350,7 +351,7 @@ CHECKSUMS
   activesupport (8.1.3) sha256=21a5e0dfbd4c3ddd9e1317ec6a4d782fa226e7867dc70b0743acda81a1dca20e
   addressable (2.9.0) sha256=7fdf6ac3660f7f4e867a0838be3f6cf722ace541dd97767fa42bc6cfa980c7af
   ast (2.4.3) sha256=954615157c1d6a382bc27d690d973195e79db7f55e9765ac7c481c60bdb4d383
-  auth-sanitizer (0.1.2) sha256=29f7638d74b2a19ff890008f1561165668a78969a4d90bc85e991128825a7c03
+  auth-sanitizer (0.2.3) sha256=db10aac92cfbe4c64ab637eebcbe1d67395d1694798041362173370f59933e3c
   base64 (0.3.0) sha256=27337aeabad6ffae05c265c450490628ef3ebd4b67be58257393227588f5a97b
   bcrypt_pbkdf (1.1.2) sha256=c2414c23ce66869b3eb9f643d6a3374d8322dfb5078125c82792304c10b94cf6
   bcrypt_pbkdf (1.1.2-arm64-darwin) sha256=afdd6feb6ed5a97b8e44caacb3f2d641b98af78e6a516d4a3520b69af5cf9fea
@@ -379,7 +380,7 @@ CHECKSUMS
   ffi (1.17.4-x86_64-linux-gnu) sha256=9d3db14c2eae074b382fa9c083fe95aec6e0a1451da249eab096c34002bc752d
   haml (7.2.2) sha256=b2f3819d6025a886dc50e5b85f67b568de3e87bc9b61e4d3a2f0f97e36d7fe02
   haml_lint (0.76.0) sha256=ba63a2a13645ff600f0b9c08146f5bb323521a65f8613fda0b6187e573387d82
-  hashie (5.0.0) sha256=9d6c4e51f2a36d4616cbc8a322d619a162d8f42815a792596039fc95595603da
+  hashie (5.1.0) sha256=c266471896f323c446ea8207f8ffac985d2718df0a0ba98651a3057096ca3870
   i18n (1.15.1) sha256=505ec5de1f4e6c8a2cb028ef9700ca495f117911643455721dee5abdca797255
   iniparse (1.5.0) sha256=36a165e98d8a250b7631c4a7f9afba32af78f089970cd6446a39771189c761f1
   io-console (0.8.2) sha256=d6e3ae7a7cc7574f4b8893b4fca2162e57a825b223a177b7afa236c5ef9814cc
@@ -394,7 +395,7 @@ CHECKSUMS
   loofah (2.25.2) sha256=2007f746959ac65552456e04b433e83deb22759ab38c838b4445c70e43425918
   mini_portile2 (2.8.9) sha256=0cd7c7f824e010c072e33f68bc02d85a00aeb6fce05bb4819c03dfd3c140c289
   minitest (6.0.6) sha256=153ea36d1d987a62942382b61075745042a2b3123b1cd48f4c3675af9cc7d6f1
-  multi_xml (0.8.1) sha256=addba0290bac34e9088bfe73dc4878530297a82a7bbd66cb44dcd0a4b86edf5a
+  multi_xml (0.9.1) sha256=7ce766b59c17241ed62976caeae1fae9b2431b263398c35396239a68c4a64e57
   mustermann (3.0.4) sha256=85fadcb6b3c6493a8b511b42426f904b7f27b282835502233dd154daab13aa22
   net-http (0.9.1) sha256=25ba0b67c63e89df626ed8fac771d0ad24ad151a858af2cc8e6a716ca4336996
   net-scp (4.1.0) sha256=a99b0b92a1e5d360b0de4ffbf2dc0c91531502d3d4f56c28b0139a7c093d1a5d
@@ -405,7 +406,7 @@ CHECKSUMS
   nokogiri (1.19.4-arm64-darwin) sha256=a46db9853286e6597b36ebc6953817d15acf3a299583eb3f89fdc6f91dd63527
   nokogiri (1.19.4-x86_64-darwin) sha256=7fd17057d3e1f00e9954a74b3cd76595d3d4a5ef233b7ed9599047c204f70551
   nokogiri (1.19.4-x86_64-linux-gnu) sha256=379fae440b28915e3f19d752ce2dcf8465ed2b2fbefd2a7ca0dd497bc981a06a
-  oauth2 (2.0.19) sha256=175e12c18c3e786bd5c0f30a3235d17594ea36935d17aac5c1296497c0a42613
+  oauth2 (2.0.22) sha256=8f4669f0c8de69f6db7ed786bda20996eaf0003966b886f1c519efb1a5682fa6
   octokit (10.0.0) sha256=82e99a539b7637b7e905e6d277bb0c1a4bed56735935cc33db6da7eae49a24e8
   omniauth (2.1.2) sha256=def03277298b8f8a5d3ff16cdb2eb5edb9bffed60ee7dda24cc0c89b3ae6a0ce
   omniauth-github (2.0.1) sha256=8ff8e70ac6d6db9d52485eef52cfa894938c941496e66b52b5e2773ade3ccad4
@@ -454,7 +455,7 @@ CHECKSUMS
   securerandom (0.4.1) sha256=cc5193d414a4341b6e225f0cb4446aceca8e50d5e1888743fac16987638ea0b1
   simplecov (1.0.3) sha256=38ef0514f16ae7562f0d0f4df02610071115103d301b6de7dacbcc000082e39b
   sinatra (4.2.1) sha256=b7aeb9b11d046b552972ade834f1f9be98b185fa8444480688e3627625377080
-  snaky_hash (2.0.4) sha256=2b12758c57defa6796341a1620f84b1a23737421d8d7e2575d0550b53cc4fece
+  snaky_hash (2.0.7) sha256=7d02c70012a3f932e48860cd024577908300c9aa615e0cb9b450aaa749cbcb4d
   sshkit (1.25.0) sha256=c8c6543cdb60f91f1d277306d585dd11b6a064cb44eab0972827e4311ff96744
   sysexits (1.2.0) sha256=598241c4ae57baa403c125182dfdcc0d1ac4c0fb606dd47fbed57e4aaf795662
   temple (0.10.4) sha256=b7a1e94b6f09038ab0b6e4fe0126996055da2c38bec53a8a336f075748fff72c
@@ -470,7 +471,7 @@ CHECKSUMS
   unicode-emoji (4.2.0) sha256=519e69150f75652e40bf736106cfbc8f0f73aa3fb6a65afe62fefa7f80b0f80f
   uri (1.1.1) sha256=379fa58d27ffb1387eaada68c749d1426738bd0f654d812fcc07e7568f5c57c6
   useragent (0.16.11) sha256=700e6413ad4bb954bb63547fa098dddf7b0ebe75b40cc6f93b8d54255b173844
-  version_gem (1.1.9) sha256=0c1a0962ae543c84a00889bb018d9f14d8f8af6029d26b295d98774e3d2eb9a4
+  version_gem (1.1.14) sha256=6b7306c7e9416d06067561981ab3444e2cecb844f26cc325ae3c27b44cf85613
   zeitwerk (2.8.2) sha256=7212a61311083c604184b1ea2574b9aa05cd14f855a0841c06985cabe9181d12
 
 RUBY VERSION
