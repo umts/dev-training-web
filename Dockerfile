@@ -2,7 +2,7 @@
 # check=error=true
 
 # This Dockerfile is designed for production, not development. Use with Kamal or build'n'run by hand:
-# docker build --tag dev-training-web --build-arg NODE_VERSION=$(cat .node-version) --platform linux/amd64 .
+# docker build --tag dev-training-web --platform linux/amd64 .
 # docker run --interactive --tty --publish 80:80 --env MASTER_KEY="$(cat config/dev-training-web.key)" dev-training-web
 
 FROM ruby:3.4.8-slim AS base
@@ -34,10 +34,11 @@ RUN apt-get update -qq && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Install JavaScript dependencies
-ARG NODE_VERSION=OVERRIDE_ME
+COPY .node-version ./
+
 ENV PATH=/usr/local/node/bin:$PATH
 RUN curl -sL https://github.com/nodenv/node-build/archive/master.tar.gz | tar xz -C /tmp/ && \
-    /tmp/node-build-master/bin/node-build "${NODE_VERSION}" /usr/local/node && \
+    /tmp/node-build-master/bin/node-build "$(cat .node-version)" /usr/local/node && \
     rm -rf /tmp/node-build-master
 
 # Install application gems
