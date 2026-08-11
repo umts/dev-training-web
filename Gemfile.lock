@@ -73,7 +73,7 @@ GEM
       temple (>= 0.8.2)
       thor
       tilt
-    haml_lint (0.76.0)
+    haml_lint (0.77.0)
       haml (>= 5.0)
       parallel (>= 1.10)
       rainbow
@@ -290,7 +290,7 @@ GEM
       net-ssh (>= 2.8.0)
       ostruct
     sysexits (1.2.0)
-    temple (0.10.4)
+    temple (0.10.6)
     thor (1.5.0)
     thruster (0.1.23)
     thruster (0.1.23-arm64-darwin)
@@ -379,7 +379,7 @@ CHECKSUMS
   ffi (1.17.4-x86_64-darwin) sha256=aa70390523cf3235096cf64962b709b4cfbd5c082a2cb2ae714eb0fe2ccda496
   ffi (1.17.4-x86_64-linux-gnu) sha256=9d3db14c2eae074b382fa9c083fe95aec6e0a1451da249eab096c34002bc752d
   haml (7.2.2) sha256=b2f3819d6025a886dc50e5b85f67b568de3e87bc9b61e4d3a2f0f97e36d7fe02
-  haml_lint (0.76.0) sha256=ba63a2a13645ff600f0b9c08146f5bb323521a65f8613fda0b6187e573387d82
+  haml_lint (0.77.0) sha256=d6c3ead412ed40872272f6ef6d4114ecc2afaf63ac94ce97cafd550fe1ae575d
   hashie (5.1.0) sha256=c266471896f323c446ea8207f8ffac985d2718df0a0ba98651a3057096ca3870
   i18n (1.15.2) sha256=00f9eb62412fe593b2a65a97daa75300d37abb8f7202ec748e94b6d46a9dd1b5
   iniparse (1.5.0) sha256=36a165e98d8a250b7631c4a7f9afba32af78f089970cd6446a39771189c761f1
@@ -458,7 +458,7 @@ CHECKSUMS
   snaky_hash (2.0.7) sha256=7d02c70012a3f932e48860cd024577908300c9aa615e0cb9b450aaa749cbcb4d
   sshkit (1.25.0) sha256=c8c6543cdb60f91f1d277306d585dd11b6a064cb44eab0972827e4311ff96744
   sysexits (1.2.0) sha256=598241c4ae57baa403c125182dfdcc0d1ac4c0fb606dd47fbed57e4aaf795662
-  temple (0.10.4) sha256=b7a1e94b6f09038ab0b6e4fe0126996055da2c38bec53a8a336f075748fff72c
+  temple (0.10.6) sha256=0f2ed8a885a81ef5b13b1d99a02948e36da34f2212390f0a0228bfd0412c400a
   thor (1.5.0) sha256=e3a9e55fe857e44859ce104a84675ab6e8cd59c650a49106a05f55f136425e73
   thruster (0.1.23) sha256=ad3081e8ff3b5cb413768292c367f1e015c423bb6b35919b9b9f533af50d639f
   thruster (0.1.23-arm64-darwin) sha256=2f1b73119ffec813cdb104d64dd39bfc3771b5308eb0f4dc2428077141140022
