@@ -6,6 +6,7 @@
 !/lib/
 !/public/
 !/views
+!/.node-version
 !/.ruby-version
 !/config.ru
 !/Gemfile
