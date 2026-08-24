@@ -7,8 +7,7 @@ class AssetAssembly < Propshaft::Assembly
     super(config)
   end
 
-  # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
-  def config
+  def config # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
     ActiveSupport::OrderedOptions.new.tap do |c|
       root_path = Pathname(__dir__).join('../')
       c.paths = [root_path.join('assets/builds').expand_path]
@@ -25,5 +24,4 @@ class AssetAssembly < Propshaft::Assembly
       c.integrity_hash_algorithm = 'sha256'
     end
   end
-  # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
 end
