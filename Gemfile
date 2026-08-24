@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-ruby '3.4.8'
+ruby '4.0.6'
 
 gem 'activesupport', require: 'active_support/all'
 gem 'faraday-retry'
