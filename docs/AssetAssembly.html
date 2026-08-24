@@ -589,8 +589,8 @@
 
 
           <div class="method-source-code" id="config-source">
-            <pre class="ruby"><span class="ruby-comment"># File lib/asset_assembly.rb, line 11</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">config</span>
+            <pre class="ruby"><span class="ruby-comment"># File lib/asset_assembly.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">config</span> <span class="ruby-comment"># rubocop:disable Metrics/AbcSize, Metrics/MethodLength</span>
   <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">OrderedOptions</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">tap</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">root_path</span> = <span class="ruby-constant">Pathname</span>(<span class="ruby-identifier">__dir__</span>).<span class="ruby-identifier">join</span>(<span class="ruby-string">&#39;</span><span class="ruby-string">../</span><span class="ruby-string">&#39;</span>)
     <span class="ruby-identifier">c</span>.<span class="ruby-identifier">paths</span> = [<span class="ruby-identifier">root_path</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&#39;</span><span class="ruby-string">assets/builds</span><span class="ruby-string">&#39;</span>).<span class="ruby-identifier">expand_path</span>]
@@ -614,7 +614,7 @@
         <div class="method-description">
 
 
-          <p>rubocop:disable Metrics/AbcSize, Metrics/MethodLength</p>
+          
 
 
         </div>
