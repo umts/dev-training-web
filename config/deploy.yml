@@ -1,7 +1,7 @@
 # <% def user_for(host) = Net::SSH::Config.for(host).fetch(:user, ENV.fetch('USER', nil)) %>
 
-service: %%REPLACE_ME%%
-image: umts/%%REPLACE_ME%%
+service: dev-training-web
+image: umts/dev-training-web
 registry:
   server: ghcr.io
   username: not_needed
@@ -12,19 +12,19 @@ builder:
   provenance: false
   sbom: false
 labels:
-  org.opencontainers.image.source: "https://github.com/umts/%%REPLACE_ME%%"
+  org.opencontainers.image.source: "https://github.com/umts/dev-training-web"
 servers:
   web:
-    - %%REPLACE_ME%%
+    - afs-umts-web4.admin.umass.edu
 proxy:
   ssl: true
-  host: %%REPLACE_ME%%
+  host: umts-dt.admin.umass.edu
 env:
   clear:
     TZ: America/New_York
   secret:
     - MASTER_KEY
 ssh:
-  user: <%= user_for '%%REPLACE_ME%%' %>
+  user: <%= user_for 'afs-umts-web4.admin.umass.edu' %>
 volumes:
-  - "%%FILL_ME_IN%%"
+  - "dev-training-web_log:/app/log"
