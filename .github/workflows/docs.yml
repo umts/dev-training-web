@@ -14,7 +14,7 @@ jobs:
     permissions:
       actions: write
     steps:
-      - uses: actions/create-github-app-token@v3
+      - uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3
         id: docs-github-app-token
         with:
           app-id: ${{ vars.DOCS_APP_ID }}
@@ -22,7 +22,7 @@ jobs:
           owner: umts
           repositories: dev-training-web
           permission-contents: write
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           token: ${{ steps.docs-github-app-token.outputs.token }}
       - uses: ./.github/actions/setup
@@ -33,7 +33,7 @@ jobs:
           git add docs/
           git commit -m 'Update documentation [skip ci]' || true
           git push
-      - uses: actions/upload-pages-artifact@v5
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5
         with:
           path: ./docs
 
@@ -44,4 +44,4 @@ jobs:
       pages: write
       id-token: write
     steps:
-      - uses: actions/deploy-pages@v5
+      - uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5
