@@ -3,19 +3,19 @@ on:
 jobs:
   docker:
     name: app
-    uses: umts/shared-workflows/.github/workflows/docker.yml@main
+    uses: umts/shared-workflows/.github/workflows/docker.yml@45a657bbe392751472f14fd638845093af4509cb # main
   haml-lint:
     name: app
-    uses: umts/shared-workflows/.github/workflows/haml-lint.yml@main
+    uses: umts/shared-workflows/.github/workflows/haml-lint.yml@45a657bbe392751472f14fd638845093af4509cb # main
   rspec:
     name: app
-    uses: umts/shared-workflows/.github/workflows/rspec.yml@main
+    uses: umts/shared-workflows/.github/workflows/rspec.yml@45a657bbe392751472f14fd638845093af4509cb # main
     with:
       node: true
       setup_command: "bin/rake test:prepare"
   rubocop:
     name: app
-    uses: umts/shared-workflows/.github/workflows/rubocop.yml@main
+    uses: umts/shared-workflows/.github/workflows/rubocop.yml@45a657bbe392751472f14fd638845093af4509cb # main
   stylelint:
     name: app
-    uses: umts/shared-workflows/.github/workflows/stylelint.yml@main
+    uses: umts/shared-workflows/.github/workflows/stylelint.yml@45a657bbe392751472f14fd638845093af4509cb # main
