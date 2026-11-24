@@ -5,7 +5,7 @@
 # docker build --tag dev-training-web --platform linux/amd64 .
 # docker run --interactive --tty --publish 80:80 --env MASTER_KEY="$(cat config/dev-training-web.key)" dev-training-web
 
-FROM ruby:4.0.10-slim@sha256:a4b3e62bfe56bd267a3aeacc1b89aea96be919faa0c7d77c6346e2ac14f6c175 AS base
+FROM ruby:4.0.10-slim@sha256:67fb5dbef860bb2205a3c69799f7f1c4f5b01c943ae089de436bc266ea8c102e AS base
 
 # App lives here
 WORKDIR /app
