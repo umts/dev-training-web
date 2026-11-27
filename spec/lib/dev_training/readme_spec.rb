@@ -7,6 +7,7 @@ RSpec.describe DevTraining::Readme do
   subject(:readme) { described_class.new(filename, client, repo) }
 
   include_context 'with mock client'
+
   let(:filename) { File.join(__dir__, '../../fixtures/README.md.erb') }
   let(:template) { Tilt.new(filename, trim: '-') }
 

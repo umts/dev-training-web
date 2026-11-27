@@ -10,6 +10,7 @@ RSpec.describe DevTraining::Training do
   subject(:training) { described_class.new(:fake_token) }
 
   include_context 'with mock client'
+
   let(:milestone) { DevTraining::Milestone.new(client, repo) }
 
   before do

@@ -7,6 +7,7 @@ RSpec.describe DevTraining::Milestone do
   subject(:milestone) { described_class.new(client, repo) }
 
   include_context 'with mock client'
+
   let(:milestone_name) { described_class::NAME }
 
   describe '#resource' do

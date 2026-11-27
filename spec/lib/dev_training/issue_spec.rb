@@ -8,6 +8,7 @@ RSpec.describe DevTraining::Issue do
   subject(:issue) { ->(data) { described_class.new(client, repo, milestone, data) } }
 
   include_context 'with mock client'
+
   let(:milestone) { DevTraining::Milestone.new(client, repo) }
 
   describe '#title' do
