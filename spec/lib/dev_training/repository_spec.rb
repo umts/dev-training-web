@@ -7,6 +7,7 @@ RSpec.describe DevTraining::Repository do
   subject(:repository) { described_class.new(client) }
 
   include_context 'with mock client'
+
   let(:repo_name) { described_class::NAME }
 
   describe '#add_collaborator' do
